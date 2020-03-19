@@ -21,7 +21,7 @@ jobs:
         run: |
           bundle install
           bundle exec jekyll build
-          bundle exec htmlproofer --check-html --internal-domains localhost:4000 --assume-extension --disable-external --url-ignore "/#.*/" _site
+          bundle exec htmlproofer --check-html --internal-domains localhost:4000 --assume-extension --disable-external --url-ignore "/#.*/" --file-ignore /tools/ _site
       - name: deploy
         uses: peaceiris/actions-gh-pages@v2.5.0
         env:
