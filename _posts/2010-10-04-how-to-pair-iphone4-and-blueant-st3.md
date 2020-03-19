@@ -3,7 +3,7 @@ layout: single
 permalink: /blog/2010/10/04/how-to-pair-iphone4-and-blueant-st3
 author: max
 title:  "How to pair iPhone and Blueant ST3..."
-date:   2010-11-24 00:00:00 +1100
+date:   2010-10-04 00:00:00 +1100
 categories:
   - blog
 tags:

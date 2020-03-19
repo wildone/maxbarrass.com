@@ -3,7 +3,7 @@ layout: single
 permalink: /blog/2010/07/23/treeview-in-office-2010-activex-control
 author: max
 title:  "TreeView in Office 2010 - ActiveX Control Workaround"
-date:   2010-07-24 00:00:00 +1100
+date:   2010-07-23 00:00:00 +1100
 categories:
   - blog
 tags:
