@@ -4,4 +4,5 @@ bundle exec htmlproofer --check-html \
         --assume-extension \
         --disable-external \
         --url-ignore "/#.*/" \
+        --file-ignore /tools/ \
         _site
