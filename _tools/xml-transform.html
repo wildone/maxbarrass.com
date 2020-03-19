@@ -1,0 +1,103 @@
+---
+layout: tool
+title:  "XML Transform"
+author: max
+permalink: /tools/xml-transform
+excerpt: "XML Transform Testing Tools"
+date:   2016-11-04 18:57:00 +1100
+categories:
+  - tools
+tags:
+  - xml-transform
+  - xml
+  - xslt
+---
+
+<form role="form">
+    <div class="form-body">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h4>Description</h4>
+                    <p>Online XML ad XSLT transofrmation tool.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h4>Support</h4>
+                    <div class="support">
+                        <span title="9+" class="tag ie live">ie: live</span>
+                        <span title="partialy 13+" class="tag firefox live">firefox: partialy</span>
+                        <span title="12+" class="tag opera live">opera: nightly</span>
+                        <span title="5.1.7" class="tag safari live">safari: live</span>
+                        <span title="20+" class="tag chrome live">chrome: live</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h4>Source</h4>
+                    <textarea id="txtXMLSource" class="form-control DataFieldLarge" rows="12"><?xml version="1.0" encoding="UTF-8"?><records><record><a> TEST1 </a></record><record><a>TEST2</a></record></records></textarea>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h4>Transformation (Stylesheet)</h4>
+                    <textarea id="txtXMLTransformSource" class="form-control DataFieldLarge" rows="12"><?xml version="1.0" encoding="ISO-8859-1"?>
+                        <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                                    <xsl:output method="xml" omit-xml-declaration="yes" indent="yes" encoding="utf-16"/>
+
+                                    <xsl:template match="/">
+                                        <xsl:apply-templates/>
+                                    </xsl:template>
+
+                                    <xsl:template match="//records">
+
+                                        <test>
+                                            <xsl:for-each select="//record">
+                                                <a>
+                                                    <xsl:apply-templates select="a" mode="fixtext"/>
+                                                </a>
+                                            </xsl:for-each>
+                                        </test>
+
+                                    </xsl:template>
+
+
+                                    <xsl:template match="*" mode="fixtext" >
+                                        <xsl:value-of select="normalize-space(.)" />
+                                    </xsl:template>
+
+                                </xsl:stylesheet></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h4>Error</h4>
+                    <textarea id="txtXMLTransformError" class="form-control DataFieldLarge" rows="12"></textarea>
+                    <xml id="xmlSource"></xml>
+                    <xml id="xmlStyle"></xml>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h4>Output</h4>
+                    <textarea id="txtXMLTransformOutput" class="form-control DataFieldLarge" rows="12"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Actions</h4>
+                <div class="form-group">
+                    <button type="button" class="btn green" onclick="doXMLTransform(enumXMLTransformAction.actionProcess)">Process</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+

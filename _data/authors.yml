@@ -1,0 +1,15 @@
+# Authors
+
+max:
+  name        : "Max Barrass"
+  uri         : "http://maxbarrass.com"
+  email       : "me@maxbarrass.com"
+  bio         : "Me"
+  avatar      : "/assets/images/profile/maxbarrass4.jpg"
+  twitter     : "maxbarrass"
+  linkedin    : "maxbarrass"
+  github      : "wildone"
+  crypto:
+    bitcoin   : "18kns7Jt6pym9tmZ6bzUY1Hw4WZ7XrEPxN"
+    doge      : "DGxzGHeurYBV9jdUiHBdCJoqS3y1WFoVQF"
+    ltc       : "Lgdu8pchCVQy3sZqy1caJ6UuUXoVDnoGwk"

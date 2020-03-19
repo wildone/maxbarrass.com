@@ -1,0 +1,254 @@
+---
+layout: tool
+title:  "Image Convert"
+author: max
+permalink: /tools/image-convert
+excerpt: "Simple tool to create image DataURI's."
+date:   2016-11-04 18:57:00 +1100
+categories:
+  - tools
+tags:
+  - image
+  - convert
+  - data-uri
+---
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <p>Simple tool to create image DataURI's. Basically convert image to Base64 in the browser using Canvas and SVG. Plus some bonus features. You can use this to convert your images in prep for embedding these into your CSS, HTML or any other useful purpose.</p>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+
+        <div class="portlet box purple ">
+            <div class="portlet-title">
+                <div class="caption">
+                    <h2><i class="far fa-image"></i> Image Selection</h2>
+                </div>
+                <div class="tools">
+                    <a href="" class="collapse">
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <form class="form-horizontal" role="form">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Image</label>
+                            <div class="col-md-8">
+                                <button type="button" class="form-control btn green input-small margin-right-10" onclick="$('#inputImage').click()">Pick File</button>
+                                <input type="file" id="inputImage" class="hidden" multiple="multiple">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Width</label>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <input type="text" class="form-control"  id="txtImageWidth" readonly>
+                                    <span class="input-group-addon">px</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Height</label>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <input type="text" class="form-control"  id="txtImageHeight" readonly>
+                                    <span class="input-group-addon">px</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="portlet box purple ">
+            <div class="portlet-title">
+                <div class="caption">
+                    <h2><i class="fas fa-compress"></i> Image Resize</h2>
+                </div>
+                <div class="tools">
+                    <a href="" class="collapse">
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <form onsubmit="return(false)" class="form-horizontal" role="form">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">maxWidth</label>
+
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="txtImageCanvasMaxWidth">
+                                    <span class="input-group-addon">px</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">maxHeight</label>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="txtImageCanvasMaxHeight">
+                                    <span class="input-group-addon">px</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-actions right" style="margin-top: 0px;">
+                        <button type="button" class="btn green" id="doProcess">Process</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+
+        <div class="portlet box purple ">
+            <div class="portlet-title">
+                <div class="caption">
+                    <h2><i class="fas fa-icons"></i> Image to CSS Base46 Gallery</h2>
+                </div>
+                <div class="tools">
+                    <a href="" class="collapse">
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <form  role="form">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label>Conversion of original image using different rendering styles to Base64</label>
+
+                            <table>
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Canvas Original</th>
+                                    <th>Canvas Resize</th>
+                                    <th>SVG Original</th>
+                                    <th>SVG Resize</th>
+                                </tr>
+                                <tr>
+                                    <td><img src="" id="previewImage"></td>
+                                    <td><canvas id="previewCanvas" ></canvas></td>
+                                    <td><img id="previewCanvasResize"></td>
+                                    <td><svg id="previewSVG" xmlns="http://www.w3.org/2000/svg" version="1.1"></svg></td>
+                                    <td><svg id="previewSVGResize" xmlns="http://www.w3.org/2000/svg" version="1.1"></svg></td>
+                                </tr>
+                                <tr>
+                                    <td><textarea id="txtSourceImage" readonly></textarea><br>Len: <input id="txtSourceImageLength" value="0" readonly></td>
+                                    <td><textarea id="txtSourceImageCanvas" readonly></textarea><br>Len: <input id="txtSourceImageCanvasLength" value="0" readonly></td>
+                                    <td><textarea id="txtSourceImageCanvasResize" readonly></textarea><br>Len: <input id="txtSourceImageCanvasResizeLength" value="0" readonly></td>
+                                    <td><textarea id="txtSourceImageSVG" readonly></textarea><br>Len: <input id="txtSourceImageSVGLength" value="0" readonly></td>
+                                    <td><textarea id="txtSourceImageSVGResize" readonly></textarea><br>Len: <input id="txtSourceImageSVGResizeLength" value="0" readonly></td>
+                                </tr>
+                                <tr>
+                                    <td>(original)</td>
+                                    <td>(canvas(original))</td>
+                                    <td>(canvas resized(original))</td>
+                                    <td>(svg(original))</td>
+                                    <td>(svg(canvas resized))</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td><img id="previewSVGEmbed" src="" type="image/svg+xml" width="244px" height="244px"/></td>
+                                    <td><img id="previewSVGResizeEmbed" src="" type="image/svg+xml" width="244px" height="244px"/></td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+
+        <div class="portlet box purple ">
+            <div class="portlet-title">
+                <div class="caption">
+                    <h2><i class="fab fa-apple"></i> Image to Apple App CSS</h2>
+                </div>
+                <div class="tools">
+                    <a href="" class="collapse">
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <form  role="form">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Embed these images into your Apple Web App, this will provide icons and images for homescreen...</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img id="previewImage57" width="57px" height="57px" style="max-width:57px; max-height:57px">
+                                </div>
+                                <div class="col-md-3">
+                                    <img id="previewImage72" width="72px" height="72px" style="max-width:72px; max-height:72px">
+                                </div>
+                                <div class="col-md-3">
+                                    <img id="previewImage114" width="114px" height="114px" style="max-width:114px; max-height:114px">
+                                </div>
+                                <div class="col-md-3">
+                                    <img id="previewImage144" width="144px" height="144px" style="max-width:144px; max-height:144px">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <textarea id="txtSourceImagePrep" class="form-control margin-top-10" rows="12" readonly></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+
+        <div class="portlet box purple ">
+            <div class="portlet-title">
+                <div class="caption">
+                    <h2><i class="fab fa-css3-alt"></i> Image to CSS</h2>
+                </div>
+                <div class="tools">
+                    <a href="" class="collapse">
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <form  role="form">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label>Embed this image into your CSS, for those fast loading times...</label>
+                            <textarea id="imageToCSSOutput" class="form-control" rows="12" readonly></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

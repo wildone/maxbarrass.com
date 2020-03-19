@@ -1,0 +1,157 @@
+---
+layout: tool
+title:  "String Tools"
+author: max
+permalink: /tools/string-tools
+excerpt: "String manipulation tool"
+date:   2016-11-04 18:57:00 +1100
+categories:
+  - tools
+tags:
+  - string-tools
+  -
+---
+
+Sometimes you just need to play with some strings.
+
+
+<form role="form">
+    <div class="form-body">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h4>Description</h4>
+                    <p>Various online String and Number tools. Convert numbers between generic bases. Encode and format strings.</p>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h4>Support</h4>
+                    <div class="support">
+                        <span title="9+" class="tag ie live">ie: live</span>
+                        <span title="partialy 13+" class="tag firefox live">firefox: partialy</span>
+                        <span title="12+" class="tag opera live">opera: nightly</span>
+                        <span title="5.1.7" class="tag safari live">safari: live</span>
+                        <span title="20+" class="tag chrome live">chrome: live</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h4>From</h4>
+                    <textarea id="txtFrom" class="form-control" rows="12">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz`0123456789-=~!@#$%^&amp;*()_+,./;'[]&lt;&gt;?:"{}\|</textarea>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h4>To</h4>
+                    <textarea id="txtTo" class="form-control" rows="12"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h4>Direction</h4>
+                    <select id="selDirection" class="form-control" onchange="doDirection()">
+                        <option value="0" selcted>From =&gt; To</option>
+                        <option value="1">From &lt;= To</option>
+                    </select>
+                </div>
+
+                <h4>Actions</h4>
+                <div class="form-group">
+                    <button type="button" class="btn green" onclick="doEncode(enumEncodeType.plainEscape)">Escape</button>
+                    <button type="button" class="btn blue" onclick="doEncode(enumEncodeType.plainUnescape)">Unecape</button>
+                    <span class="help-inline">encode/decode special characters, with the exception of: * @ - _ + . /</span>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn green" onclick="doEncode(enumEncodeType.URIEncode)">URI Encode</button>
+                    <button type="button" class="btn blue" onclick="doEncode(enumEncodeType.URIDecode)">URI Decode</button>
+                    <span class="help-inline">encode/decode special characters, including: , / ? : @ & = + $ #</span>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn green" onclick="doEncode(enumEncodeType.HTMLEncode)">HTML Encode</button>
+                    <button type="button" class="btn blue" onclick="doEncode(enumEncodeType.HTMLDecode)">HTML Decode</button>
+                    <span class="help-inline">encode/decode special HTML characters</span>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn green" onclick="doEncode(enumEncodeType.HexEncode)">Hex Encode</button>
+                    <button type="button" class="btn blue" onclick="doEncode(enumEncodeType.HexDecode)">Hex Decode</button>
+                    <span class="help-inline">encode/decode Hex To/From String.
+                            <a target="_new" href="http://en.wikipedia.org/wiki/Endianness">Endianness</a>
+                        </span>
+                    <input  type="checkbox" checked id="chkLittleEndian" class="make-switch switch-mini" data-on-label="Big" data-off-label="Little">
+                </div>
+                <div class="form-group">
+                    <select id="cboRadixFrom" class="form-control" onclick="doEncode(enumEncodeType.BaseChange)"></select>
+                    <select id="cboRadixTo" class="form-control" onclick="doEncode(enumEncodeType.BaseChange)"></select>
+                    <span class="help-inline">change base of a number</span>
+                </div>
+
+                <div class="form-group">
+                    <button type="button" class="btn green" onclick="doEncode(enumEncodeType.Base64Encode)">Base64 Encode</button>
+                    <button type="button" class="btn blue" onclick="doEncode(enumEncodeType.Base64Decode)">Base64 Decode</button>
+                    <span class="help-inline">encode/decode Base64 Strings</span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h4>History <button type="button" id="historyClear" class="btn red btn-sm" onclick="doHistoryClear()"><span class="fa fa-trash"></span> Clear</button>
+                        <div class="pull-right"><input id="chkTrackHistory" type="checkbox" class="make-switch" data-on="success" data-off="danger"></div>
+                    </h4>
+                </div>
+                <div class="form-group">
+                    <!--<select id="selHistory" ondblclick="doHistoryReplay()" class="form-control" size="8" multiple></select>-->
+                    <div class="flip-scroll">
+                        <table class="table table-bordered table-striped table-condensed flip-content historyData" id="historyData">
+                            <thead class="flip-content">
+                            <tr>
+                                <th class="numeric" width="10%">#</th>
+                                <th>Label</th>
+                                <th>Data</th>
+                                <th>Type</th>
+                                <th>Direction</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!--<div class="form-group">-->
+                <!--<h5>Item</h5>-->
+                <!--<div class="input-group">-->
+                <!--<input type="text" class="form-control" id="txtHistoryLabel">-->
+                <!--<div class="input-group-btn">-->
+                <!--<button type="button" class="btn yellow dropdown-toggle" data-toggle="dropdown">Action <i class="fa fa-angle-down"></i></button>-->
+                <!--<ul class="dropdown-menu pull-right">-->
+                <!--<li>-->
+                <!--<a href="#" onclick="doHistorySetLabel()">-->
+                <!--Update Label-->
+                <!--</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                <!--<a href="#" onclick="doHistoryDelete()">-->
+                <!--Remove Selected-->
+                <!--</a>-->
+                <!--</li>-->
+                <!--<li class="divider">-->
+                <!--</li>-->
+                <!--<li>-->
+                <!--<a href="#" onclick="doHistoryClear()">-->
+                <!--Clear All-->
+                <!--</a>-->
+                <!--</li>-->
+                <!--</ul>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+</form>

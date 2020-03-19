@@ -1,0 +1,141 @@
+---
+layout: tool
+title:  "Json Path"
+author: max
+permalink: /tools/json-path
+excerpt: "Json-Path tester using JSONPath - XPath for JSON javascript library"
+date:   2016-11-04 18:57:00 +1100
+categories:
+  - tools
+tags:
+  - json-path
+  - json
+
+---
+
+<form role="form">
+    <div class="form-body">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h4>Description</h4>
+                    <p>Json-Path tester using <a href="http://goessner.net/articles/JsonPath/">JSONPath - XPath for JSON</a> javascript library</p>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h4>Support</h4>
+                    <div class="support">
+                        <span title="9+" class="tag ie live">ie: live</span>
+                        <span title="partialy 13+" class="tag firefox live">firefox: partialy</span>
+                        <span title="12+" class="tag opera live">opera: nightly</span>
+                        <span title="5.1.7" class="tag safari live">safari: live</span>
+                        <span title="20+" class="tag chrome live">chrome: live</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h4>JSON Source</h4>
+                    <textarea id="txtFrom" class="form-control DataFieldLarge" rows="12">
+{
+    "store": {
+        "book": [
+        {   "category": "reference",
+            "author": "Nigel Rees",
+            "title": "Sayings of the Century",
+            "price": 8.95
+        },
+        {   "category": "fiction",
+            "author": "Evelyn Waugh",
+            "title": "Sword of Honour",
+            "price": 12.99
+        },
+        {   "category": "fiction",
+            "author": "Herman Melville",
+            "title": "Moby Dick",
+            "isbn": "0-553-21311-3",
+            "price": 8.99
+        },
+        {   "category": "fiction",
+            "author": "J. R. R. Tolkien",
+            "title": "The Lord of the Rings",
+            "isbn": "0-395-19395-8",
+            "price": 22.99
+        }
+        ],
+        "bicycle": {
+            "color": "red",
+            "price": 19.95
+        }
+    }
+}
+
+
+                            </textarea>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h4>Json Path</h4>
+                    <textarea id="txtJsonPath" class="form-control" rows="4">$..book[?(@.price<10)]</textarea>
+                </div>
+                <div class="form-group">
+                    <h4>Result</h4>
+                    <textarea id="txtTo" class="form-control DataFieldLarge" rows="4"></textarea>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Actions</h4>
+                <div class="form-group">
+                    <button type="button" class="btn green" id="parse">Evaluate Json Path</button>
+                    <button type="button" class="btn green" id="formatsource">Format Json</button>
+<!--                    <button type="button" class="btn green input-medium margin-right-10" id="formatjsonpath">Format Json Path</button>-->
+                    <button type="button" class="btn green" id="formatresult">Format Result</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <h4>History <a id="historyClear" class="btn red btn-sm"><i class="fa fa-trash"></i> Clear</a>
+                        <div class="pull-right"><input id="chkTrackHistory" type="checkbox" class="make-switch" data-on="success" data-off="danger"></div>
+                    </h4>
+                </div>
+                <div class="form-group">
+                    <!--<select id="selHistory" ondblclick="doHistoryReplay()" class="form-control" size="8" multiple></select>-->
+                    <div class="flip-scroll">
+                        <table class="table table-bordered table-striped table-condensed flip-content historyData" id="historyData">
+                            <thead class="flip-content">
+                            <tr>
+                                <th class="numeric" width="10%">#</th>
+                                <th>Label</th>
+                                <th>Data</th>
+                                <th>Type</th>
+                                <th>Direction</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+</form>
+
+

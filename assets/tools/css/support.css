@@ -1,0 +1,56 @@
+.support {
+  width: 126px;
+}
+.support span {
+  cursor: pointer;
+  overflow: hidden;
+  float: left;
+  display: block;
+  height: 16px;
+  width: 16px;
+  text-indent: -9999px;
+  background-image: url(/assets/images/tools/images/browsers.gif);
+  background-repeat: none;
+  margin-right: 5px;
+}
+
+.support span.selected {
+  outline: 1px dashed #75784C;
+}
+
+.support span.safari {
+  background-position: 0 0;
+}
+
+.support span.chrome {
+  background-position: 16px 0;
+}
+
+.support span.firefox {
+  background-position: 32px 0;
+}
+
+.support span.ie {
+  background-position: 48px 0;
+}
+
+.support span.opera {
+  background-position: 64px 0;
+}
+
+.support span.nightly {
+  opacity: 0.5;
+  filter:alpha(opacity=50);
+}
+
+.support span.none {
+  opacity: 0.1;
+  filter:alpha(opacity=10);
+}
+.support span.yourbrowser.supported {
+  background: url(../images/yourbrowser.gif) no-repeat top left;
+}
+
+.support span.yourbrowser.not-supported {
+  background: url(../images/yourbrowser.gif) no-repeat top right;
+}

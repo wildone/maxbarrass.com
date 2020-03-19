@@ -1,0 +1,2079 @@
+---
+---
+
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 | default: en }}" class="no-js">
+  <head>
+    {% include head.html %}
+    {% include head/custom.html %}
+    {% include google/gtm-head.html %}
+
+      <script src="//code.jquery.com/jquery-3.1.0.js"></script>
+      <script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<!--      <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
+<!--      <script src="/assets/tools/plugins/jquery-ui/jquery-ui-1.12.1.custom/jquery-ui.js"></script>-->
+<!--      <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js" type="text/javascript"></script>-->
+<!--      <script src="/assets/tools/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>-->
+
+      <link rel="stylesheet" href="/assets/tools/plugins/bootstrap-4.4.1/css/bootstrap-grid.min.css">
+      <script src="/assets/tools/plugins/bootstrap-modal/js/bootstrap.js"></script>
+      <script src="//stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.4.0/bootbox.js" type="text/javascript"></script>
+
+
+      <!-- BEGIN PAGE LEVEL STYLES -->
+      <link rel="stylesheet" type="text/css" href="/assets/tools/plugins/select2/select2.css"/>
+      <link rel="stylesheet" type="text/css" href="/assets/tools/plugins/select2/select2-metronic.css"/>
+      <link rel="stylesheet" type="text/css" href="/assets/tools/plugins/jquery-notific8/jquery.notific8.min.css"/>
+      <link rel="stylesheet" type="text/css" href="/assets/tools/plugins/bootstrap-switch/css/bootstrap-switch.min.css"/>
+
+<!--      <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>-->
+<!--      <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>-->
+<!--      <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/jquery-editable/css/jquery-editable.css" rel="stylesheet"/>-->
+<!--      <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/jquery-editable/js/jquery-editable-poshytip.js"></script>-->
+
+<!--      <script src="/assets/tools/plugins/bootstrap-editable/bootstrap-popovers.js"></script>-->
+<!--      <link rel="stylesheet" type="text/css" href="/assets/tools/plugins/bootstrap-editable/bootstrap-editable/css/bootstrap-editable.css"/>-->
+<!--      <script src="/assets/tools/plugins/bootstrap4-editable/js/bootstrap-editable.js"></script>-->
+<!--      <link rel="stylesheet" type="text/css" href="/assets/tools/plugins/bootstrap4-editable/css/bootstrap-editable.css"/>-->
+
+      <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"/>
+      <link rel="stylesheet" href="//cdn.datatables.net/responsive/1.0.0/css/dataTables.responsive.css"/>
+<!--        <script src="//cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.js"></script>-->
+<!--        <script src="//cdn.datatables.net/select/1.3.1/js/dataTables.select.js"></script>-->
+<!--        <script src="//editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>-->
+      <!-- END PAGE LEVEL STYLES -->
+
+      <!-- BEGIN CUSTOM CSS -->
+      <link href="/assets/tools/css/support.css" rel="stylesheet" type="text/css"/>
+      <link href="/assets/tools/plugins/codemirror-4.1/lib/codemirror.css" rel="stylesheet" type="text/css"/>
+      <link href="/assets/tools/plugins/codemirror-4.1/theme/the-matrix.css" rel="stylesheet" type="text/css"/>
+
+      <!-- END CUSTOM CSS -->
+
+      <style>
+          .page {
+              padding-right: 0px !important;
+          }
+
+          #main {
+              max-width: initial !important;
+              margin-left: initial !important;
+              margin-right: initial !important;
+          }
+
+          .editable {
+              border-bottom: dashed 1px #0088cc;
+          }
+      </style>
+
+
+      <style>
+          .form-group {
+              vertical-align: top;
+          }
+          .btn.green {
+              color: white;
+              text-shadow: none;
+              background-color: #35aa47;
+              width: 120px;
+              height: 55px;
+          }
+          .btn.blue {
+              color: white;
+              text-shadow: none;
+              background-color: #4d90fe;
+              width: 120px;
+              height: 55px;
+          }
+          .btn.yellow {
+              color: black;
+              text-shadow: none;
+              background-color: yellow;
+              width: 120px;
+              height: 55px;
+          }
+          .btn.red {
+              color: white;
+              text-shadow: none;
+              background-color: red;
+              width: 120px;
+              height: 55px;
+          }
+
+          .btn-sm {
+              width: auto !important;
+              height: auto !important;
+          }
+      </style>
+  </head>
+
+  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
+    {% include google/gtm-body.html %}
+
+    {% include browser-upgrade.html %}
+
+    {% include masthead.html %}
+
+    {{ content }}
+
+    <div class="page__footer">
+      <footer>
+        {% include footer/custom.html %}
+        {% include footer.html %}
+      </footer>
+    </div>
+
+    {% include scripts.html %}
+
+
+    <!-- TEMPLATE -->
+    <!--<script src="/assets/tools/plugins/jquery-1.11.1.js" type="text/javascript"></script>-->
+    <!--<script src="//code.jquery.com/jquery-1.11.3.min.js" type="text/javascript"></script>-->
+<!--    <script src="//code.jquery.com/jquery-1.9.1.js" type="text/javascript"></script>-->
+<!--    <script src="//code.jquery.com/jquery-3.4.1.js" type="text/javascript"></script>-->
+    <!-- IMPORTANT! Load jquery-ui-1.10.3.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+    <!--<script src="/assets/tools/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>-->
+    <!--<script src="/assets/tools/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>-->
+    <!--<script src="/assets/tools/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>-->
+    <!--<script src="/assets/tools/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>-->
+    <!--<script src="/assets/tools/plugins/jquery.blockui.min.js" type="text/javascript"></script>-->
+    <!--<script src="/assets/tools/plugins/jquery.cokie.min.js" type="text/javascript"></script>-->
+    <!--<script src="/assets/tools/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>-->
+    <!-- END CORE PLUGINS -->
+
+    <!--<script src="/assets/tools/plugins/beautify.js"></script>-->
+    <!--<script src="/assets/tools/plugins/beautify-css.js"></script>-->
+    <!--<script src="/assets/tools/plugins/beautify-html.js"></script>-->
+
+
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+
+    <script src="/assets/tools/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+
+<!--    <script type="text/javascript" src="/assets/tools/plugins/bootstrap-editable/bootstrap-editable/js/bootstrap-editable.js"></script>-->
+<!--    <script src="/assets/tools/plugins/bootbox/bootbox.min.js" type="text/javascript"></script>-->
+
+    <script src="/assets/tools/plugins/jquery-notific8/jquery.notific8.min.js"></script>
+    <script type="text/javascript" src="/assets/tools/plugins/select2/select2.min.js"></script>
+
+    <!--<script type="text/javascript" src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>-->
+    <!--<script type="text/javascript" src="/assets/tools/plugins/data-tables/jquery.dataTables.js"></script>-->
+    <!--<script type="text/javascript" src="//cdn.datatables.net/1.10.1/js/jquery.dataTables.js"></script>-->
+    <script type="text/javascript" src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="//cdn.datatables.net/responsive/1.0.0/js/dataTables.responsive.js"></script>
+
+    <!-- TOOLS -->
+    <script src="/assets/tools/plugins/jsonpath/jsonpath-0.8.0.js"></script>
+    <script src="/assets/tools/plugins/jquery.jsonXmlTools.js"></script>
+    <script src="/assets/tools/plugins/index.tools.js"></script>
+    <script src="/assets/tools/plugins/uglify2/wrapper.js"></script>
+    <script src="/assets/tools/plugins/codemirror-4.1/lib/codemirror.js"></script>
+    <script src="/assets/tools/plugins/codemirror-4.1/addon/edit/matchbrackets.js"></script>
+    <script src="/assets/tools/plugins/codemirror-4.1/addon/comment/continuecomment.js"></script>
+    <script src="/assets/tools/plugins/codemirror-4.1/addon/comment/comment.js"></script>
+    <script src="/assets/tools/plugins/codemirror-4.1/addon/format/format.js"></script>
+    <script src="/assets/tools/plugins/codemirror-4.1/mode/javascript/javascript.js"></script>
+    <script src="/assets/tools/plugins/codemirror-4.1/mode/xml/xml.js"></script>
+
+    <script src="/assets/tools/plugins/beautify/beautify.js"></script>
+    <script src="/assets/tools/plugins/beautify/beautify-css.js"></script>
+    <script src="/assets/tools/plugins/beautify/beautify-html.js"></script>
+
+    <!--<script src="/assets/tools/scripts/core/app.js"></script>-->
+    <!--<script src="/assets/tools/scripts/custom/ui-alert-dialog-api.js"></script>-->
+
+
+    <!-- ASCII TABLE -->
+    <script>
+        // ASCII TABLE
+        var oAsciiData;
+        // $.noConflict();
+        $(document).ready(function() {
+            //App.initAjax();
+            if ($('#ascii').length >0) {
+                oAsciiData = $('#ascii').DataTable({
+                    "bLengthChange": true
+                    , "bPaginate": true
+                    , "bSort": true
+                    , "aLengthMenu": [
+                        [20, 50, 100, -1],
+                        [20, 50, 100, "All"] // change per page values here
+                    ],
+                    // set the initial value
+                    "iDisplayLength": 20,
+                    "oLanguage": {
+                        "sLengthMenu": "_MENU_ records",
+                        "oPaginate": {
+                            "sPrevious": "Prev",
+                            "sNext": "Next"
+                        }
+                    }
+                    , "aoColumnDefs": [{
+                        'bSortable': false,
+                        'bSearchable': true,
+                        'aTargets': [0]
+                    }]
+
+                });
+
+                $("#ascii_wrapper .dataTables_filter input").addClass("form-control input-medium input-inline"); // modify table search input
+                $("#ascii_wrapper .dataTables_length select").addClass("form-control input-small"); // modify table per page dropdown
+                $("#ascii_wrapper .dataTables_length select").select2({minimumResultsForSearch: -1}); // initialize select2 dropdown
+            }
+        });
+    </script>
+    <!-- STRING TOOLS -->
+    <script>
+        //STRING TOOLS
+
+        var editors = {
+            history: null
+        }
+
+        jQuery(document).ready(function() {
+            //App.initAjax();
+            if ($("#txtFrom").length > 0 && $("#txtTo").length > 0 && $("#selDirection").length > 0) {
+
+                objFrom = $("#txtFrom").get(0); // document.getElementById("txtFrom");
+                objTo = $("#txtTo").get(0); //  document.getElementById("txtTo");
+
+                objRadixFrom = $("#cboRadixFrom").get(0); // document.getElementById("cboRadixFrom");
+                objRadixTo = $("#cboRadixTo").get(0); // document.getElementById("cboRadixTo");
+
+
+                for (var i = 2; i <= 32; i++) {
+                    $("#cboRadixTo").append($("<option></option>").text(enumRadixType[i]).val(i));
+                    $("#cboRadixFrom").append($("<option></option>").text(enumRadixType[i]).val(i));
+                }
+
+                editors.history = $('#historyData').DataTable({
+                    "bLengthChange": true
+                    , "bPaginate": true
+                    , "bSort": true
+                    , "aLengthMenu": [
+                        [5, 15, 20, -1],
+                        [5, 15, 20, "All"] // change per page values here
+                    ],
+                    // set the initial value
+                    "iDisplayLength": 5,
+
+                    "oLanguage": {
+                        "sLengthMenu": "_MENU_ records",
+                        "oPaginate": {
+                            "sPrevious": "Prev",
+                            "sNext": "Next"
+                        }
+                    }
+                    , "aoColumnDefs": [{
+                        'bSortable': false,
+                        'bSearchable': true,
+                        'aTargets': [0]
+                    }]
+
+                    , "columns": [
+                        {data: 'id', "width": "auto"},
+                        {data: null, "width": "auto"},
+                        {data: null, "width": "85%"},
+                        {data: 'type', "width": "auto"},
+                        {data: 'direction', "width": "auto"},
+                        {
+                            data: null, "width": "15%",
+                            className: "center",
+                            defaultContent: '<button type="button" class="historyReplay" onclick="doHistoryReplay($(this).parents(\'tr\')[0])"><span class="fa fa-play"></span> Replay</button> <button type="button" onclick="doRowHistoryDelete($(this).parents(\'tr\')[0])"><span class="fa fa-trash"></span> Delete</button>'
+                        }
+                        ,{data: "label", visible: false, "width": "auto"}
+                        ,{data: "value", visible: false, "width": "auto"}
+                    ]
+
+                    , "columnDefs": [
+                        {
+                            "targets": 1,
+                            "width": "auto",
+                            "render": function (data, type, row, meta) {
+                                return '<input type="text" class="editable" onchange="doRowHistoryEdit(' + meta.row + ',\'_label\',$(this).val())" value="' + data.label() + '" />';
+                            }
+                        },
+                        {
+                            "targets": 2,
+                            "width": "auto",
+                            "render": function (data, type, row, meta) {
+                                return '<input type="text" class="editable" onchange="doRowHistoryEdit(' + meta.row + ',\'_label\',$(this).val())" value="' + data.value() + '" />';
+                            }
+                        }
+                    ]
+
+                    , "aoColumns": [
+                        {"sClass": "numeric"},
+                        {"sClass": ""},
+                        {"sClass": ""},
+                        {"sClass": "numeric"},
+                        {"sClass": "numeric"},
+                        {"sClass": "text-center"},
+                        {"sClass": ""}
+                    ],
+
+                });
+
+                $("#historyData_wrapper .dataTables_filter input").addClass("form-control input-medium input-inline"); // modify table search input
+                $("#historyData_wrapper .dataTables_length select").addClass("form-control input-small"); // modify table per page dropdown
+                $("#historyData_wrapper .dataTables_length select").select2({minimumResultsForSearch: -1}); // initialize select2 dropdown
+                $("#historyData_wrapper .dataTables_length select").change(function () {
+                    editors.history.find('.historyLabel').editable();
+                });
+
+
+                $('#selDirection').select2({minimumResultsForSearch: -1});
+                $('#cboRadixFrom').select2({width: "120px"});
+                $('#cboRadixFrom').on("select2-selecting", function () {
+                    doEncode(enumEncodeType.BaseChange)
+                });
+
+                $('#cboRadixTo').select2({width: "120px"});
+                $('#cboRadixTo').on("select2-selecting", function () {
+                    doEncode(enumEncodeType.BaseChange)
+                });
+            }
+        });
+    </script>
+    <!-- SCRIPT TOOLS -->
+    <script>
+        //SCRIPT TOOLS
+
+        var enumScriptExecType = {
+            returnAlert: 0,
+            returnSilent: 1,
+            returnOutput: 2,
+            returnEval: 3
+        }
+
+        var editors = {
+            use_codemirror: (!window.location.href.match(/without-codemirror/)),
+            beautify_in_progress: false,
+            source: null, // codemirror editor
+            result: null
+
+        };
+
+        //jsbeautifier.org
+
+        function any(a, b) {
+            return a || b;
+        }
+
+        function read_settings_from_cookie() {
+            $('#tabsize').val(any($.cookie('tabsize'), '4'));
+            $('#brace-style').val(any($.cookie('brace-style'), 'collapse'));
+            $('#detect-packers').attr('checked', $.cookie('detect-packers') !== 'off');
+            $('#max-preserve-newlines').val(any($.cookie('max-preserve-newlines'), '5'));
+            $('#keep-array-indentation').attr('checked', $.cookie('keep-array-indentation') === 'on');
+            $('#break-chained-methods').attr('checked', $.cookie('break-chained-methods') === 'on');
+            $('#indent-scripts').val(any($.cookie('indent-scripts'), 'normal'));
+            $('#space-before-conditional').attr('checked', $.cookie('space-before-conditional') !== 'off');
+            $('#wrap-line-length').val(any($.cookie('wrap-line-length'), '0'));
+            $('#unescape-strings').attr('checked', $.cookie('unescape-strings') === 'on');
+        }
+
+        function store_settings_to_cookie() {
+            var opts = {
+                expires: 360
+            };
+            $.cookie('tabsize', $('#tabsize').val(), opts);
+            $.cookie('brace-style', $('#brace-style').val(), opts);
+            $.cookie('detect-packers', $('#detect-packers').attr('checked') ? 'on' : 'off', opts);
+            $.cookie('max-preserve-newlines', $('#max-preserve-newlines').val(), opts);
+            $.cookie('keep-array-indentation', $('#keep-array-indentation').attr('checked') ? 'on' : 'off', opts);
+            $.cookie('break-chained-methods', $('#break-chained-methods').attr('checked') ? 'on' : 'off', opts);
+            $.cookie('space-before-conditional', $('#space-before-conditional').attr('checked') ? 'on' : 'off',
+                opts);
+            $.cookie('unescape-strings', $('#unescape-strings').attr('checked') ? 'on' : 'off', opts);
+            $.cookie('wrap-line-length', $('#wrap-line-length').val(), opts);
+            $.cookie('indent-scripts', $('#indent-scripts').val(), opts);
+        }
+
+        function inline() {
+            editors.result.setValue(editors.source.getValue(" ").replace(/\t|\s\s/g,""));
+        }
+
+        function beautify() {
+            if (editors.beautify_in_progress) return;
+
+            //store_settings_to_cookie();
+
+            editors.beautify_in_progress = true;
+
+            var source = editors.source ? editors.source.getValue() : $('#txtJavaScriptSource').val(),
+                output,
+                opts = {};
+
+            opts.indent_size = $('#tabsize').val();
+            opts.indent_char = opts.indent_size == 1 ? '\t' : ' ';
+            opts.max_preserve_newlines = $('#max-preserve-newlines').val();
+            opts.preserve_newlines = opts.max_preserve_newlines !== -1;
+            opts.keep_array_indentation = $('#keep-array-indentation').attr('checked');
+            opts.break_chained_methods = $('#break-chained-methods').attr('checked');
+            opts.indent_scripts = $('#indent-scripts').val();
+            opts.brace_style = $('#brace-style').val();
+            opts.space_before_conditional = $('#space-before-conditional').attr('checked');
+            opts.unescape_strings = $('#unescape-strings').attr('checked');
+            opts.wrap_line_length = $('#wrap-line-length').val();
+            opts.space_after_anon_function = true;
+
+            if (looks_like_html(source)) {
+                output = html_beautify(source, opts);
+            } else {
+                if ($('#detect-packers').attr('checked')) {
+                    source = unpacker_filter(source);
+                }
+                output = js_beautify(source, opts);
+            }
+            if (editors.source) {
+                editors.source.setValue(output);
+            } else {
+                $('#source').val(output);
+            }
+
+            editors.beautify_in_progress = false;
+        }
+
+        function looks_like_html(source) {
+            // <foo> - looks like html
+            // <!--\nalert('foo!');\n--> - doesn't look like html
+
+            var trimmed = source.replace(/^[ \t\n\r]+/, '');
+            var comment_mark = '<' + '!-' + '-';
+            return (trimmed && (trimmed.substring(0, 1) === '<' && trimmed.substring(0, 4) !== comment_mark));
+        }
+
+        //uglify
+        function uglify2(options) {
+            try {
+                editors.result.setValue(Uglify.uglify(editors.source.getValue(),options));
+            } catch (ex) {
+                //console.log(ex);
+                editors.result.setValue(Uglify.format_error(ex, editors.source.getValue()));
+            }
+        }
+
+        function doScriptExec(scriptExecType) {
+            var rValue;
+            try {
+                switch (scriptExecType) {
+                    case enumScriptExecType.returnAlert:
+                        rValue = eval(editors.source.getValue("\n"));
+                        bootbox.alert(rValue.replace(/\n/gi,"<br>"));
+                        break;
+                    case enumScriptExecType.returnSilent:
+                        rValue = eval(editors.source.getValue() + ";");
+                        editors.result.setValue("ok");
+                        break;
+                    case enumScriptExecType.returnOutput:
+                        rValue = eval(editors.source.getValue() + ";");
+                        editors.result.setValue(rValue);
+                        break;
+                    case enumScriptExecType.returnEval:
+                        var strSource = editors.result.getValue();
+                        if (strSource !== "") {
+                            try {
+                                rValue = eval(strSource);
+                                bootbox.alert(rValue.replace(/\n/gi,"<br>"));
+                            } catch (ex) {
+                                bootbox.alert(Uglify.format_error(ex, strSource));
+                            }
+                        }
+                        break;
+                }
+            } catch (ex) {
+               editors.result.setValue(ex);
+            }
+
+        }
+
+
+        jQuery(document).ready(function() {
+
+            if ($("#txtJavaScriptSource").length > 0 &&  $("#txtJavaScriptResult").length > 0) {
+
+                editors.source = CodeMirror.fromTextArea(document.getElementById("txtJavaScriptSource"), {
+                    mode: "javascript",
+                    lineNumbers: true,
+                    matchBrackets: true,
+                    continueComments: "Enter",
+                    extraKeys: {"Ctrl-Q": "toggleComment"}
+                });
+
+                editors.result = CodeMirror.fromTextArea(document.getElementById("txtJavaScriptResult"), {
+                    mode: "javascript",
+                    lineNumbers: true,
+                    matchBrackets: true,
+                    continueComments: "Enter",
+                    extraKeys: {"Ctrl-Q": "toggleComment"}
+                });
+
+                beautify();
+            }
+        });
+
+
+
+    </script>
+    <!-- XML TRANSFORM -->
+    <script>
+        // XML TRANSFORM
+        var editors = {
+            xmlsource: null,
+            xsltsource: null,
+            xmlerror: null,
+            xmlout: null
+        }
+
+        var enumXMLTransformAction = {
+            actionEval: 0,
+            actionProcess: 1
+        }
+
+        function doXMLTransform(XMLTransformAction) {
+            //console.log('doXMLTransform');
+            var strEval = "";
+            var objSource = $("#txtXMLSource")[0]; //document.getElementById("txtXMLSource");
+            var objTransform = $("#txtXMLTransformSource")[0]; //document.getElementById("txtXMLTransformSource");
+            var objError = $("#txtXMLTransformError")[0]; //document.getElementById("txtXMLTransformError");
+            var objOutput = $("#txtXMLTransformOutput")[0]; //document.getElementById("txtXMLTransformOutput");
+            var objXmlSource;// = document.getElementById("xmlSource");
+            var objXmlStyle;// = document.getElementById("xmlStyle");
+
+            switch (XMLTransformAction) {
+                case enumXMLTransformAction.actionEval:
+                    break;
+                case enumXMLTransformAction.actionProcess:
+                    try {
+                        if (window.DOMParser == null) {
+                            try {
+                                objXmlSource = $("#xmlSource")[0]; //document.getElementById("xmlSource"); // new ActiveXObject("Microsoft.XMLDOM");
+                                objXmlStyle = $("#xmlStyle")[0]; //document.getElementById("xmlStyle"); // new ActiveXObject("Microsoft.XMLDOM");
+                            } catch (ex) {
+                                console.log("xml support?");
+                            }
+                        }
+                    } catch (ex) {
+                        editors.xmlerror.setValue("<b>Error<b/><br><p>No XML parser<p/>");
+                        //doSetValue(objOutput, "<b>Error<b/><br><p>No XML parser<p/>", enumValueType.InnerText)
+                        //objOutput.innerText = "<b>Error<b/><br><p>No XML parser<p/>";
+                    }
+                    try {
+                        if (window.DOMParser == null) {
+                            objXmlSource.loadXML(editors.xmlsource.getValue()); //doGetValue(objSource,enumValueType.InnerText)
+                            objXmlStyle.loadXML(editors.xsltsource.getValue()); //doGetValue(objTransform, enumValueType.InnerText));
+                            var sOut = objXmlSource.transformNode(objXmlStyle.XMLDocument);
+                            editors.xmlout.setValue(sOut); // doSetValue(objOutput, objXmlSource.transformNode(objXmlStyle.XMLDocument), enumValueType.InnerText)
+                            console.log(sOut);
+                            //objOutput.innerText = objXmlSource.transformNode(objXmlStyle.XMLDocument);
+                        } else {
+                            var parser = new DOMParser();
+                            //console.log(objSource.value);
+                            objXmlSource = parser.parseFromString(editors.xmlsource.getValue(), "text/xml");
+                            objXmlStyle = parser.parseFromString(editors.xsltsource.getValue(), "text/xml");
+                            //console.log(objXmlSource);
+                            //console.log(objXmlStyle);
+                            objXmlProcessor = new XSLTProcessor();
+                            objXmlProcessor.importStylesheet(objXmlStyle);
+                            //console.log(objXmlProcessor);
+                            var objXMLResult = objXmlProcessor.transformToFragment(objXmlSource, document);
+                            //console.log(objXMLResult);
+                            var objXMLSerialiser = new XMLSerializer(objXMLResult);
+                            //console.log(objXMLSerialiser);
+                            var sOut = objXMLSerialiser.serializeToString(objXMLResult);
+                            editors.xmlout.setValue(sOut);
+                            console.log(sOut);
+                            //objOutput.value = objXMLSerialiser.serializeToString(objXMLResult);
+                        }
+                    } catch (ex) {
+                        var sError = "<b>Error:</b><br>" + ex;
+                        sError += "<br><br><b>Source Error:</b><br>" + objXmlSource.parseError.reason + "<br><b>Line:</b><br>" + objXmlSource.parseError.srcText;
+                        sError += "<br><br><b>Style Error:</b><br>" + objXmlStyle.parseError.reason + "<br><b>Line:</b><br>" + objXmlStyle.parseError.srcText;
+                        editors.xmlerror.setValue(sError);
+                    }
+                    break;
+            }
+
+            /*
+             //ie only
+             objXmlSource = document.getElementById("xmlSource");
+             objXmlStyle = document.getElementById("xmlStyle");
+
+             switch (XMLTransformAction) {
+             case enumXMLTransformAction.actionEval:
+             break;
+             case enumXMLTransformAction.actionProcess:
+             try {
+             objXmlSource.loadXML(objSource.innerText);
+             objXmlStyle.loadXML(objTransform.innerText);
+             objOutput.innerText = objXmlSource.transformNode(objXmlStyle.XMLDocument);
+             } catch (ex) {
+             objError.innerHTML = "<b>Error:</b><br>" + ex;
+             objError.innerHTML += "<br><br><b>Source Error:</b><br>" + objXmlSource.parseError.reason + "<br><b>Line:</b><br>" + objXmlSource.parseError.srcText;
+             objError.innerHTML += "<br><br><b>Style Error:</b><br>" + objXmlStyle.parseError.reason + "<br><b>Line:</b><br>" + objXmlStyle.parseError.srcText;
+             }
+
+             break;
+             }
+             */
+
+        }
+
+
+        jQuery(document).ready(function() {
+            //App.initAjax();
+            if ($("#txtXMLSource").length > 0 && $("#txtXMLTransformSource").length > 0) {
+
+                //loadBodyScript("js/codemirror-4.1/mode/xml/xml.js");
+                //loadBodyScript("js/codemirror-4.1/addon/format/format.js");
+
+                editors.xmlsource = CodeMirror.fromTextArea(document.getElementById("txtXMLSource"), {
+                    mode: "xml",
+                    lineNumbers: true,
+                    matchBrackets: true,
+                    continueComments: "Enter",
+                    extraKeys: {"Ctrl-Q": "toggleComment"}
+                });
+
+                //console.log(['a1',$("#txtXMLTransformSource").val()]);
+
+
+                editors.xsltsource = CodeMirror.fromTextArea($("#txtXMLTransformSource")[0], {
+                    mode: "xml",
+                    lineNumbers: true,
+                    matchBrackets: true,
+                    continueComments: "Enter",
+                    extraKeys: {"Ctrl-Q": "toggleComment"}
+                });
+
+                editors.xmlerror = CodeMirror.fromTextArea(document.getElementById("txtXMLTransformError"), {
+                    mode: "xml",
+                    lineNumbers: true,
+                    matchBrackets: true,
+                    continueComments: "Enter",
+                    extraKeys: {"Ctrl-Q": "toggleComment"}
+                });
+
+                editors.xmlout = CodeMirror.fromTextArea(document.getElementById("txtXMLTransformOutput"), {
+                    mode: "xml",
+                    lineNumbers: true,
+                    matchBrackets: true,
+                    continueComments: "Enter",
+                    extraKeys: {"Ctrl-Q": "toggleComment"}
+                });
+
+                editors.xmlsource.autoFormat();
+                editors.xsltsource.autoFormat();
+            }
+        });
+    </script>
+    <!-- JSON XML -->
+    <script>
+        // JSON XML
+
+        var editors = {
+            xmlsource: null,
+            jsonsource: null
+        }
+
+        var enumJsonXMLConvertType = {
+            jsonToXML:0,
+            xmlToJson:1
+        }
+
+
+        function doJsonXml(jsonXMLConvertType) {
+            switch (jsonXMLConvertType) {
+                case enumJsonXMLConvertType.jsonToXML:
+                    try {
+                        editors.xmlsource.setValue($.json2xml("",$.parseJSON(editors.jsonsource.getValue()),$("#txtJsonXmlExcludeBlanks").val()=='on'));
+                        doJsonXmlFormat(enumJsonXMLConvertType.xmlToJson);
+                    } catch (ex) {
+                        $("#txtJsonXmlSourceError").val(ex.toString());
+                    }
+                    break;
+                case enumJsonXMLConvertType.xmlToJson:
+                    try {
+                        editors.jsonsource.setValue(JSON.stringify($.xml2json(editors.xmlsource.getValue(),$("#txtJsonXmlExtended").val()=='on')),null,4);
+                        doJsonXmlFormat(enumJsonXMLConvertType.jsonToXML);
+                    } catch (ex) {
+                        $("#txtJsonXmlDestinationError").val(ex.toString());
+                    }
+                    break;
+            }
+        }
+
+        function doJsonXmlFormat(jsonXMLConvertType) {
+            switch (jsonXMLConvertType) {
+                case enumJsonXMLConvertType.jsonToXML:
+                    try {
+                        editors.jsonsource.setValue(JSON.stringify($.parseJSON(editors.jsonsource.getValue()),null,4));
+                    } catch (ex) {
+                        $("#txtJsonXmlSourceError").val(ex.toString());
+                    }
+                    break;
+                case enumJsonXMLConvertType.xmlToJson:
+                    try {
+                        editors.xmlsource.setValue(formatXml(editors.xmlsource.getValue())); //txtJsonXmlFormat
+                    } catch (ex) {
+                        $("#txtJsonXmlDestinationError").val(ex.toString());
+                    }
+                    break;
+            }
+        }
+
+
+
+        function doTextFormat(textFormatTypeType) {
+
+            var objTextSource = document.getElementById("txtTextSource");
+            switch (textFormatTypeType) {
+                case enumTextFormatType.asJsonText:
+                    try {
+                        $("#txtTextSource").val(JSON.stringify($.parseJSON($("#txtTextSource").val()),null,4));
+                    } catch (ex) {
+                        $("#txtTextSourceError").val(ex.toString());
+                    }
+                    $( "#txtTextSource" ).change(); //(facepalm)
+                    break;
+                case enumTextFormatType.asXMLText:
+                    try {
+                        $("#txtTextSource").val(formatXml($("#txtTextSource").val())); //txtJsonXmlFormat
+                    } catch (ex) {
+                        $("#txtTextSourceError").val(ex.toString());
+                    }
+
+                    $( "#txtTextSource" ).change(); //(facepalm)
+                    break;
+            }
+
+        }
+
+        function formatXml(xml) {
+            var reg = /(>)(<)(\/*)/g;
+            var wsexp = / *(.*) +\n/g;
+            var contexp = /(<.+>)(.+\n)/g;
+            xml = xml.replace(reg, '$1\n$2$3').replace(wsexp, '$1\n').replace(contexp, '$1\n$2');
+            var pad = 0;
+            var formatted = '';
+            var lines = xml.split('\n');
+            var indent = 0;
+            var lastType = 'other';
+            // 4 types of tags - single, closing, opening, other (text, doctype, comment) - 4*4 = 16 transitions
+            var transitions = {
+                'single->single': 0,
+                'single->closing': -1,
+                'single->opening': 0,
+                'single->other': 0,
+                'closing->single': 0,
+                'closing->closing': -1,
+                'closing->opening': 0,
+                'closing->other': 0,
+                'opening->single': 1,
+                'opening->closing': 0,
+                'opening->opening': 1,
+                'opening->other': 1,
+                'other->single': 0,
+                'other->closing': -1,
+                'other->opening': 0,
+                'other->other': 0
+            };
+
+            for (var i = 0; i < lines.length; i++) {
+                var ln = lines[i];
+                var single = Boolean(ln.match(/<.+\/>/)); // is this line a single tag? ex. <br />
+                var closing = Boolean(ln.match(/<\/.+>/)); // is this a closing tag? ex. </a>
+                var opening = Boolean(ln.match(/<[^!].*>/)); // is this even a tag (that's not <!something>)
+                var type = single ? 'single' : closing ? 'closing' : opening ? 'opening' : 'other';
+                var fromTo = lastType + '->' + type;
+                lastType = type;
+                var padding = '';
+
+                indent += transitions[fromTo];
+                for (var j = 0; j < indent; j++) {
+                    padding += '\t';
+                }
+                if (fromTo == 'opening->closing')
+                    formatted = formatted.substr(0, formatted.length - 1) + ln + '\n'; // substr removes line break (\n) from prev loop
+                else
+                    formatted += padding + ln + '\n';
+            }
+
+            return formatted;
+        }
+
+        jQuery(document).ready(function() {
+            //App.initAjax();
+            if ($("#txtJsonXmlSource").length > 0 && $("#txtJsonXmlDestination").length > 0) {
+
+//        $.getScript("js/codemirror-4.1/mode/xml/xml.js");
+//        $.getScript("js/codemirror-4.1/addon/format/format.js");
+
+
+                editors.jsonsource = CodeMirror.fromTextArea(document.getElementById("txtJsonXmlSource"), {
+                    mode: "javascript",
+                    lineNumbers: true,
+                    matchBrackets: true,
+                    continueComments: "Enter",
+                    extraKeys: {"Ctrl-Q": "toggleComment"}
+                });
+
+                editors.jsonsource.autoFormat();
+                //console.log(['a1',$("#txtXMLTransformSource").val()]);
+
+
+                editors.xmlsource = CodeMirror.fromTextArea($("#txtJsonXmlDestination")[0], {
+                    mode: "xml",
+                    lineNumbers: true,
+                    matchBrackets: true,
+                    continueComments: "Enter",
+                    extraKeys: {"Ctrl-Q": "toggleComment"}
+                });
+
+                editors.xmlsource.autoFormat();
+
+                //editors.xmlsource.autoFormat();
+                //editors.jsonsource.autoFormat();
+            }
+        });
+    </script>
+    <!-- JSON PATH -->
+    <script>
+        // JSON PATH
+
+        var editors = {
+            result: null,
+            jsonsource: null,
+            jsonpath: null,
+            history: null
+        };
+
+
+        jQuery(document).ready(function() {
+            //App.initAjax();
+            if ($("#txtFrom").length > 0 && $("#txtJsonPath").length > 0 && $("#historyData").length > 0) {
+                editors.history = $('#historyData').DataTable({
+                    "bLengthChange": true
+                    , "bPaginate": true
+                    , "bSort": true
+                    , "aLengthMenu": [
+                        [5, 15, 20, -1],
+                        [5, 15, 20, "All"] // change per page values here
+                    ],
+                    // set the initial value
+                    "iDisplayLength": 5,
+
+                    "oLanguage": {
+                        "sLengthMenu": "_MENU_ records",
+                        "oPaginate": {
+                            "sPrevious": "Prev",
+                            "sNext": "Next"
+                        }
+                    }
+                    , "aoColumnDefs": [{
+                        'bSortable': false,
+                        'bSearchable': true,
+                        'aTargets': [0]
+                    }]
+
+                    , "columns": [
+                        {data: 'id', "width": "auto"},
+                        {data: null, "width": "auto"},
+                        {data: null, "width": "85%"},
+                        {data: 'type', "width": "auto"},
+                        {data: 'direction', "width": "auto"},
+                        {
+                            data: null, "width": "15%",
+                            className: "center",
+                            defaultContent: '<button type="button" class="historyReplay"><span class="fa fa-play"></span> Replay</button> <button type="button" onclick="doRowHistoryDelete($(this).parents(\'tr\')[0])"><span class="fa fa-trash"></span> Delete</button>'
+                        }
+                        ,{data: "label", visible: false, "width": "auto"}
+                        ,{data: "value", visible: false, "width": "auto"}
+                    ]
+
+                    , "columnDefs": [
+                        {
+                            "targets": 1,
+                            "width": "auto",
+                            "render": function (data, type, row, meta) {
+                                return '<input type="text" class="editable" onchange="doRowHistoryEdit(' + meta.row + ',\'_label\',$(this).val())" value="' + data.label() + '" />';
+                            }
+                        },
+                        {
+                            "targets": 2,
+                            "width": "auto",
+                            "render": function (data, type, row, meta) {
+                                return '<input type="text" class="editable" onchange="doRowHistoryEdit(' + meta.row + ',\'_label\',$(this).val())" value="' + data.value() + '" />';
+                            }
+                        }
+                    ]
+
+                    , "aoColumns": [
+                        {"sClass": "numeric"},
+                        {"sClass": ""},
+                        {"sClass": ""},
+                        {"sClass": "numeric"},
+                        {"sClass": "numeric"},
+                        {"sClass": "text-center"},
+                        {"sClass": ""}
+                    ]
+
+                });
+                console.log(editors.history)
+
+                $("#historyData_wrapper .dataTables_filter input").addClass("form-control input-medium input-inline"); // modify table search input
+                $("#historyData_wrapper .dataTables_length select").addClass("form-control input-small"); // modify table per page dropdown
+                $("#historyData_wrapper .dataTables_length select").select2({minimumResultsForSearch: -1}); // initialize select2 dropdown
+                $("#historyData_wrapper .dataTables_length select").change(function () {
+                    editors.history.find('.historyLabel').editable();
+                });
+
+                editors.jsonsource = CodeMirror.fromTextArea(document.getElementById("txtFrom"), {
+                    mode: "javascript",
+                    lineNumbers: true,
+                    matchBrackets: true,
+                    continueComments: "Enter",
+                    extraKeys: {"Ctrl-Q": "toggleComment"}
+                });
+
+
+                editors.jsonsource.setSize('dynamic', '500px');
+                editors.jsonsource.autoFormat();
+                //console.log(['a1',$("#txtXMLTransformSource").val()]);
+
+
+                editors.result = CodeMirror.fromTextArea($("#txtTo")[0], {
+                    mode: "javascript",
+                    lineNumbers: true,
+                    matchBrackets: true,
+                    continueComments: "Enter",
+                    extraKeys: {"Ctrl-Q": "toggleComment"},
+                    viewportMargin: Infinity
+                });
+
+
+                editors.result.autoFormat();
+
+                editors.jsonpath = CodeMirror.fromTextArea($("#txtJsonPath")[0], {
+                    mode: "javascript",
+                    lineNumbers: true,
+                    matchBrackets: true,
+                    continueComments: "Enter",
+                    extraKeys: {"Ctrl-Q": "toggleComment"}
+                });
+
+                editors.jsonpath.autoFormat();
+
+
+                $("#formatsource").click(function () {
+                    editors.jsonsource.setValue(JSON.stringify($.parseJSON(editors.jsonsource.getValue()), null, 4));
+                });
+                $("#formatjsonpath").click(function () {
+                    editors.jsonpath.setValue(JSON.stringify($.parseJSON(editors.jsonpath.getValue()), null, 4)); //txtJsonXmlFormat
+                });
+                $("#formatresult").click(function () {
+                    editors.result.setValue(JSON.stringify($.parseJSON(editors.result.getValue()), null, 4)); //txtJsonXmlFormat
+                });
+
+                var skipHistoryOnce = false;
+
+                $("#parse").click(function () {
+                    //var o = { /*...*/ },  // the 'store' JSON object from above
+
+                    var sj = JSON.parse(editors.jsonsource.getValue().replace("\n", ""));
+                    var jp = editors.jsonpath.getValue().replace("\n", "");
+
+                    var output = jsonPath(sj, jp);
+
+                    var stro = JSON.stringify(output);
+
+                    editors.result.setValue(stro);
+                    $("#formatresult").click();
+
+                    if (!skipHistoryOnce) {
+                        if (doCheckOption("trackHistory") != false) {
+                            doHistoryAdd("json path", 0, 0, jp);
+                            $(".historyReplay").click(function () {
+
+                                var row = $(this).parents('tr')[0];
+
+                                var aData  = editors.history.row( row ).data();
+
+                                editors.jsonpath.setValue(aData.value());
+                                skipHistoryOnce = true;
+                                $("#parse").click();
+                            });
+                        }
+                    } else {
+                        skipHistoryOnce = false;
+                    }
+
+                });
+            }
+
+        });
+    </script>
+    <!-- IMAGE CONVERT -->
+    <script>
+        // IMAGE CONVERT
+        if ($("#previewCanvas").length > 0) {
+
+
+            //"use strict";
+            var svgNS = "http://www.w3.org/2000/svg";
+            var xlinkNS = "http://www.w3.org/1999/xlink";
+
+            var iFile = document.getElementById("iFile");
+            var oCanvas = document.getElementById("canvas");
+            //var oCanvasCTX = oCanvas.getContext("2d");
+            var iImage = document.getElementById("iImage");
+            var pImage = document.getElementById("pImage");
+
+            var oCanvas2 = document.getElementById('imgCanvas'); //SVG
+
+            var objImage = document.getElementById("previewImage");
+            var objFile = document.getElementById("inputImage");
+            var objImageWidth = document.getElementById("txtImageWidth");
+            var objImageHeight = document.getElementById("txtImageHeight");
+            var objImageCanvas = document.getElementById("previewCanvas");
+            var objImageCanvasContext = objImageCanvas.getContext("2d");
+            var objImageCanvasResize = document.getElementById("previewCanvasResize");
+            var objImageSVG = document.getElementById("previewSVG");
+            var objImageSVGEmbed = document.getElementById("previewSVGEmbed");
+            var objImageSVGResize = document.getElementById("previewSVGResize");
+            var objImageSVGResizeEmbed = document.getElementById("previewSVGResizeEmbed");
+
+
+            var objImageCanvasMaxWidth = document.getElementById("txtImageCanvasMaxWidth");
+            var objImageCanvasMaxHeight = document.getElementById("txtImageCanvasMaxHeight");
+            var objImageSVGMaxWidth = document.getElementById("txtImageSVGMaxWidth");
+            var objImageSVGMaxHeight = document.getElementById("txtImageSVGMaxHeight");
+
+            var objSourceImage = document.getElementById("txtSourceImage");
+            var objSourceImageCanvas = document.getElementById("txtSourceImageCanvas");
+            var objSourceImageCanvasResize = document.getElementById("txtSourceImageCanvasResize");
+            var objSourceImageSVG = document.getElementById("txtSourceImageSVG");
+            var objSourceImageSVGResize = document.getElementById("txtSourceImageSVGResize");
+
+            function setValue(id, value) {
+                document.getElementById(id).value = value;
+            }
+
+            function addValue(id, value) {
+                document.getElementById(id).value += value;
+            }
+
+            function setSrc(id, value) {
+                document.getElementById(id).setAttribute("src", value);
+            }
+
+            function getSrc(id) {
+                return document.getElementById(id).getAttribute("src");
+            }
+
+            function createImage(src, w, h) {
+                var oImage = document.createElementNS(svgNS, "image");
+                oImage.setAttributeNS(xlinkNS, "xlink:href", src);
+                oImage.setAttributeNS(null, "x", 0);
+                oImage.setAttributeNS(null, "y", 0);
+                oImage.setAttributeNS(null, "width", w + "px");
+                oImage.setAttributeNS(null, "height", h + "px");
+                return (oImage);
+            }
+
+            function utf8_to_b64(str) {
+                return window.btoa(unescape(encodeURIComponent(str)));
+            }
+
+            function b64_to_utf8(str) {
+                return decodeURIComponent(escape(window.atob(str)));
+            }
+
+            function doImagePrep(sourceImage) {
+                //console.log(sourceImage);
+
+                var imageLink57 = '<link rel="apple-touch-icon-precomposed" sizes="57x57" href="##" />';
+                var imageLink72 = '<link rel="apple-touch-icon-precomposed" sizes="72x72" href="##" />';
+                var imageLink114 = '<link rel="apple-touch-icon-precomposed" sizes="114x114" href="##" />';
+                var imageLink144 = '<link rel="apple-touch-icon-precomposed" sizes="144x144" href="##" />';
+
+                getImageBase64("previewImage57", sourceImage, function (imgURI) {
+                    //console.log(imgURI)
+                    setSrc('previewImage57', imgURI);
+                    addValue('txtSourceImagePrep', imageLink57.replace("##", imgURI) + "\n");
+                });
+                getImageBase64("previewImage72", sourceImage, function (imgURI) {
+                    setSrc('previewImage72', imgURI);
+                    addValue('txtSourceImagePrep', imageLink72.replace("##", imgURI) + "\n");
+                });
+                getImageBase64("previewImage114", sourceImage, function (imgURI) {
+                    setSrc('previewImage114', imgURI);
+                    addValue('txtSourceImagePrep', imageLink114.replace("##", imgURI) + "\n");
+                });
+                getImageBase64("previewImage144", sourceImage, function (imgURI) {
+                    setSrc('previewImage144', imgURI);
+                    addValue('txtSourceImagePrep', imageLink144.replace("##", imgURI) + "\n");
+                });
+
+
+            }
+
+            function doUpdate() {
+                var file = objFile.files[0];
+                var fileName = file.name;
+                var fileSize = file.size;
+                var URL = window.URL || window.webkitURL;
+
+                objImage.setAttribute('src', URL.createObjectURL(file));
+                var reader = new FileReader();
+                reader.onload = function (evt) {
+                    //var header = evt.target.result.substr(0,evt.target.result.indexOf(",")+1);
+                    //var data = evt.target.result.substr(evt.target.result.indexOf(",")+1);
+                    objSourceImage.value = evt.target.result;
+                    setValue('txtSourceImageLength', objSourceImage.value.length);
+
+                };
+
+
+                reader.readAsDataURL(file);
+
+                var img = new Image();
+                img.onload = function () {
+                    objImageWidth.value = img.width;
+                    objImageHeight.value = img.height;
+
+                    objImageCanvas.width = img.width;
+                    objImageCanvas.height = img.height;
+                    objImageCanvasContext.drawImage(img, 0, 0);
+                    var data = objImageCanvas.toDataURL();
+                    objSourceImageCanvas.value = data;
+                    setValue('txtSourceImageCanvasLength', data.length);
+
+                    doProcess();
+
+                }
+
+                img.src = objImage.src;
+
+
+                doImgToCSS($('#imageToCSSOutput'));
+            }
+
+            function doProcess() {
+                var maxWidth = objImageWidth.value;
+                var maxHeight = objImageHeight.value;
+
+                if (objImageCanvasMaxWidth.value != "" || isNaN(objImageCanvasMaxWidth.value)) {
+                    maxWidth = parseInt(objImageCanvasMaxWidth.value);
+                }
+                objImage.style.maxWidth = maxWidth + "px";
+
+                if (objImageCanvasMaxHeight.value != "") {
+                    maxHeight = parseInt(objImageCanvasMaxHeight.value);
+                }
+
+                objImage.style.maxHeight = maxHeight + "px";
+
+                var sgvHeader = '<?xml version="1.0" encoding="utf-8"?><\!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">';
+                var dataURISVG = 'data:image/svg+xml;charset=utf-8;base64,';
+
+
+                //canavs
+                getImageBase64(objImage, "", function (imgURI) {
+                    objImageCanvasResize.setAttribute("src", imgURI);
+                    objSourceImageCanvasResize.value = imgURI;
+                    setValue('txtSourceImageCanvasResizeLength', imgURI.length);
+
+                    //svg Resized
+                    //objSourceImageCanvasResize
+                    var svgImageResize = createImage(imgURI, objImageCanvasResize.width, objImageCanvasResize.height);
+                    //clear SVG
+
+                    for (var i = 0; i < objImageSVGResize.childNodes.length; i++) {
+                        objImageSVGResize.removeChild(objImageSVGResize.childNodes[i]);
+                    }
+                    objImageSVGResize.appendChild(svgImageResize);
+                    objImageSVGResize.style.width = objImageCanvasResize.width + "px";
+                    objImageSVGResize.style.height = objImageCanvasResize.height + "px";
+
+
+                    var svgXMLPartResize = (new XMLSerializer()).serializeToString(objImageSVGResize);
+                    //namespace fix
+                    svgXMLPartResize = svgXMLPartResize.replace('xmlns="http://www.w3.org/2000/svg" ', ' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" ').replace(" href=", " xlink:href=");
+
+                    //var dataURISVG = 'data:image/svg+xml,';
+                    var svgXMLResize;
+
+                    if ("btoa" in window) {
+                        svgXMLResize = dataURISVG + btoa(sgvHeader + svgXMLPartResize);
+                    } else {
+                        svgXMLResize = dataURISVG + Base64.encode(sgvHeader + svgXMLPartResize);
+                    }
+
+
+                    objSourceImageSVGResize.value = svgXMLResize;
+
+                    setValue('txtSourceImageSVGResizeLength', svgXMLResize.length);
+                    objImageSVGResizeEmbed.setAttribute('src', svgXMLResize);
+
+                    objImageSVGResizeEmbed.style.width = objImageCanvasResize.width + "px";
+                    objImageSVGResizeEmbed.style.height = objImageCanvasResize.height + "px";
+
+                    doImagePrep(imgURI);
+                });
+
+                //svg Original
+                var svgImage = createImage(objSourceImage.value, objImageWidth.value, objImageHeight.value);
+                //clear SVG
+                for (var i = 0; i < objImageSVG.childNodes.length; i++) {
+                    objImageSVG.removeChild(objImageSVG.childNodes[i]);
+                }
+                objImageSVG.appendChild(svgImage);
+                objImageSVG.style.width = objImageWidth.value + "px";
+                objImageSVG.style.height = objImageHeight.value + "px";
+
+
+                var svgXMLPart = (new XMLSerializer()).serializeToString(objImageSVG);
+                //namespace fix
+                svgXMLPart = svgXMLPart.replace('xmlns="http://www.w3.org/2000/svg" ', ' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" ').replace(" href=", " xlink:href=");
+
+                //var dataURISVG = 'data:image/svg+xml,';
+                var svgXML;
+
+                if ("btoa" in window) {
+                    //svgXML = dataURISVG+btoa(sgvHeader+svgXMLPart);
+                    svgXML = dataURISVG + btoa(sgvHeader + svgXMLPart);
+                } else {
+                    svgXML = dataURISVG + Base64.encode(sgvHeader + svgXMLPart);
+                }
+
+
+                objSourceImageSVG.value = svgXML;
+
+                setValue('txtSourceImageSVGLength', svgXML.length);
+                objImageSVGEmbed.setAttribute('src', svgXML);
+
+                objImageSVGEmbed.style.width = objImageWidth.value + "px";
+                objImageSVGEmbed.style.height = objImageHeight.value + "px";
+
+
+            }
+
+            function getImageBase64(image, altSource, callback) {
+
+                var sourceImg;
+                if (typeof image === "string") {
+                    sourceImg = document.getElementById(image);
+                } else if (image.selector) {
+                    sourceImg = image[0];
+                } else {
+                    sourceImg = image;
+                }
+
+                //aspect to fill max height
+                var _width = parseInt(sourceImg.width);
+                var _height = parseInt(sourceImg.height);
+
+                var _widthMax = sourceImg.style.maxWidth;
+
+                try {
+                    _widthMax = parseInt(_widthMax);
+                } catch (ex) {
+                    _widthMax = _width;
+                }
+                var _heightMax = sourceImg.style.maxHeight;
+
+
+                try {
+                    _heightMax = parseInt(_heightMax);
+                } catch (ex) {
+                    _heightMax = _height;
+                }
+
+                var _aspectRatioBox = _widthMax / _heightMax;
+
+
+                var img = new Image();
+                img.onload = function () {
+
+                    var oCanvas = document.createElement("canvas");
+                    var oCanvasCTX = oCanvas.getContext("2d");
+
+                    var _widthCurr = img.width;
+                    var _heightCurr = img.height;
+                    var _aspectRatioImg = _widthCurr / _heightCurr;
+
+                    var _newHeight = 0; // _heightMax;
+                    var _newWidth = 0; //_widthMax;
+
+
+                    if (_aspectRatioImg < _aspectRatioBox) {
+                        _newHeight = _heightMax;
+                        _newWidth = _newHeight * _aspectRatioImg;
+                    } else {
+                        _newWidth = _widthMax;
+                        _newHeight = _newWidth / _aspectRatioImg;
+                    }
+
+                    oCanvas.width = _newWidth;
+                    oCanvas.height = _newHeight;
+                    oCanvasCTX.drawImage(img, 0, 0, _newWidth, _newHeight);
+                    console.log([img, oCanvas, oCanvasCTX, oCanvas.toDataURL("image/png")]);
+                    //console.log(oCanvas.toDataURL());
+                    if (typeof callback == "function") {
+                        callback(oCanvas.toDataURL(), img.src);
+                    }
+
+                }
+                if (altSource) {
+                    //console.log("using alt source: "+altSource);
+                    img.setAttribute("src", altSource);
+                    //img.src = altSource;
+                } else {
+                    //console.log(sourceImg.src);
+                    img.src = sourceImg.src;
+                }
+                return true;
+            }
+
+
+            function dataURItoBlob(dataURI) {
+                // convert base64 to raw binary data held in a string
+                // doesn't handle URLEncoded DataURIs
+                var byteString = atob(dataURI.split(',')[1]);
+
+                // separate out the mime component
+                var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0]
+
+                // write the bytes of the string to an ArrayBuffer
+                var ab = new ArrayBuffer(byteString.length);
+                var ia = new Uint8Array(ab);
+                for (var i = 0; i < byteString.length; i++) {
+                    ia[i] = byteString.charCodeAt(i);
+                }
+
+                // write the ArrayBuffer to a blob, and you're done
+                var bb = (window.MozBlobBuilder || window.WebKitBlobBuilder || window.BlobBuilder);
+                bb.append(ab);
+                return bb.getBlob(mimeString);
+            }
+
+
+            var Base64 = {
+                // private property
+                _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
+
+                // public method for encoding
+                encode: function (input) {
+                    var output = "";
+                    var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
+                    var i = 0;
+
+                    input = Base64._utf8_encode(input);
+
+                    while (i < input.length) {
+
+                        chr1 = input.charCodeAt(i++);
+                        chr2 = input.charCodeAt(i++);
+                        chr3 = input.charCodeAt(i++);
+
+                        enc1 = chr1 >> 2;
+                        enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+                        enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+                        enc4 = chr3 & 63;
+
+                        if (isNaN(chr2)) {
+                            enc3 = enc4 = 64;
+                        } else if (isNaN(chr3)) {
+                            enc4 = 64;
+                        }
+
+                        output = output +
+                            Base64._keyStr.charAt(enc1) + Base64._keyStr.charAt(enc2) +
+                            Base64._keyStr.charAt(enc3) + Base64._keyStr.charAt(enc4);
+
+                    }
+
+                    return output;
+                },
+
+                // public method for decoding
+                decode: function (input) {
+                    var output = "";
+                    var chr1, chr2, chr3;
+                    var enc1, enc2, enc3, enc4;
+                    var i = 0;
+
+                    input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+
+                    while (i < input.length) {
+
+                        enc1 = Base64._keyStr.indexOf(input.charAt(i++));
+                        enc2 = Base64._keyStr.indexOf(input.charAt(i++));
+                        enc3 = Base64._keyStr.indexOf(input.charAt(i++));
+                        enc4 = Base64._keyStr.indexOf(input.charAt(i++));
+
+                        chr1 = (enc1 << 2) | (enc2 >> 4);
+                        chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+                        chr3 = ((enc3 & 3) << 6) | enc4;
+
+                        output = output + String.fromCharCode(chr1);
+
+                        if (enc3 != 64) {
+                            output = output + String.fromCharCode(chr2);
+                        }
+                        if (enc4 != 64) {
+                            output = output + String.fromCharCode(chr3);
+                        }
+
+                    }
+
+                    output = Base64._utf8_decode(output);
+
+                    return output;
+
+                },
+
+                // private method for UTF-8 encoding
+                _utf8_encode: function (string) {
+                    string = string.replace(/\r\n/g, "\n");
+                    var utftext = "";
+
+                    for (var n = 0; n < string.length; n++) {
+
+                        var c = string.charCodeAt(n);
+
+                        if (c < 128) {
+                            utftext += String.fromCharCode(c);
+                        } else if ((c > 127) && (c < 2048)) {
+                            utftext += String.fromCharCode((c >> 6) | 192);
+                            utftext += String.fromCharCode((c & 63) | 128);
+                        } else {
+                            utftext += String.fromCharCode((c >> 12) | 224);
+                            utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+                            utftext += String.fromCharCode((c & 63) | 128);
+                        }
+
+                    }
+
+                    return utftext;
+                },
+
+                // private method for UTF-8 decoding
+                _utf8_decode: function (utftext) {
+                    var string = "";
+                    var i = 0;
+                    var c = 0, c1 = 0, c2 = 0;
+
+                    while (i < utftext.length) {
+
+                        c = utftext.charCodeAt(i);
+
+                        if (c < 128) {
+                            string += String.fromCharCode(c);
+                            i++;
+                        } else if ((c > 191) && (c < 224)) {
+                            c1 = utftext.charCodeAt(i + 1);
+                            string += String.fromCharCode(((c & 31) << 6) | (c1 & 63));
+                            i += 2;
+                        } else {
+                            c1 = utftext.charCodeAt(i + 1);
+                            c2 = utftext.charCodeAt(i + 2);
+                            string += String.fromCharCode(((c & 15) << 12) | ((c1 & 63) << 6) | (c2 & 63));
+                            i += 3;
+                        }
+
+                    }
+                    return string;
+                }
+            }
+
+            function doImgToCSS(destObj) {
+                for (fileIndex in objFile.files) {
+                    var file = objFile.files[fileIndex];
+                    if (file != 'undefined') {
+                        var fileName = file.name;
+                        console.log(fileName);
+                        var reader = new FileReader();
+                        try {
+                            reader.cssName = fileName.split(".")[0];
+                        } catch (ex) {
+                            //do nothing
+                        }
+                        reader.onload = function (evt) {
+                            destObj.append("." + this.cssName + " {background-image:url(" + evt.target.result + "); }\n");
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                }
+            }
+
+
+            jQuery(document).ready(function () {
+
+                //console.log('load');
+
+                //App.initAjax();
+                $("#inputImage").change(function () {
+                    //console.log('doUpdate');
+                    doUpdate();
+                });
+                $("#doProcess").click(function () {
+                    //console.log('doProcess');
+                    doProcess();
+                });
+
+            });
+        }
+
+
+    </script>
+    <!-- IMAGE MAP -->
+    <script>
+        // $.noConflict();
+
+        //image map
+        var startTop=-1;
+        var startLeft=-1;
+        var endTop=-1;
+        var endLeft=-1;
+        var currentSelector=null;
+        var offsetTop;
+        var offsetLeft;
+        var sPin = "pin";
+
+        var bStart=true;
+        /*
+
+         <map name=home>
+         <area shape=Rect Coords=70,70,405,210 Href="rsvp">
+         <area shape=Rect Coords=70,260,405,410 Href="comment">
+         <area shape=Rect Coords=70,450,405,595 Href="request">
+         </map>
+
+         */
+
+
+
+        function doDropped(oDrop) {
+
+        }
+
+
+        function updateCoords()
+        {
+            document.getElementById("top1").value=startTop;
+            document.getElementById("left1").value=startLeft;
+            document.getElementById("top2").value=endTop;
+            document.getElementById("left2").value=endLeft;
+        }
+        function doDown(target,event)
+        {
+            //var g;
+            //alert('a');
+            /*if (bStart==true) {
+             startLeft = window.event.clientX,
+             startTop = window.event.clientY;
+             } else {
+             bStart=false;
+             endLeft = window.event.clientX,
+             endTop = window.event.clientY;
+             doAddSelector(startTop,startLeft,startTop,startLeft);
+             doUpdateMap();
+             }
+             */
+//        var target = $(obj);
+//        var event = $(event)[0];
+//        //$(event)[0].clientX,$(event)[0].clientY
+//        //console.log([target.offset(),clientX,clientY]);
+//        console.log([event.clientY,target.offset().left,event.clientX,target.offset().top]);
+            doPin(target,event);
+        }
+
+        function doSet() {
+            doGenerateMap();
+        }
+
+        function OuterHTML(element) {
+            var container = document.createElement("div");
+            container.appendChild(element.cloneNode(true));
+
+            return container.innerHTML;
+        }
+        var svgNS = "http://www.w3.org/2000/svg";
+        var xlinkNS = "http://www.w3.org/1999/xlink";
+        //this is where the pin visualy starts
+        var pinOffsetX = 8;
+        var pinOffsetY = 34;
+
+        function createRect(x,y,w,h) {
+            var oObj = document.createElementNS(svgNS, "rect");
+            oObj.setAttributeNS(null, "x", x);
+            oObj.setAttributeNS(null, "y", y);
+            oObj.setAttributeNS(null, "width", w);
+            oObj.setAttributeNS(null, "height", h);
+            oObj.setAttributeNS(null, "fill-opacity", "0.4");
+            oObj.setAttributeNS(null, "fill", "red");
+            return (oObj);
+        }
+
+        function createCircle(x, y, r) {
+            var oObj = document.createElementNS(svgNS, "circle");
+            oObj.setAttributeNS(null, "cx", x);
+            oObj.setAttributeNS(null, "cy", y);
+            oObj.setAttributeNS(null, "r", r);
+            oObj.setAttributeNS(null, "fill-opacity", "0.4");
+            oObj.setAttributeNS(null, "fill", "red");
+            return (oObj);
+        }
+
+        function createPolygon(points) {
+            var oObj = document.createElementNS(svgNS, "polygon");
+            oObj.setAttributeNS(null, "points", points);
+            oObj.setAttributeNS(null, "fill-opacity", "0.4");
+            oObj.setAttributeNS(null, "fill", "red");
+            oObj.setAttributeNS(null, "fill-rule", "nonzero");
+            return (oObj);
+        }
+
+
+        function createImage(src,w,h) {
+            var oImage = document.createElementNS(svgNS, "image");
+            oImage.setAttributeNS(xlinkNS, "xlink:href", src);
+            oImage.setAttributeNS(null, "x", 0);
+            oImage.setAttributeNS(null, "y", 0);
+            oImage.setAttributeNS(null, "width", w);
+            oImage.setAttributeNS(null, "height", h);
+            return (oImage);
+        }
+
+        function doGenerateMap() {
+            /*
+             coords:
+             radius - x,y,radius
+             rect - x1,y1,x2,y2
+             poly x1,y1,x2,y2,..,xn,yn
+             */
+
+            var sMap="";
+            //var oPins = document.getElementsByTagName('img');
+            var oPins = document.getElementsByName(sPin);
+            var oImage = document.getElementById('imgMap');
+            var oCanvas = document.getElementById('imgCanvas');
+
+            oCanvas.setAttribute("width", oImage.width);
+            oCanvas.setAttribute("height", oImage.height);
+
+            var oCanvas = document.getElementById("imgCanvas");
+            while (oCanvas.firstChild) {
+                $(oCanvas.firstChild).remove();
+            }
+
+
+            //copy background
+            var oBImage = createImage(oImage.src, oImage.width, oImage.height)
+            oCanvas.appendChild(oBImage);
+
+
+            var oMapType = document.getElementById('mapType');
+
+
+            var sNewMap = "";
+            var sCoordList = "";
+
+            $("[name='pin']").filter("[areaType='rect']").each(function (key, value) {
+                var cPin = $(this);
+
+
+                switch (cPin.attr("pintype")) {
+                    case "start":
+                        sCoordList += (parseInt(cPin.css("left"), 10) + pinOffsetX) + "," + (parseInt(cPin.css("top"), 10) + pinOffsetY);
+                        break;
+                    case "end":
+                        sCoordList += "," + (parseInt(cPin.css("left"), 10) + pinOffsetX) + "," + (parseInt(cPin.css("top"), 10) + pinOffsetY);
+                        sNewMap += "<area shape=\"rect\" Coords=\"" + sCoordList + "\" Href=\"javascript:doClick('rect[x1,y1,x2,y2]:" + sCoordList + "')\">\n";
+
+                        var aCoord = sCoordList.split(",");
+                        oCanvas.appendChild(createRect(aCoord[0], aCoord[1], aCoord[2] - aCoord[0], aCoord[3] - aCoord[1]));
+
+                        sCoordList = "";
+                        break;
+                }
+
+            });
+            $("[name='pin']").filter("[areaType='circle']").each(function (key, value) {
+                var cPin = $(this);
+
+                switch (cPin.attr("pintype")) {
+                    case "start":
+                        sCoordList += (parseInt(cPin.css("left"), 10) + pinOffsetX) + "," + (parseInt(cPin.css("top"), 10) + pinOffsetY);
+                        break;
+                    case "end":
+                        var aCoord = sCoordList.split(",");
+
+                        var x2 = parseInt(cPin.css("left")) + pinOffsetX;
+                        var y2 = parseInt(cPin.css("top")) + pinOffsetY;
+
+                        var rad = Math.floor(Math.sqrt(Math.pow(x2 - aCoord[0], 2) + Math.pow(y2 - aCoord[1], 2)));
+                        sCoordList += "," + rad;
+                        sNewMap += "<area shape=\"circle\" Coords=\"" + sCoordList + "\" Href=\"javascript:doClick('circle[x,y,rad]:" + sCoordList + "')\">\n";
+
+
+                        oCanvas.appendChild(createCircle(aCoord[0], aCoord[1], rad));
+
+
+                        sCoordList = "";
+                        break;
+                }
+
+
+            });
+
+            var lastPoint = "";
+
+            $("[name='pin']").filter("[areaType='poly']").each(function (key, value) {
+                var cPin = $(this);
+                var isLast = ($("[name='pin']").last().attr("order") == cPin.attr("order"));
+                var bPrint = (isLast) || (lastPoint == "point" && cPin.attr("pintype") == "start");
+
+                var currentCoord = (parseInt(cPin.css("left"), 10) + pinOffsetX) + "," + (parseInt(cPin.css("top"), 10) + pinOffsetY);
+                var sNewCoordList = "";
+
+                switch (cPin.attr("pintype")) {
+                    case "start":
+                        sNewCoordList += currentCoord;
+                        break;
+                    case "point":
+                        sNewCoordList += "," + currentCoord;
+                        break;
+                }
+
+
+                if (bPrint) {
+
+                    var printCoords = sCoordList;
+
+                    if (isLast) {
+                        printCoords += sNewCoordList;
+                    }
+
+                    sNewMap += "<area shape=\"poly\" Coords=\"" + printCoords + "\" Href=\"javascript:doClick('poly[x,...,n]:" + printCoords + "')\">\n";
+
+                    oCanvas.appendChild(createPolygon(printCoords));
+
+                    sCoordList = "";
+                }
+
+                sCoordList += sNewCoordList;
+
+                lastPoint = cPin.attr("pintype");
+            });
+
+
+            var oMap = document.getElementById('outMap');
+            oMap.value = "<map>" + sNewMap + "</map>";
+            document.getElementById("mapPreview").innerHTML = sNewMap;
+
+        }
+
+        function doClick(scoords) {
+            alert(scoords);
+        }
+
+        function doClear() {
+
+            var oCanvas = document.getElementById("imgCanvas");
+            while (oCanvas.firstChild) {
+                $(oCanvas.firstChild).remove();
+            }
+
+            var oMap = document.getElementById("mapPreview");
+            while (oMap.firstChild) {
+                $(oMap.firstChild).remove();
+            }
+
+
+
+            var oPins = document.getElementsByName(sPin);
+            for (var i=oPins.length;i>0;i--) {
+                $(oPins[i-1]).remove();
+            }
+
+            doStart();
+
+        }
+
+        var sMarkerType = "start";
+
+        function doStart() {
+            sMarkerType = "start";
+            $("#newRegion").addClass('disabled');
+
+        }
+
+        function doPin(obj,event) {
+            var target = $(obj);
+            var event = $(event)[0];
+
+            var oPinLeft=event.pageX - target.offset().left;
+            var oPinTop=event.pageY - target.offset().top;
+            //console.log([oPinLeft,oPinTop]);
+
+            var oPins = document.getElementsByName(sPin);
+            var bCreate = false;
+            var newPin = $("<img>");
+            var oPin = document.createElement("img");
+            var oMapType = document.getElementById('mapType');
+            var sMapType="rect";
+            var sNewMarkerType = "end";
+
+            var allPins = $("[name='pin']");
+            var bEnableNew = false;
+
+            switch (oMapType.value) {
+                case "2":  //rect
+                    sMapType="rect";
+                    if (sMarkerType == "start") {
+                        newPin.attr("src","/assets/images/imagemap/PinDown1Green.png");
+                        sNewMarkerType="end";
+                        bCreate=true;
+                    } else if (sMarkerType == "end") {
+                        newPin.attr("src","/assets/images/imagemap/PinDown1Red.png");
+                        bEnableNew=true;
+                        sNewMarkerType="";
+                        bCreate=true;
+                    }
+                    break;
+                case "1":  //cir
+                    sMapType="circle";
+                    if (sMarkerType == "start") {
+                        newPin.attr("src","/assets/images/imagemap/PinDown1Purple.png");
+                        sNewMarkerType="end";
+                        bCreate = true;
+                    } else if (sMarkerType == "end") {
+                        newPin.attr("src","/assets/images/imagemap/PinDown1Red.png");
+                        bEnableNew=true;
+                        sNewMarkerType="";
+                        bCreate = true;
+                    }
+                    break;
+                default:  //poly
+                    sMapType="poly";
+                    sNewMarkerType="point";
+                    bEnableNew=true;
+                    newPin.attr("src", "/assets/images/imagemap/PinDown1Purple.png");
+                    bCreate = true;
+            }
+
+            if (bEnableNew) {
+                $("#newRegion").removeClass('disabled');
+                if (jQuery().pulsate) {
+                    $('#imageActions').pulsate({
+                        color: "#399bc3",
+                        repeat: false
+                    });
+                }
+
+            }
+
+            if (bCreate==true) {
+                newPin.attr("id",sPin)
+                    .attr("name",sPin)
+                    .attr("areaType",sMapType)
+                    .attr("pinType",sMarkerType)
+                    .attr("order",allPins.length)
+                    .css("top",oPinTop-pinOffsetY)
+                    .css("left",oPinLeft-pinOffsetX);
+
+                $("#imgMapParent").append(newPin);
+
+                newPin.draggable();
+
+                sMarkerType = sNewMarkerType;
+            }
+
+            //console.log([sMarkerType,sNewMarkerType]);
+        }
+
+        function doEdit() {
+
+            if (event.srcElement.id=="selector") {
+                currentSelector=event.srcElement;
+                console.log(currentSelector);
+                currentSelector.style.width='1px';
+                currentSelector.style.height='1px';
+                var startLeft = currentSelector.offsetLeft;
+                var startTop = currentSelector.offsetTop;
+                var endLeft = window.event.clientX;
+                var endTop = window.event.clientY;
+                console.log(startTop,startLeft,endTop,endLeft);
+                ResiseCurrentSelector(startTop,startLeft,endTop,endLeft);
+            }
+
+        }
+
+        function doUpdateMap()
+        {
+            var sMap="";
+            var oSelectors = document.getElementsByTagName('div');
+            var oImage = document.getElementById('imgMap');
+            for (var i=0;i<oSelectors.length;i++) {
+                if (oSelectors[i].id=='selector') {
+                    var x1=parseInt(oSelectors[i].style.left)-oImage.offsetLeft;
+                    var y1=parseInt(oSelectors[i].style.top)-oImage.offsetTop;
+                    var x2=parseInt(oSelectors[i].style.width)+x1;
+                    var y2=parseInt(oSelectors[i].style.height)+y1;
+                    sMap+="<area shape=Rect Coords=\""+x1+','+y1+','+x2+','+y2+"\" Href=\"javascript:doClick('area "+i+"')\" alt=\"area "+i+"\">\n"
+                }
+            }
+            var oMap = document.getElementById('outMap');
+            oMap.innerText=sMap;
+            document.getElementById('mapPreview').innerHTML =sMap;
+        }
+
+        function doOut(obj) {
+            reset();
+        }
+
+        function reset() {
+            $(currentSelector).remove();
+            currentSelector=null;
+        }
+
+        function doMove(obj)
+        {
+            endLeft = window.event.clientX,
+                endTop = window.event.clientY;
+            var oimg = document.getElementById("imgMap");
+            //document.getElementById("coords").value=window.event.clientX + ', ' + window.event.clientY + ', ' + oimg.offsetTop + ', ' + oimg.offsetLeft;
+            updateCoords();
+            ResiseCurrentSelector(startTop,startLeft,endTop,endLeft);
+        }
+        //    function doAddSelector(top1,left1,top2,left2)
+        //    {
+        //
+        //        var oSelector = document.createElement("div");
+        //        var oImage = document.getElementById('imgMap');
+        //
+        //        currentSelector = document.body.appendChild(oSelector);
+        //        oSelector.id="selector";
+        //        oSelector.name="selector";
+        //        currentSelector.style.top=top1+'px';
+        //        currentSelector.style.left=left1+'px';
+        //        currentSelector.style.width=(left2-left1)+'px';
+        //        currentSelector.style.height=(top2-top1)+'px';
+        //
+        //        offsetTop=oImage.offsetTop;
+        //        offsetLeft=oImage.offsetLeft;
+        //    }
+
+        function ResiseCurrentSelector(top1,left1,top2,left2) {
+            if (currentSelector!=null) {
+                currentSelector.style.width=(left2-left1)+'px';
+                currentSelector.style.height=(top2-top1)+'px';
+                currentSelector.innerText=(top1-offsetTop) + 'x' + (left1-offsetLeft) + '->' + (top2-offsetTop) + 'x' + (left2-offsetLeft) ;
+
+            }
+        }
+
+
+        function doUpdate() {
+            var file = $("#inputImage")[0].files[0];
+            var fileName = file.name;
+            var fileSize = file.size;
+            var URL = window.URL || window.webkitURL;
+
+            $("#imgMap")[0] .setAttribute('src',URL.createObjectURL(file));
+            $("#imgMapShow")[0] .setAttribute('src',URL.createObjectURL(file));
+
+
+            var reader = new FileReader();
+            reader.onload = function(evt) {
+
+            };
+
+            reader.readAsDataURL(file);
+
+        }
+
+
+        jQuery(document).ready(function() {
+            $("body").click(function() {
+                //console.log("doEdit");
+                doEdit();
+            });
+            $("#inputImage").change(function() {
+                //console.log('doUpdate');
+                doUpdate();
+            });
+
+            //onmousedown="doDown(this)"
+            $("#imgMap").on("mousedown",function(event) {
+                //console.log(this);
+                //doDown(this,$(event)[0].clientX,$(event)[0].clientY);
+
+//            var oPinLeft=event.pageX - target.offset().left;
+//            var oPinTop=event.clientY - target.offset().top;
+
+                doDown(this,event);
+
+                //console.log($(event)[0].clientX);
+                //console.log([event.pageY,$(event.srcElement)[0].offset().left,event.pageX,$(event.srcElement)[0].offset().top]);
+
+            });
+
+            var defaultItems = $(".page-breadcrumb.breadcrumb").children().splice(0,2);
+            $(".page-breadcrumb.breadcrumb").empty().append(defaultItems);
+            $(".page-breadcrumb.breadcrumb").append('<li><i class="fa fa-angle-right"></i><a href="#">Tools</a></li>')
+            $(".page-breadcrumb.breadcrumb").append('<li><i class="fa fa-angle-right"></i><a href="#">Image Map</a></li>');
+
+
+        });
+
+        //https://css-tricks.com/snippets/jquery/draggable-without-jquery-ui/
+        (function($) {
+            $.fn.draggable = function(opt) {
+
+                opt = $.extend({handle:"",cursor:"move"}, opt);
+
+                if(opt.handle === "") {
+                    var $el = this;
+                } else {
+                    var $el = this.find(opt.handle);
+                }
+
+                return $el.css('cursor', opt.cursor).on("mousedown", function (e) {
+                    if (opt.handle === "") {
+                        var $drag = $(this).addClass('draggable');
+                    } else {
+                        var $drag = $(this).addClass('active-handle').parent().addClass('draggable');
+                    }
+                    var z_idx = $drag.css('z-index'),
+                        drg_h = $drag.outerHeight(),
+                        drg_w = $drag.outerWidth(),
+                        pos_y = $drag.offset().top + drg_h - e.pageY,
+                        pos_x = $drag.offset().left + drg_w - e.pageX;
+                    $drag.css('z-index', 1000).parents().on("mousemove", function (e) {
+                        $('.draggable').offset({
+                            top: e.pageY + pos_y - drg_h,
+                            left: e.pageX + pos_x - drg_w
+                        }).on("mouseup", function () {
+                            $(this).removeClass('draggable').css('z-index', z_idx);
+                        });
+                    });
+                    e.preventDefault(); // disable selection
+                }).on("mouseup", function () {
+                    if (opt.handle === "") {
+                        $(this).removeClass('draggable');
+                    } else {
+                        $(this).removeClass('active-handle').parent().removeClass('draggable');
+                    }
+                });
+
+            }
+        })(jQuery);
+    </script>
+  </body>
+</html>

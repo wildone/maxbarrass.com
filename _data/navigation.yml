@@ -1,0 +1,45 @@
+# main links
+main:
+  - title: "Home"
+    url: /
+  - title: "Tools"
+    url: /tools/
+  - title: "Blog"
+    url: /blog/
+  - title: "About"
+    url: /about/
+  - title: "GitHub"
+    target: _blank
+    url: https://github.com/wildone/maxbarrass.com
+  - title: "Search"
+    url: /search/
+
+#tools links
+tools:
+  - title: Tools
+    url: /tools/
+    children:
+      - title: "String Tools"
+        description: "String manipulation tool"
+        url: /tools/string-tools
+      - title: "Script Tools"
+        description: "Online Javascript script obfuscation and testing."
+        url: /tools/script-tools
+      - title: "XML Transform"
+        description: "XML Transform Testing Tools"
+        url: /tools/xml-transform
+      - title: "Json and XML Tools"
+        description: "Online tool for converting between Json and XML formats."
+        url: /tools/json-xml
+      - title: "Json Path"
+        description: "Json-Path tester using JSONPath - XPath for JSON javascript library"
+        url: /tools/json-path
+      - title: "Ascii Table"
+        description: "Full list of ascii chars and handy conversion"
+        url: /tools/ascii-table
+      - title: "Image Convert"
+        description: "Simple tool to create image DataURI's."
+        url: /tools/image-convert
+      - title: "Image Map Workbench"
+        description: "Simple visual tool to create image maps for an image."
+        url: /tools/image-map
