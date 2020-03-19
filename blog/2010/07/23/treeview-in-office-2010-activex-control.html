@@ -1,0 +1,1165 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>TreeView in Office 2010 - ActiveX Control Workaround - Max Barrass</title>
+
+
+
+
+<meta name="description" content="Getting the ActiveX controls working in Office 2010 is easy, but making sure every one has those controls is not so. Here is my solution for this, I was unable to find anything sustainable so I had to do it my self. I had a dilema geting a TreeView control this working in Excel accross multiple workstations so this is what I came up with, this is a simple concept and will work for other Office and VBA type products.">
+
+
+
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Max Barrass">
+<meta property="og:title" content="TreeView in Office 2010 - ActiveX Control Workaround">
+
+
+  <link rel="canonical" href="https://maxbarrass.com/blog/2010/07/23/treeview-in-office-2010-activex-control">
+  <meta property="og:url" content="https://maxbarrass.com/blog/2010/07/23/treeview-in-office-2010-activex-control">
+
+
+
+  <meta property="og:description" content="Getting the ActiveX controls working in Office 2010 is easy, but making sure every one has those controls is not so. Here is my solution for this, I was unable to find anything sustainable so I had to do it my self. I had a dilema geting a TreeView control this working in Excel accross multiple workstations so this is what I came up with, this is a simple concept and will work for other Office and VBA type products.">
+
+
+
+
+
+  
+
+  
+
+
+
+  <meta property="og:image" content="https://maxbarrass.com/assets/images/site-logo.png">
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2010-07-22T13:00:00+00:00">
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://maxbarrass.com",
+      "logo": "https://maxbarrass.com/assets/images/site-logo.png"
+    }
+  </script>
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Max Barrass",
+      "url" : "https://maxbarrass.com",
+      "sameAs" : null
+    }
+  </script>
+
+
+
+  <meta name="google-site-verification" content="" />
+
+
+
+
+<!-- end SEO -->
+
+
+
+
+<meta name="author" content="Max Barrass">
+
+<link href="https://maxbarrass.com/feed.xml" type="application/atom+xml" rel="alternate" title="Max Barrass Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://maxbarrass.com/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+
+<script>
+    function wrap(el, wrapper) {
+        el.parentNode.insertBefore(wrapper, el);
+        wrapper.appendChild(el);
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        var elements = document.querySelectorAll(".page__content p img");
+        elements.forEach(element => {
+            var url = element.getAttribute('src');
+            var alt = element.getAttribute('alt');
+            if(url) {
+                var a = document.createElement('a');
+                a.setAttribute("href",url);
+                a.setAttribute("data-lightbox",'');
+                a.setAttribute("title",alt);
+                wrap(element, a);
+            }
+        });
+
+    });
+</script>
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet">
+
+<link rel="apple-touch-icon" sizes="57x57" href="/assets/images/icons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/assets/images/icons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/images/icons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/images/icons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/images/icons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/images/icons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/images/icons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/images/icons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="/assets/images/icons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/assets/images/icons/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/assets/images/icons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/assets/images/icons/manifest.json">
+<link rel="mask-icon" href="/assets/images/icons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="/assets/images/icons/mstile-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<style>
+    .archive__item-teaser {
+        min-height: 238px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgb(222,228,228);
+        background: radial-gradient(circle, rgba(222,228,228,1) 0%, rgba(255,179,107,1) 100%);
+    }
+
+    /*add tint to images*/
+    .page__hero--overlay {
+        background-color: rgba(255,179,107,.5);
+        background-blend-mode: multiply;
+    }
+</style>
+
+<!-- end custom head snippets -->
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MV4BGNX');</script>
+<!-- End Google Tag Manager -->
+  </head>
+
+  <body class="layout--single">
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MV4BGNX"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+
+    
+
+<div class="masthead">
+    <div class="masthead__inner-wrap">
+        <div class="masthead__menu">
+            <nav id="site-nav" class="greedy-nav">
+                
+                <a class="site-title" href="/">
+                    Max Barrass
+                    
+                </a>
+                <ul class="visible-links"><li class="masthead__menu-item">
+                        <a target="" href="/">Home</a>
+                    </li><li class="masthead__menu-item">
+                        <a target="" href="/tools/">Tools</a>
+                    </li><li class="masthead__menu-item">
+                        <a target="" href="/blog/">Blog</a>
+                    </li><li class="masthead__menu-item">
+                        <a target="" href="/about/">About</a>
+                    </li><li class="masthead__menu-item">
+                        <a target="_blank" href="https://github.com/wildone/maxbarrass.com">GitHub</a>
+                    </li><li class="masthead__menu-item">
+                        <a target="" href="/search/">Search</a>
+                    </li></ul>
+                
+                <button class="greedy-nav__toggle hidden" type="button">
+                    <span class="visually-hidden">Toggle Menu</span>
+                    <div class="navicon"></div>
+                </button>
+                <ul class="hidden-links hidden"></ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+    
+
+
+
+<div id="main" role="main">
+    
+  <div class="sidebar sticky">
+    
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://maxbarrass.com/assets/images/profile/maxbarrass4.jpg" class="author__avatar" alt="Max Barrass" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Max Barrass</h3>
+    
+      <p class="author__bio" itemprop="description">
+        Me
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        <li>
+          <a href="http://maxbarrass.com" itemprop="url">
+            <i class="fas fa-globe" aria-hidden="true"></i> Website
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="mailto:me@maxbarrass.com">
+            <meta itemprop="email" content="me@maxbarrass.com" />
+            <i class="fas fa-envelope-square" aria-hidden="true"></i> Email
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/maxbarrass" itemprop="sameAs">
+            <i class="fab fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/maxbarrass" itemprop="sameAs">
+            <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/wildone" itemprop="sameAs">
+            <i class="fab fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        
+        <li>
+            Donate
+        </li>
+        
+      
+        <li>
+          <a href="https://sochain.com/address/BTC/18kns7Jt6pym9tmZ6bzUY1Hw4WZ7XrEPxN" itemprop="sameAs">
+            <i class="fab fa-btc" aria-hidden="true"></i> BTC
+          </a>
+        </li>
+      
+      
+        <li>
+          <a href="https://sochain.com/address/DOGE/DGxzGHeurYBV9jdUiHBdCJoqS3y1WFoVQF" itemprop="sameAs">
+            <b>Ð</b> Doge
+          </a>
+        </li>
+      
+      
+        <li>
+          <a href="https://sochain.com/address/LTC/Lgdu8pchCVQy3sZqy1caJ6UuUXoVDnoGwk" itemprop="sameAs">
+            <b>Ł</b> LTC
+          </a>
+        </li>
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+      <i class="fa fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  
+  </div>
+
+
+    <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+        <meta itemprop="headline" content="TreeView in Office 2010 - ActiveX Control Workaround">
+        <meta itemprop="description" content="Getting the ActiveX controls working in Office 2010 is easy, but making sure every one has those controls is not so. Here is my solution for this, I was unable to find anything sustainable so I had to do it my self. I had a dilema geting a TreeView control this working in Excel accross multiple workstations so this is what I came up with, this is a simple concept and will work for other Office and VBA type products.">
+        <meta itemprop="datePublished" content="July 22, 2010">
+        
+
+        <div class="page__inner-wrap">
+            
+            <header>
+
+
+                <h1 class="page__title" itemprop="headline">TreeView in Office 2010 - ActiveX Control Workaround
+</h1>
+                
+                <p class="page__meta"><i class="far fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  5 minute read
+
+</p>
+                
+            </header>
+            
+
+            <section class="page__content" itemprop="text">
+                <p>Getting the ActiveX controls working in Office 2010 is easy, but making sure every one has those controls is not so. Here is my solution for this, I was unable to find anything sustainable so I had to do it my self. I had a dilema geting a TreeView control this working in Excel accross multiple workstations so this is what I came up with, this is a simple concept and will work for other Office and VBA type products.</p>
+
+<p>In a nutshell you are hosting a WebBrowser control in your app, using a Linking class and a good old HTML magic to get controls into your app withough having to register them in the application. This way when you load your Workbook or Document on others PC it does not complain that you dont have controls installed. The example here is limited to what I needed but its can be extended further if needed.</p>
+
+<p>Without any further ado..</p>
+
+<p>Making HTML Magic:</p>
+<ol>
+  <li>Create default.css</li>
+  <li>Create Lic.lpk</li>
+  <li>Create TreeView.htm</li>
+  <li>Dowload and extract http://activex.microsoft.com/controls/vb6/MSComCtl.cab</li>
+</ol>
+
+<p>Making The Excel</p>
+
+<ol>
+  <li>Create new workbook</li>
+  <li>Enable Developer toolbar, Toggle developer mode</li>
+  <li>Add “Microsoft Web Browser” control to Sheet1</li>
+  <li>Add ActiveX Button control to Sheet1, double click on button</li>
+</ol>
+
+<p>In VBAProject,</p>
+
+<ol>
+  <li>Create a new class clsLinkObject</li>
+  <li>Add code to Sheet1</li>
+  <li>Add Reference to “Microsoft HTML Object Library”</li>
+  <li>Done.</li>
+</ol>
+
+<p>NOTE: Code for all items you are creating is bellow.</p>
+
+<h1 id="files-you-will-need">Files you will need</h1>
+
+<h2 id="defaultcss">default.css</h2>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">BODY</span>
+<span class="p">{</span>
+<span class="py">MARGIN</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">TABLE</span><span class="nc">.tblPopup</span>
+<span class="p">{</span>
+<span class="py">WIDTH</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="py">HEIGHT</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="py">TEXT-ALIGN</span><span class="p">:</span> <span class="nb">center</span>
+<span class="p">}</span>
+<span class="nt">TABLE</span><span class="nc">.tblPopup</span> <span class="nc">.treeSelectionTree</span>
+<span class="p">{</span>
+<span class="py">FONT-SIZE</span><span class="p">:</span> <span class="m">10pt</span><span class="p">;</span>
+<span class="py">COLOR</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
+<span class="py">FONT-FAMILY</span><span class="p">:</span> <span class="n">Arial</span><span class="p">,</span> <span class="n">Tahoma</span><span class="p">,</span> <span class="n">Verdana</span><span class="p">,</span> <span class="s2">'MS Sans Serif'</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="liclpk">Lic.lpk</h2>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LPK License Package
+//////////////////////////////////////////////////////////////////////////////
+// WARNING: The information in this file is protected by copyright law //
+// and international treaty provisions. Unauthorized reproduction or //
+// distribution of this file, or any portion of it, may result in severe //
+// criminal and civil penalties, and will be prosecuted to the maximum //
+// extent possible under the law. Further, you may not reverse engineer, //
+// decompile, or disassemble the file. //
+//////////////////////////////////////////////////////////////////////////////
+{3d25aba1-caec-11cf-b34a-00aa00a28331}
+iwsnya1ZuUedNEhVNzj9IA=
+
+AQAAAA=
+
+tpBBx4mF0RGxagDA8Cg2KCQAAAA
+5ADMANgA4ADIANgA1AEUALQA4ADUARgBFAC0AMQAxAGQAMQAtADgAQgBFADMALQAw
+ADAAMAAwAEYAOAA3ADUANABEAEEAMQA=
+</code></pre></div></div>
+
+<h2 id="treeviewhtm">TreeView.htm</h2>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+
+<span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"default.css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+
+<span class="nt">&lt;body</span> <span class="na">scroll=</span><span class="s">"no"</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">"frmPageForm"</span> <span class="na">method=</span><span class="s">"post"</span> <span class="na">action</span><span class="nt">&gt;</span>
+<span class="nt">&lt;table</span> <span class="na">BORDER=</span><span class="s">"0"</span> <span class="na">CELLSPACING=</span><span class="s">"0"</span> <span class="na">CELLPADDING=</span><span class="s">"0"</span> <span class="na">class=</span><span class="s">"tblPopup"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;tr&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">align=</span><span class="s">"left"</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"divLoading"</span> <span class="na">class=</span><span class="s">"treeSelectionTree"</span> <span class="na">style=</span><span class="s">"WIDTH: 100%; HEIGHT: 100%; background-color:white;text-align:center;VERTICAL-ALIGN: middle"</span><span class="nt">&gt;</span> Loading...<span class="nt">&lt;/div&gt;</span>
+
+
+<span class="nt">&lt;object</span> <span class="na">class=</span><span class="s">"Hidden"</span> <span class="na">classid=</span><span class="s">"clsid:5220cb21-c88d-11cf-b347-00aa00a28331"</span> <span class="na">id=</span><span class="s">"Microsoft_Licensed_Class_Manager_1_0"</span> <span class="na">VIEWASTEXT</span><span class="nt">&gt;</span>
+<span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"LPKPath"</span> <span class="na">value=</span><span class="s">".\Lic.lpk"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/object&gt;</span>
+
+<span class="nt">&lt;object</span> <span class="na">classid=</span><span class="s">"clsid:C74190B6-8589-11D1-B16A-00C0F0283628"</span> <span class="na">class=</span><span class="s">"treeSelectionTree"</span> <span class="na">id=</span><span class="s">"treeHierarchy"</span> <span class="na">name=</span><span class="s">"treeHierarchy"</span> <span class="na">style=</span><span class="s">"WIDTH: 100%; HEIGHT: 100%; display:none"</span> <span class="na">codebase=</span><span class="s">".\MSCOMCTL.OCX"</span> <span class="na">VIEWASTEXT</span><span class="nt">&gt;</span>
+<span class="nt">&lt;param</span> <span class="na">NAME=</span><span class="s">"_ExtentX"</span> <span class="na">VALUE=</span><span class="s">"6959"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;param</span> <span class="na">NAME=</span><span class="s">"_ExtentY"</span> <span class="na">VALUE=</span><span class="s">"5927"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;param</span> <span class="na">NAME=</span><span class="s">"_Version"</span> <span class="na">VALUE=</span><span class="s">"327682"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;param</span> <span class="na">NAME=</span><span class="s">"HideSelection"</span> <span class="na">VALUE=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;param</span> <span class="na">NAME=</span><span class="s">"Indentation"</span> <span class="na">VALUE=</span><span class="s">"100"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;param</span> <span class="na">NAME=</span><span class="s">"LabelEdit"</span> <span class="na">VALUE=</span><span class="s">"0"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;param</span> <span class="na">NAME=</span><span class="s">"LineStyle"</span> <span class="na">VALUE=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;param</span> <span class="na">NAME=</span><span class="s">"PathSeparator"</span> <span class="na">VALUE=</span><span class="s">"\"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;param</span> <span class="na">NAME=</span><span class="s">"Sorted"</span> <span class="na">VALUE=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;param</span> <span class="na">NAME=</span><span class="s">"Style"</span> <span class="na">VALUE=</span><span class="s">"7"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;param</span> <span class="na">NAME=</span><span class="s">"ImageList"</span> <span class="na">VALUE</span><span class="nt">&gt;</span>
+<span class="nt">&lt;param</span> <span class="na">NAME=</span><span class="s">"BorderStyle"</span> <span class="na">VALUE=</span><span class="s">"0"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;param</span> <span class="na">NAME=</span><span class="s">"Appearance"</span> <span class="na">VALUE=</span><span class="s">"0"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;param</span> <span class="na">NAME=</span><span class="s">"MousePointer"</span> <span class="na">VALUE=</span><span class="s">"0"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;param</span> <span class="na">NAME=</span><span class="s">"Enabled"</span> <span class="na">VALUE=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;param</span> <span class="na">NAME=</span><span class="s">"FullRowSelect"</span> <span class="na">VALUE=</span><span class="s">"0"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;param</span> <span class="na">NAME=</span><span class="s">"Placement"</span> <span class="na">VALUE=</span><span class="s">"2"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;param</span> <span class="na">NAME=</span><span class="s">"SingleSel"</span> <span class="na">VALUE=</span><span class="s">"0"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;param</span> <span class="na">NAME=</span><span class="s">"Scroll"</span> <span class="na">VALUE=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;param</span> <span class="na">NAME=</span><span class="s">"OLEDragMode"</span> <span class="na">VALUE=</span><span class="s">"0"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;param</span> <span class="na">NAME=</span><span class="s">"OLEDropMode"</span> <span class="na">VALUE=</span><span class="s">"0"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/object&gt;</span>
+
+
+
+<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+
+
+<span class="nt">&lt;SCRIPT</span> <span class="na">LANGUAGE=</span><span class="s">vbscript</span> <span class="na">defer</span><span class="nt">&gt;</span>
+<span class="c">&lt;!--
+
+dim blnLoaded
+dim objLinkObject
+dim objTreeView
+
+blnLoaded = false
+
+set objTreeView = document.all("treeHierarchy")
+
+
+sub DoLoadSample
+
+
+if IsObject(objTreeView) = true then
+
+objTreeView.Nodes.Clear
+objTreeView.LabelEdit = 1
+
+objTreeView.Nodes.Add ,, "oRoot", "root"
+dim i
+for i = 0 to 100
+if i = 0 then
+objTreeView.Nodes.Add "oRoot", 4, "oChild" &amp; i, "Child " &amp; i
+else
+objTreeView.Nodes.Add "oChild" &amp; i-1, 4, "oChild" &amp; i, "Child " &amp; i
+end if
+next
+
+end if
+
+end sub
+
+
+function CreateLink
+on error resume next
+
+set objLinkObject = window.document.body.getAttribute("external_LinkObject")
+call objLinkObject.SetData(document.all("treeHierarchy"))
+
+if err.number &lt;&gt; 0 then
+err.clear
+else
+blnLoaded = true
+end if
+
+
+end function
+
+function LinkObject_NodeClick
+if blnLoaded = true then
+call objLinkObject.NodeClick(objTreeView.SelectedItem)
+end if
+end function
+
+function LinkObject_Click
+if blnLoaded = true then
+call objLinkObject.Click()
+end if
+end function
+
+function LinkObject_DblClick
+if blnLoaded = true then
+call objLinkObject.DblClick()
+end if
+end function
+
+//--&gt;</span>
+<span class="nt">&lt;/SCRIPT&gt;</span>
+
+
+<span class="nt">&lt;script </span><span class="na">LANGUAGE=</span><span class="s">"javascript"</span> <span class="na">FOR=</span><span class="s">"treeHierarchy"</span> <span class="na">EVENT=</span><span class="s">"NodeClick"</span><span class="nt">&gt;</span>
+<span class="o">&lt;!--</span>
+<span class="nx">LinkObject_NodeClick</span><span class="p">();</span>
+<span class="c1">//--&gt;</span>
+<span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">LANGUAGE=</span><span class="s">"javascript"</span> <span class="na">FOR=</span><span class="s">"treeHierarchy"</span> <span class="na">EVENT=</span><span class="s">"Click"</span><span class="nt">&gt;</span>
+<span class="o">&lt;!--</span>
+<span class="nx">LinkObject_Click</span><span class="p">();</span>
+<span class="c1">//--&gt;</span>
+<span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">LANGUAGE=</span><span class="s">"javascript"</span> <span class="na">FOR=</span><span class="s">"treeHierarchy"</span> <span class="na">EVENT=</span><span class="s">"DblClick"</span><span class="nt">&gt;</span>
+<span class="o">&lt;!--</span>
+<span class="nx">LinkObject_DblClick</span><span class="p">();</span>
+<span class="c1">//--&gt;</span>
+<span class="nt">&lt;/script&gt;</span>
+
+<span class="nt">&lt;script </span><span class="na">LANGUAGE=</span><span class="s">"javascript"</span> <span class="na">defer</span><span class="nt">&gt;</span>
+<span class="o">&lt;!--</span>
+
+<span class="k">try</span> <span class="p">{</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="dl">"</span><span class="s2">divLoading</span><span class="dl">"</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span><span class="o">=</span><span class="dl">"</span><span class="s2">none</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">objTreeView</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span><span class="o">=</span><span class="dl">"</span><span class="s2">block</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">objTreeView</span><span class="p">.</span><span class="nx">focus</span><span class="p">();</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">ex</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="c1">//--&gt;</span>
+<span class="nt">&lt;/script&gt;</span>
+
+
+<span class="nt">&lt;/body&gt;</span>
+
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h2 id="clslinkobject-code">clsLinkObject code</h2>
+
+<pre><code class="language-asp">Option Explicit
+
+Public LinkObject As Object
+
+Public Event NodeClick(ByRef Node As Object)
+Public Event Click()
+Public Event DblClick()
+Public Event Loaded()
+
+Public Function SetData(ByRef SourceObject As Object)
+Set LinkObject = SourceObject
+RaiseEvent Loaded
+End Function
+
+Public Function NodeClick(ByRef Node As Object)
+RaiseEvent NodeClick(Node)
+End Function
+
+Public Function Click()
+RaiseEvent Click
+End Function
+
+Public Function DblClick()
+RaiseEvent DblClick
+End Function
+</code></pre>
+
+<h2 id="sheet1-code">Sheet1 code</h2>
+
+<pre><code class="language-asp">Option Explicit
+Const constTreeViewPage As String = "\Components\TreeView.htm"
+Const constDefaultPage As String = "about:blank"
+Dim objSelectedItem As Range
+Dim blnLoaded As Boolean
+Dim blnRegistred As Boolean
+Dim objTreeView As Object
+Dim WithEvents objDocument As MSHTML.HTMLDocument
+Dim WithEvents objWindow As MSHTML.HTMLWindow2
+Dim WithEvents objTreeViewElement As MSHTML.HTMLObjectElement
+Dim strDefaultPage As String
+Dim strDocumentPage As String
+Dim WithEvents objLinkObject As clsLinkObject
+Dim blnDebug As Boolean
+Dim strErrorStack As String
+
+Private Sub CommandButton1_Click()
+'Call LoadDefault
+On Error GoTo ErrorHandler
+
+CommandButton1.Enabled = False
+
+If blnRegistred = False Then
+Call RegisterObjects
+End If
+
+If Not objTreeView Is Nothing Then
+call objTreeView.Nodes.Clear
+call objTreeView.Nodes.Add(, , "oRoot", "Root")
+call objTreeView.Nodes.Add("oRoot", 4, "oChild", "Child")
+Else
+GoTo ErrorHandler
+End If
+
+
+ErrorExit:
+CommandButton1.Enabled = True
+Exit Sub
+
+ErrorHandler:
+If blnDebug = False Then
+MsgBox "Component did not load."
+Call LoadDefault
+Else
+MsgBox strErrorStack, , "Component did not load."
+End If
+GoTo ErrorExit
+End Sub
+
+Function SelectRange()
+If Not objSelectedItem Is Nothing Then
+objSelectedItem.Interior.Color = vbGreen
+End If
+End Function
+
+Function UnselectRange()
+If Not objSelectedItem Is Nothing Then
+objSelectedItem.Interior.Color = vbWhite
+End If
+End Function
+
+
+Private Sub objLinkObject_Loaded()
+Set objTreeView = objLinkObject.LinkObject
+End Sub
+
+Private Sub objLinkObject_NodeClick(Node As Object)
+'
+End Sub
+Private Sub objLinkObject_Click()
+'
+End Sub
+Private Sub objLinkObject_DblClick()
+'
+End Sub
+
+Private Sub Worksheet_Deactivate()
+Call UnselectRange
+End Sub
+
+
+
+
+Private Sub Worksheet_Activate()
+blnDebug = False
+Call ResetDebug
+If blnLoaded = False Then
+Call LoadDefault
+blnLoaded = True
+End If
+End Sub
+
+
+
+
+
+
+Private Sub WebBrowser1_DocumentComplete(ByVal pDisp As Object, URL As Variant)
+
+Select Case URL
+Case strDefaultPage:
+Call LoadDocument
+Case strDocumentPage:
+Call RegisterObjects
+Case Else:
+End Select
+End Sub
+
+
+Private Sub LoadDefault()
+
+
+strDefaultPage = constDefaultPage
+strDocumentPage = ActiveWorkbook.Path &amp; constTreeViewPage
+
+Call WebBrowser1.Navigate2(strDefaultPage)
+End Sub
+Private Sub LoadDocument()
+Call WebBrowser1.Navigate2(strDocumentPage)
+End Sub
+
+Private Sub RegisterObjects()
+
+On Error GoTo ErrorHandler
+
+blnRegistred = False
+
+Call AddDebug(Nothing, "RegisterObjects", "Accessing host element")
+Set objDocument = WebBrowser1.Document
+
+Call AddDebug(Nothing, "RegisterObjects", "Accessing host client")
+Set objWindow = objDocument.parentWindow
+
+Call AddDebug(Nothing, "RegisterObjects", "Accessing host object")
+Set objTreeViewElement = objDocument.all("treeHierarchy")
+
+'Call objWindow.execScript("DoLoadSample", "VBScript")
+
+Set objLinkObject = New clsLinkObject
+
+Call AddDebug(Nothing, "RegisterObjects", "Init host link")
+Call objWindow.Document.body.setAttribute("external_LinkObject", objLinkObject)
+
+Call AddDebug(Nothing, "RegisterObjects", "Load host link")
+Call objWindow.execScript("CreateLink", "VBScript")
+
+blnRegistred = True
+
+
+ErrorExit:
+Exit Sub
+ErrorHandler:
+Call AddDebug(Err, "RegisterObjects")
+GoTo ErrorExit
+End Sub
+
+Function ResetDebug()
+strErrorStack = ""
+If blnDebug = True Then
+WebBrowser1.Silent = False
+Else
+WebBrowser1.Silent = True
+End If
+End Function
+
+Function AddDebug(SourceError As ErrObject, MethodSource As String, Optional Description As String = "")
+Dim strErrorText As String
+If strErrorStack &lt;&gt; "" Then
+strErrorStack = strErrorStack &amp; vbCrLf
+End If
+If Not SourceError Is Nothing Then
+strErrorText = " -&gt; " &amp; SourceError.Description
+End If
+strErrorStack = strErrorStack &amp; MethodSource &amp; ":: " &amp; Description &amp; strErrorText
+End Function
+</code></pre>
+
+                
+            </section>
+
+            <style>
+                .page__content_adspace_bottom {
+                    height: 200px;
+                    display: inline-block;
+                    width: 100%;
+                }
+            </style>
+            <section class="page__content_adspace_bottom">
+            
+<div align="center" style="margin: 1em 0;">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-6707033742178132"
+         data-ad-slot="7730324178"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+            </section>
+
+            <footer class="page__meta">
+                
+                
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#activex" class="page__taxonomy-item" rel="tag">activex</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#office" class="page__taxonomy-item" rel="tag">office</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#treeview" class="page__taxonomy-item" rel="tag">treeview</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#blog" class="page__taxonomy-item" rel="tag">blog</a>
+    
+    </span>
+  </p>
+
+
+                
+                <p class="page__date"><strong><i class="fas fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2010-07-22T13:00:00+00:00">July 22, 2010</time></p>
+                
+            </footer>
+
+            <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=TreeView+in+Office+2010+-+ActiveX+Control+Workaround%20https%3A%2F%2Fmaxbarrass.com%2Fblog%2F2010%2F07%2F23%2Ftreeview-in-office-2010-activex-control" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmaxbarrass.com%2Fblog%2F2010%2F07%2F23%2Ftreeview-in-office-2010-activex-control" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmaxbarrass.com%2Fblog%2F2010%2F07%2F23%2Ftreeview-in-office-2010-activex-control" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+            
+  <nav class="pagination">
+    
+      <a href="/blog/2009/03/18/sql-2008-full-text-index-add-button-is-disabled" class="pagination--pager" title="SQL 2008 Full-text index Add button is disabled!
+">Previous</a>
+    
+    
+      <a href="/blog/2010/09/15/training-for-your-first-marathon" class="pagination--pager" title="Training for your first marathon.
+">Next</a>
+    
+  </nav>
+
+        </div>
+
+        
+        <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Leave a Comment</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+        
+    </article>
+
+    
+    
+    <div class="page__related">
+        
+        <h4 class="page__related-title">You May Also Enjoy</h4>
+        
+        <div class="grid__wrapper">
+            
+            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/2016/11/04/linkmoji%F0%9F%92%AA%F0%9F%98%8E%F0%9F%91%8D" rel="permalink">Linkmoji 💪😎👍
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Linkmoji!
+</p>
+  </article>
+</div>
+
+            
+            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/2015/06/01/aem-capability-matrix" rel="permalink">Life
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">I always get asked does AEM has any components that come out of the box (OOTB)? What is the list of OOTB component?  Can I use them?
+</p>
+  </article>
+</div>
+
+            
+            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/2014/05/28/lucene-index-configuration-in-aem" rel="permalink">Lucene Index Configuration in AEM
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">If you need to update index configuration to speed up your searches in AEM,  you will need to add add an indexing_config.xml to your quickstart.
+</p>
+  </article>
+</div>
+
+            
+            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/2014/05/27/jcr-predicate-operations-in-aem" rel="permalink">JCR Predicate Operations in AEM
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Here are some samples of JCR search in AEM. There is very little doco on this so here it goes.
+</p>
+  </article>
+</div>
+
+            
+        </div>
+    </div>
+    
+</div>
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 Max Barrass. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/js/fontawesome.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://maxbarrass.com/blog/2010/07/23/treeview-in-office-2010-activex-control";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/blog/2010/07/23/treeview-in-office-2010-activex-control"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://maxbarrass.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+  </body>
+</html>
