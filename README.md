@@ -1,19 +1,18 @@
-# aem.design
-AEM.Design blog
+# MaxBarrass.com
+My Blog
 
-[![build_status](https://github.com/aem-design/aem.design/workflows/ci/badge.svg)](https://github.com/aem-design/aem.design/actions?workflow=ci)
-[![github license](https://img.shields.io/github/license/aem-design/aem.design)](https://github.com/aem-design/aem.design) 
-[![github issues](https://img.shields.io/github/issues/aem-design/aem.design)](https://github.com/aem-design/aem.design) 
-[![github last commit](https://img.shields.io/github/last-commit/aem-design/aem.design)](https://github.com/aem-design/aem.design) 
-[![github repo size](https://img.shields.io/github/repo-size/aem-design/aem.design)](https://github.com/aem-design/aem.design) 
-![statuscake](https://app.statuscake.com/button/index.php?Track=sKW7chwd8h&Days=7&Design=3 "statuscake")
+[![build_status](https://github.com/wildone/maxbarrass.com/workflows/ci/badge.svg)](https://github.com/wildone/maxbarrass.com/actions?workflow=ci)
+[![github license](https://img.shields.io/github/license/wildone/maxbarrass.com)](https://github.com/wildone/maxbarrass.com) 
+[![github issues](https://img.shields.io/github/issues/wildone/maxbarrass.com)](https://github.com/wildone/maxbarrass.com) 
+[![github last commit](https://img.shields.io/github/last-commit/wildone/maxbarrass.com)](https://github.com/wildone/maxbarrass.com) 
+[![github repo size](https://img.shields.io/github/repo-size/wildone/maxbarrass.com)](https://github.com/wildone/maxbarrass.com) 
 
 
 ## Updating this Repo
 
 You can update this repo using your favorite IDE or use a web based editor
 
-* [Prose.io - AEM.Design](http://prose.io/#aem-design/aem.design/tree/master)
+* [Prose.io - AEM.Design](http://prose.io/#wildone/maxbarrass.com/tree/master)
 
 ## Markdown Cheatsheet
 
@@ -24,7 +23,6 @@ When creating pages in this repo use the markdown syntax, you can find syntax he
 ## Icons
 
 Icons can be selected form here [Fontawesome](http://fontawesome.io/icons/)
-
 
 ## Getting Started
 
@@ -51,12 +49,8 @@ Config is located in `_data/advertising.yml` html should not need to be changed 
 Following is the description of important sections in the project. 
 
 * `assets` - folder for all assets that appear on the site
-* `_archive` - pages that have been referenced and migrated from the internet to ensure they keep existing 
 * `_posts` - location for all Blog posts, add your markdown here and create a subfolder in `assests` for all your images etc
-* `_manual` - folder for the Manual section of the site 
-* `_manifesto` - folder for the Manifesto section of the site
 * `_layouts` - templates for pages
-* `_docs` - general info pages
 * `_pages` - admin pages for site
 * `_data` - data config for page modules
 * `_config.yml` - primary config for whole site
