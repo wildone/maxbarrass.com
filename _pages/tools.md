@@ -10,7 +10,7 @@ categories:
 tags:
   - tools
 header:
-  overlay_image: /assets/images/site-logo.png
+  overlay_image: /assets/images/background/tools.jpg
 ---
 
 This section provides an archive of pages that are relevant for learning as foundational knowledge that has lead to current understanding.
