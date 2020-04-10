@@ -101,6 +101,12 @@ var store = [{
         "url": "https://maxbarrass.com/blog/2016/11/04/linkmoji%F0%9F%92%AA%F0%9F%98%8E%F0%9F%91%8D",
         "teaser": null
       },{
+        "title": "Downloading Files from RSS with Jdownloader Packegizer",
+        "excerpt":"Intro I wanted to download some podcasts from an RSS feed, here is how to do this with help of RSS, XML Tools and JDownloader (be care full downloading this, Ill make a safe source verison of this some day) To do this I just transformed the RSS into a...","categories": ["blog"],
+        "tags": ["jdownloader","packegizer","rss","xslt"],
+        "url": "https://maxbarrass.com/blog/2020/04/10/downloading-files-from-rss-with-jdownloader-packegizer%F0%9F%92%BB%F0%9F%92%A5%F0%9F%98%8D",
+        "teaser": null
+      },{
         "title": "Ascii Table",
         "excerpt":"Sometimes you just need to lookup things, this is the place. Description Ascii conversion reference table. Source Support ie: live firefox: partialy opera: nightly safari: live chrome: live DEC OCT HEX BIN Symbol HTML Number HTML Name Description 00000000000000NUL&amp;#000;&nbsp;Null char 10010100000001SOH&amp;#001;&nbsp;Start of Heading 20020200000010STX&amp;#002;&nbsp;Start of Text 30030300000011ETX&amp;#003;&nbsp;End of Text 40040400000100EOT&amp;#004;&nbsp;End...","categories": ["blog"],
         "tags": ["tools","ascii-table"],

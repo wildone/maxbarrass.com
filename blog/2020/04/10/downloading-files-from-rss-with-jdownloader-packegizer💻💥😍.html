@@ -13,27 +13,27 @@
 
 
 
-<title>Visual C++ 6 and Thinstall - Max Barrass</title>
+<title>Downloading Files from RSS with Jdownloader Packegizer - Max Barrass</title>
 
 
 
 
-<meta name="description" content="To make VC6 work in Thinstall environment makesure you change all installation paths to a path that does not contain spaces, example:">
+<meta name="description" content="Intro">
 
 
 
 
 <meta property="og:locale" content="en">
 <meta property="og:site_name" content="Max Barrass">
-<meta property="og:title" content="Visual C++ 6 and Thinstall">
+<meta property="og:title" content="Downloading Files from RSS with Jdownloader Packegizer">
 
 
-  <link rel="canonical" href="https://maxbarrass.com/blog/2008/06/23/liquid-cooled-monolith">
-  <meta property="og:url" content="https://maxbarrass.com/blog/2008/06/23/liquid-cooled-monolith">
+  <link rel="canonical" href="https://maxbarrass.com/blog/2020/04/10/downloading-files-from-rss-with-jdownloader-packegizer💻💥😍">
+  <meta property="og:url" content="https://maxbarrass.com/blog/2020/04/10/downloading-files-from-rss-with-jdownloader-packegizer💻💥😍">
 
 
 
-  <meta property="og:description" content="To make VC6 work in Thinstall environment makesure you change all installation paths to a path that does not contain spaces, example:">
+  <meta property="og:description" content="Intro">
 
 
 
@@ -50,7 +50,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2008-06-22T13:00:00+00:00">
+  <meta property="article:published_time" content="2020-04-09T13:00:00+00:00">
 
 
 
@@ -384,9 +384,9 @@
 
 
     <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-        <meta itemprop="headline" content="Visual C++ 6 and Thinstall">
-        <meta itemprop="description" content="To make VC6 work in Thinstall environment makesure you change all installation paths to a path that does not contain spaces, example:">
-        <meta itemprop="datePublished" content="June 22, 2008">
+        <meta itemprop="headline" content="Downloading Files from RSS with Jdownloader Packegizer">
+        <meta itemprop="description" content="Intro">
+        <meta itemprop="datePublished" content="April 09, 2020">
         
 
         <div class="page__inner-wrap">
@@ -394,7 +394,7 @@
             <header>
 
 
-                <h1 class="page__title" itemprop="headline">Visual C++ 6 and Thinstall
+                <h1 class="page__title" itemprop="headline">Downloading Files from RSS with Jdownloader Packegizer
 </h1>
                 
                 <p class="page__meta"><i class="far fa-clock-o" aria-hidden="true"></i> 
@@ -402,7 +402,7 @@
 
 
 
-  less than 1 minute read
+  2 minute read
 
 </p>
                 
@@ -410,28 +410,121 @@
             
 
             <section class="page__content" itemprop="text">
-                <p>To make VC6 work in Thinstall environment makesure you change all installation paths to a path that does not contain spaces, example:</p>
+                <h1 id="intro">Intro</h1>
 
-<p>default path is:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>c:\program files\microsoft visual studio
+<p>I wanted to download some podcasts from an RSS feed, here is how to do this with help of RSS, XML Tools and JDownloader (be care full downloading this, Ill make a safe source verison of this some day)</p>
+
+<p>To do this I just transformed the RSS into a list of good URLS with appended #TITLE and used JDownloaded Packagizer Rule to rename downloaded fiels.</p>
+
+<h1 id="rss-source">RSS Source</h1>
+<p>https://feeds.megaphone.fm/WWO4858695911</p>
+
+<p>This source has a bunch of generated names but I want to use “# - Title” as good file name.</p>
+
+<h1 id="xslt-for-rss">XSLT for RSS</h1>
+
+<p>You can run it here https://maxbarrass.com/tools/xml-transform, download the RSS source and transform it, you will get a list of urls with #title, we will use this # in jdownloader to create proper names for files.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;</span>
+<span class="nt">&lt;xsl:stylesheet</span> <span class="na">version=</span><span class="s">"2.0"</span> <span class="na">xmlns:xsl=</span><span class="s">"http://www.w3.org/1999/XSL/Transform"</span>
+                <span class="na">xmlns:itunes=</span><span class="s">"http://www.itunes.com/dtds/podcast-1.0.dtd"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;xsl:output</span> <span class="na">method=</span><span class="s">"xml"</span> <span class="na">omit-xml-declaration=</span><span class="s">"yes"</span> <span class="na">indent=</span><span class="s">"yes"</span> <span class="na">encoding=</span><span class="s">"utf-16"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">"/"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xsl:apply-templates/&gt;</span>
+  <span class="nt">&lt;/xsl:template&gt;</span>
+  <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">"//channel"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">"//item"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:apply-templates</span> <span class="na">select=</span><span class="s">"enclosure/@url"</span> <span class="na">mode=</span><span class="s">"fixtext"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;xsl:text&gt;</span>#<span class="nt">&lt;/xsl:text&gt;</span>
+          <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">"not(string(itunes:episode))"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"concat(normalize-space(title),'.mp3')"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsl:if&gt;</span>
+        <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">"string(itunes:episode)"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"concat(itunes:episode,' - ',normalize-space(title),'.mp3')"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsl:if&gt;</span>
+      <span class="nt">&lt;xsl:text&gt;</span>
+<span class="nt">&lt;/xsl:text&gt;</span>
+    <span class="nt">&lt;/xsl:for-each&gt;</span>
+  <span class="nt">&lt;/xsl:template&gt;</span>
+  <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">"*"</span> <span class="na">mode=</span><span class="s">"fixtext"</span> <span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"normalize-space(.)"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
 </code></pre></div></div>
 
-<p>isntead use:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>c:\ms\mvs\
-</code></pre></div></div>
+<h1 id="jdownloader-setup">Jdownloader Setup</h1>
 
-<p>if you dont do this you will get errors when compiling, errors such as:</p>
+<p>Packegizer rule - HTML RSS Links</p>
 <ul>
-  <li>error executing ~vecchio!Compiling</li>
-  <li>error spawning VcSpawn exe</li>
+  <li>If
+    <ul>
+      <li>Sourceurls(s) using Regex: .<em>#(.</em>)
+        <ul>
+          <li>this will split url into group wich will be everything after #</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Then
+    <ul>
+      <li>Filename: &lt;jd:source:1&gt;
+        <ul>
+          <li>this will grab proper name for our download file</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ul>
 
-<p>Also dont forget to set up the path entries, here is the <code class="highlighter-rouge">HKEY_LOCAL_MACHINE.txt</code> entry if you are missing it:</p>
+<p>Thats all save and copy your link you will now see a list of RSS link to download with proper titles.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>isolation_writecopy HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment Value=MSVCDir REG_SZ~C:\MS\MVS\VC98#00 Value=MSDevDir REG_SZ~C:\MS\MVS\Common\msdev98#00 Value=INCLUDE REG_SZ~C:\MS\MVS\VC98\ATL\INCLUDE;C:\MS\MVS\VC98\INCLUDE;C:\MS\MVS\VC98\MFC\INCLUDE;#00 Value=LIB REG_SZ~C:\MS\MVS\VC98\LIB;C:\MS\MVS\VC98\MFC\LIB;#00 Value=VirtualPath REG_SZ~C:\MS\MVS\Common\msdev98\BIN;C:\MS\MVS\VC98\BIN;C:\MS\MVS\Common\TOOLS;C:\MS\MVS\Common\TOOLS\WINNT;#25windir#25\SYSTEM;#25PATH#25#00
+<h1 id="reference">Reference</h1>
+
+<p>Here is a list of config variable that can be used in <a href="https://board.jdownloader.org/showpost.php?p=421993&amp;postcount=2">Jdownloader Packegizer rules config</a>.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;jd:append&gt;
+-&gt; this placeholder will be replaced by previous value where the placeholder is being used in
+
+&lt;jd:prop:KEY&gt;
+-&gt; this placeholder reads out an internal property of the downloadlink itself. properties are plugin specific and there are plans that plugins can return a list of supported properties that can be used here
+
+&lt;jd:indexof&gt;
+-&gt; this placeholder will be replaced by number of index of the downloadlink within its package. first link will be 1, second link will be 2 and so on. It's just the index within the package!
+-&gt; will be replaced in real time
+
+&lt;jd:subfolderbyplugin&gt;
+-&gt; some plugins support recursive folder support. if supported by plugin, then the downloads will have same directory structure like shown in browser
+
+&lt;jd:env:KEY&gt;
+-&gt; this placeholder will be replaced by KEY environment variable of your system
+-&gt; will be replaced in real time
+
+&lt;jd:orgfilename&gt; &lt;jd:orgfilename:number&gt;
+-&gt; this placeholder will be replaced by original filename or matching group(number) of filename pattern
+
+&lt;jd:packagename&gt;
+-&gt; this placeholder will be replaced by the current package name
+-&gt; will be replaced in real time
+
+&lt;jd:orgfiletype&gt; &lt;jd:orgfiletype:Pattern&gt;
+-&gt; this placeholder will be replaced by the file extension of the file or the match of the given pattern
+
+&lt;jd:orgfilenamewithoutext&gt;
+-&gt; this placeholder will be replaced by original filename without file extension
+
+&lt;jd:hoster:number&gt;
+-&gt; this placeholder will be replaced by the matching group(number) of downloadurl pattern or the host itself if number is -1
+
+&lt;jd:source:(number)pattern&gt;
+-&gt; this placeholder will be replaced by the match of sourceurl pattern. with number you can specify which sourceurl to process
+
+&lt;jd:simpledate:simpleDateFormatString&gt;
+-&gt; this placeholder will be replaced by time formatted with simpleDateFormatString, see docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html
+-&gt; will be replaced in real time
+
+&lt;jd:orgpackagename&gt;
+-&gt; this placeholder will be replaced by the original package name
 </code></pre></div></div>
-
-<p>In addition place the MFC42.dll and MSVCRT.dll into %SystemSystem% directory, this will work for XP, you can find them DLL’s in windows\system32 dir. If you want to make VC6 work through thininstall on a Windows 2003 box, copy the respective DLL’s from the Windows 2003, they should be a newer version. Same goes for Windows 2008.</p>
 
                 
             </section>
@@ -476,11 +569,19 @@
     
       
       
-      <a href="/tags/#thinstall" class="page__taxonomy-item" rel="tag">thinstall</a><span class="sep">, </span>
+      <a href="/tags/#jdownloader" class="page__taxonomy-item" rel="tag">jdownloader</a><span class="sep">, </span>
     
       
       
-      <a href="/tags/#visual-c" class="page__taxonomy-item" rel="tag">visual-c</a>
+      <a href="/tags/#packegizer" class="page__taxonomy-item" rel="tag">packegizer</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#rss" class="page__taxonomy-item" rel="tag">rss</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#xslt" class="page__taxonomy-item" rel="tag">xslt</a>
     
     </span>
   </p>
@@ -508,7 +609,7 @@
 
 
                 
-                <p class="page__date"><strong><i class="fas fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2008-06-22T13:00:00+00:00">June 22, 2008</time></p>
+                <p class="page__date"><strong><i class="fas fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-04-09T13:00:00+00:00">April 09, 2020</time></p>
                 
             </footer>
 
@@ -517,23 +618,22 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=Visual+C%2B%2B+6+and+Thinstall%20https%3A%2F%2Fmaxbarrass.com%2Fblog%2F2008%2F06%2F23%2Fliquid-cooled-monolith" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Downloading+Files+from+RSS+with+Jdownloader+Packegizer%20https%3A%2F%2Fmaxbarrass.com%2Fblog%2F2020%2F04%2F10%2Fdownloading-files-from-rss-with-jdownloader-packegizer%25F0%259F%2592%25BB%25F0%259F%2592%25A5%25F0%259F%2598%258D" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmaxbarrass.com%2Fblog%2F2008%2F06%2F23%2Fliquid-cooled-monolith" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmaxbarrass.com%2Fblog%2F2020%2F04%2F10%2Fdownloading-files-from-rss-with-jdownloader-packegizer%25F0%259F%2592%25BB%25F0%259F%2592%25A5%25F0%259F%2598%258D" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmaxbarrass.com%2Fblog%2F2008%2F06%2F23%2Fliquid-cooled-monolith" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmaxbarrass.com%2Fblog%2F2020%2F04%2F10%2Fdownloading-files-from-rss-with-jdownloader-packegizer%25F0%259F%2592%25BB%25F0%259F%2592%25A5%25F0%259F%2598%258D" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
             
   <nav class="pagination">
     
-      <a href="/blog/2008/02/05/liquid-cooled-monolith" class="pagination--pager" title="Liquid Cooled Monolith!
+      <a href="/blog/2016/11/04/linkmoji%F0%9F%92%AA%F0%9F%98%8E%F0%9F%91%8D" class="pagination--pager" title="Linkmoji 💪😎👍
 ">Previous</a>
     
     
-      <a href="/blog/2008/07/21/life" class="pagination--pager" title="Life
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -558,35 +658,6 @@
         <h4 class="page__related-title">You May Also Enjoy</h4>
         
         <div class="grid__wrapper">
-            
-            
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/blog/2020/04/10/downloading-files-from-rss-with-jdownloader-packegizer%F0%9F%92%BB%F0%9F%92%A5%F0%9F%98%8D" rel="permalink">Downloading Files from RSS with Jdownloader Packegizer
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  2 minute read
-
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">Intro
-</p>
-  </article>
-</div>
-
             
             
 
@@ -636,7 +707,7 @@
 
 
 
-  2 minute read
+  1 minute read
 
 </p>
     
@@ -670,6 +741,35 @@
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">If you need to update index configuration to speed up your searches in AEM,  you will need to add add an indexing_config.xml to your quickstart.
+</p>
+  </article>
+</div>
+
+            
+            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/2014/05/27/jcr-predicate-operations-in-aem" rel="permalink">JCR Predicate Operations in AEM
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Here are some samples of JCR search in AEM. There is very little doco on this so here it goes.
 </p>
   </article>
 </div>
@@ -715,8 +815,8 @@
     
   <script>
     var disqus_config = function () {
-      this.page.url = "https://maxbarrass.com/blog/2008/06/23/liquid-cooled-monolith";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/blog/2008/06/23/visual-c-6-and-thinstall"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "https://maxbarrass.com/blog/2020/04/10/downloading-files-from-rss-with-jdownloader-packegizer%F0%9F%92%BB%F0%9F%92%A5%F0%9F%98%8D";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/blog/2020/04/10/downloading-files-from-rss-with-jdownloader-packegizer"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');
