@@ -101,7 +101,7 @@ var store = [{
         "url": "https://maxbarrass.com/blog/2016/11/04/linkmoji%F0%9F%92%AA%F0%9F%98%8E%F0%9F%91%8D",
         "teaser": null
       },{
-        "title": "Downloading Files from RSS with Jdownloader Packegizer",
+        "title": "Downloading Files from RSS with Jdownloader Packegizer 💻💥😍",
         "excerpt":"Intro I wanted to download some podcasts from an RSS feed, here is how to do this with help of RSS, XML Tools and JDownloader (be care full downloading this, Ill make a safe source verison of this some day) To do this I just transformed the RSS into a...","categories": ["blog"],
         "tags": ["jdownloader","packegizer","rss","xslt"],
         "url": "https://maxbarrass.com/blog/2020/04/10/downloading-files-from-rss-with-jdownloader-packegizer%F0%9F%92%BB%F0%9F%92%A5%F0%9F%98%8D",
