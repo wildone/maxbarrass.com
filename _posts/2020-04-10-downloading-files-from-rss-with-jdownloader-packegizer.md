@@ -2,7 +2,7 @@
 layout: single
 permalink: /blog/2020/04/10/downloading-files-from-rss-with-jdownloader-packegizer💻💥😍
 author: max
-title:  "Downloading Files from RSS with Jdownloader Packegizer"
+title:  "Downloading Files from RSS with Jdownloader Packegizer 💻💥😍"
 date:   2020-04-10 00:00:00 +1100
 categories:
   - blog
