@@ -89,7 +89,7 @@ var store = [{
         "url": "https://maxbarrass.com/blog/2014/05/28/lucene-index-configuration-in-aem",
         "teaser": null
       },{
-        "title": "Life",
+        "title": "AEM Capability Matrix",
         "excerpt":"I always get asked does AEM has any components that come out of the box (OOTB)? What is the list of OOTB component? Can I use them? A lot of people don’t know and believe that AEM is a blank canvas and you just start from scratch. Obviously this assumptions...","categories": ["blog"],
         "tags": ["aem","capability-matrix"],
         "url": "https://maxbarrass.com/blog/2015/06/01/aem-capability-matrix",
@@ -105,6 +105,12 @@ var store = [{
         "excerpt":"Intro I wanted to download some podcasts from an RSS feed, here is how to do this with help of RSS, XML Tools and JDownloader (be care full downloading this, Ill make a safe source verison of this some day) To do this I just transformed the RSS into a...","categories": ["blog"],
         "tags": ["jdownloader","packegizer","rss","xslt"],
         "url": "https://maxbarrass.com/blog/2020/04/10/downloading-files-from-rss-with-jdownloader-packegizer%F0%9F%92%BB%F0%9F%92%A5%F0%9F%98%8D",
+        "teaser": null
+      },{
+        "title": "Google Photos Metadata 😗😙😚",
+        "excerpt":"My cousin Anton, in Moscow, and I making a cross-continental photo album. We have started scanning some old photos so that we can preserve the memory of our ancestors for your generation. We have all the latest scanning technology that black market offers. And we have managed to acquire all...","categories": ["blog"],
+        "tags": ["google-photos","metadata","exif"],
+        "url": "https://maxbarrass.com/blog/2020/05/21/google-photos-metadata%F0%9F%98%97%F0%9F%98%99%F0%9F%98%9A",
         "teaser": null
       },{
         "title": "Ascii Table",
