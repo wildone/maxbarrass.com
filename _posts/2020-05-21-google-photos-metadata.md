@@ -14,7 +14,7 @@ redirect_from:
   -  /blog/2020/05/21/google-photos-metadata
 ---
 
-My cousin Anton, in Moscow, and I making a cross-continental photo album. We have started scanning some old photos so that we can preserve the memory of our ancestors for your generation.
+My cousin Anton, in Moscow, and I making a cross-continental photo album. We have started scanning some old photos so that we can preserve the memory of our ancestors for generation.
 
 We have all the latest scanning technology that black market offers. And we have managed to acquire all the photos we need to scan. Now the question is, how do we search for codes and text content that we want to preserve with the photos.
 
