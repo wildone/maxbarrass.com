@@ -108,7 +108,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Google Photos Metadata 😗😙😚",
-        "excerpt":"My cousin Anton, in Moscow, and I making a cross-continental photo album. We have started scanning some old photos so that we can preserve the memory of our ancestors for your generation. We have all the latest scanning technology that black market offers. And we have managed to acquire all...","categories": ["blog"],
+        "excerpt":"My cousin Anton, in Moscow, and I making a cross-continental photo album. We have started scanning some old photos so that we can preserve the memory of our ancestors for generation. We have all the latest scanning technology that black market offers. And we have managed to acquire all the...","categories": ["blog"],
         "tags": ["google-photos","metadata","exif"],
         "url": "https://maxbarrass.com/blog/2020/05/21/google-photos-metadata%F0%9F%98%97%F0%9F%98%99%F0%9F%98%9A",
         "teaser": null
