@@ -2,7 +2,7 @@
 layout: single
 permalink: /blog/2015/06/01/aem-capability-matrix
 author: max
-title:  "Life"
+title:  "AEM Capability Matrix"
 date:   2015-06-01 00:00:00 +1100
 categories:
   - blog
