@@ -20,19 +20,19 @@ We have all the latest scanning technology that black market offers. And we have
 
 Well after a round of googling, it's apparent that this information needs to be purchased from your favourite neighbourhood black market. After that, it turns out that, just setting properties on the file using your favourite windows file properties box, you can update file metadata. 
 
-![Adobe SSO Login Page](/assets/images/posts/google-photots-metadata/FileProperties.png)
+![File Properties](/assets/images/posts/google-photots-metadata/FileProperties.png)
 
 When you upload the photo back to google drive, the only file property that will appear in Google is the Title property. 
 
-![Adobe SSO Login Page](/assets/images/posts/google-photots-metadata/file-with-properties-in-google-photos.jpg)
+![File with properties in google photos](/assets/images/posts/google-photots-metadata/file-with-properties-in-google-photos.jpg)
 
 For us, this will be enough to smuggle additional information with the image. Here you can checkout the metadata on this image.
 
-![Adobe SSO Login Page](/assets/images/posts/google-photots-metadata/cousin-anton-smiling.jpg)
+![Cousin anton smiling](/assets/images/posts/google-photots-metadata/cousin-anton-smiling.jpg)
 
 Once you have done this, you can do a search to test your handy work. 
 
-![Adobe SSO Login Page](/assets/images/posts/google-photots-metadata/search-for-file-with-properties-in-google-photos.jpg)
+![Search for file with properties in google photos](/assets/images/posts/google-photots-metadata/search-for-file-with-properties-in-google-photos.jpg)
 
 Hope this will help you with your family albums or whatever you want it to call it.
 
