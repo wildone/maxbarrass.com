@@ -20,7 +20,7 @@ jobs:
       - name: build
         run: |
           bundle install
-          bundle exec jekyll --trace build
+          bundle exec jekyll build --trace
           bundle exec htmlproofer --trace --check-html --internal-domains localhost:4000 --assume-extension --disable-external --url-ignore "/#.*/" --file-ignore /tools/ _site
       - name: deploy
         uses: peaceiris/actions-gh-pages@v2.5.0
