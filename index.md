@@ -12,6 +12,12 @@ header:
 excerpt: 'My blog about things of interest...'
 feature_row:
   - image_path: /assets/images/cards/aem6.5-1280x768.jpg
+    alt: "Governance Foundation"
+    title: "Governance Foundation"
+    excerpt: "Governance community I am contributing to"
+    url: "https://governance.foundation"
+    btn_label: "View"
+  - image_path: /assets/images/cards/aem6.5-1280x768.jpg
     alt: "AEM.Design"
     title: "AEM.Design"
     excerpt: "AEM community I am contributing to"
@@ -71,7 +77,7 @@ feature_row:
     btn_label: "Open"
 
 intro:
-  - excerpt: '[<img src="/assets/images/brave/cropped-brave_appicon_release-270x270.png" alt="Download Brave and Send me a Tip" style="background-size: contain; width: 32px; height: 32px;"/> Download Brave and Send us a Tip!](https://brave.com/aem741) <br> Get notified when I add new stuff &nbsp; [<i class="fab fa-twitter"></i> @maxbarrass](https://twitter.com/maxbarrass){: .btn .btn--twitter}'
+  - excerpt: '[<img src="/assets/images/brave/cropped-brave_appicon_release-270x270.png" alt="Download Brave and Send me a Tip" style="background-size: contain; width: 32px; height: 32px;"/> Download Brave and Send us a Tip!](https://brave.com/max035) <br> Get notified when I add new stuff &nbsp; [<i class="fab fa-twitter"></i> @maxbarrass](https://twitter.com/maxbarrass){: .btn .btn--twitter}'
 ---
 
 
