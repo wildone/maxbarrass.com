@@ -415,11 +415,11 @@
                 <p>To make VC6 work in Thinstall environment makesure you change all installation paths to a path that does not contain spaces, example:</p>
 
 <p>default path is:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>c:\program files\microsoft visual studio
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>c:\program files\microsoft visual studio
 </code></pre></div></div>
 
 <p>isntead use:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>c:\ms\mvs\
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>c:\ms\mvs\
 </code></pre></div></div>
 
 <p>if you dont do this you will get errors when compiling, errors such as:</p>
@@ -428,9 +428,9 @@
   <li>error spawning VcSpawn exe</li>
 </ul>
 
-<p>Also dont forget to set up the path entries, here is the <code class="highlighter-rouge">HKEY_LOCAL_MACHINE.txt</code> entry if you are missing it:</p>
+<p>Also dont forget to set up the path entries, here is the <code class="language-plaintext highlighter-rouge">HKEY_LOCAL_MACHINE.txt</code> entry if you are missing it:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>isolation_writecopy HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment Value=MSVCDir REG_SZ~C:\MS\MVS\VC98#00 Value=MSDevDir REG_SZ~C:\MS\MVS\Common\msdev98#00 Value=INCLUDE REG_SZ~C:\MS\MVS\VC98\ATL\INCLUDE;C:\MS\MVS\VC98\INCLUDE;C:\MS\MVS\VC98\MFC\INCLUDE;#00 Value=LIB REG_SZ~C:\MS\MVS\VC98\LIB;C:\MS\MVS\VC98\MFC\LIB;#00 Value=VirtualPath REG_SZ~C:\MS\MVS\Common\msdev98\BIN;C:\MS\MVS\VC98\BIN;C:\MS\MVS\Common\TOOLS;C:\MS\MVS\Common\TOOLS\WINNT;#25windir#25\SYSTEM;#25PATH#25#00
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>isolation_writecopy HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment Value=MSVCDir REG_SZ~C:\MS\MVS\VC98#00 Value=MSDevDir REG_SZ~C:\MS\MVS\Common\msdev98#00 Value=INCLUDE REG_SZ~C:\MS\MVS\VC98\ATL\INCLUDE;C:\MS\MVS\VC98\INCLUDE;C:\MS\MVS\VC98\MFC\INCLUDE;#00 Value=LIB REG_SZ~C:\MS\MVS\VC98\LIB;C:\MS\MVS\VC98\MFC\LIB;#00 Value=VirtualPath REG_SZ~C:\MS\MVS\Common\msdev98\BIN;C:\MS\MVS\VC98\BIN;C:\MS\MVS\Common\TOOLS;C:\MS\MVS\Common\TOOLS\WINNT;#25windir#25\SYSTEM;#25PATH#25#00
 </code></pre></div></div>
 
 <p>In addition place the MFC42.dll and MSVCRT.dll into %SystemSystem% directory, this will work for XP, you can find them DLL’s in windows\system32 dir. If you want to make VC6 work through thininstall on a Windows 2003 box, copy the respective DLL’s from the Windows 2003, they should be a newer version. Same goes for Windows 2008.</p>
