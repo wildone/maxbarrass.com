@@ -27,24 +27,22 @@ var enumEncodeType = {
     HexDecode: 7,
     BaseChange: 8,
     Base64Encode: 9,
-    Base64Decode: 10
-}
-
-
-
-
+    Base64Decode: 10,
+    jsonStringify: 11,
+    jsonParse: 12
+};
 
 var enumTextFormatType = {
     asXMLText:0,
     asJsonText:1
-}
+};
 
 var enumValueType = {
     Value: 0,
     Text: 1,
     InnerText: 2,
     InnerHTML: 3
-}
+};
 
 var enumRadixType = {
     2: "Binary",
@@ -78,7 +76,7 @@ var enumRadixType = {
     30: "30",
     31: "31",
     32: "32"
-}
+};
 
 
 
@@ -166,6 +164,14 @@ function parseBool(boolText) {
 function doEncode(encodeType,recordHistory) {
     var strLabel = "";
     switch (encodeType) {
+        case enumEncodeType.jsonStringify:
+            strLabel = "JSON Stringify";
+            objTo.value = JSON.stringify(objFrom.value);
+            break;
+        case enumEncodeType.jsonParse:
+            strLabel = "JSON Parse";
+            objTo.value = JSON.parse(objFrom.value);
+            break;
         case enumEncodeType.plainEscape:
             strLabel = "Escape";
             objTo.value = escape(objFrom.value);
