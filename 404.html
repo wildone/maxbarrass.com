@@ -3,40 +3,30 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin SEO -->
-
-
-
-
-
-
-
-
-
-<title>Page Not Found - Max Barrass</title>
-
-
-
-
+<!-- begin _includes/seo.html --><title>Page Not Found - Max Barrass</title>
 <meta name="description" content="Page not found. Your pixels are in another canvas.">
 
 
 
-
+<meta property="og:type" content="website">
 <meta property="og:locale" content="en">
 <meta property="og:site_name" content="Max Barrass">
 <meta property="og:title" content="Page Not Found">
-
-
-  <link rel="canonical" href="https://maxbarrass.com/404.html">
-  <meta property="og:url" content="https://maxbarrass.com/404.html">
-
+<meta property="og:url" content="https://maxbarrass.com/404.html">
 
 
   <meta property="og:description" content="Page not found. Your pixels are in another canvas.">
 
 
 
+  <meta property="og:image" content="https://maxbarrass.com/assets/images/site-logo.png">
+
+
+
+
+
+
+
 
 
   
@@ -44,37 +34,21 @@
   
 
 
-
-  <meta property="og:image" content="/assets/images/site-logo.png">
-
+<link rel="canonical" href="https://maxbarrass.com/404.html">
 
 
 
 
-
-
-
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "Organization",
-      "url": "https://maxbarrass.com",
-      "logo": "/assets/images/site-logo.png"
-    }
-  </script>
-
-
-
-  <script type="application/ld+json">
-    {
-      "@context" : "http://schema.org",
-      "@type" : "Person",
-      "name" : "Max Barrass",
-      "url" : "https://maxbarrass.com",
-      "sameAs" : null
-    }
-  </script>
-
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Max Barrass",
+      "url": "https://maxbarrass.com/"
+    
+  }
+</script>
 
 
   <meta name="google-site-verification" content="UuKsKonXwFAcpjarBr3SIx6p8QGmuP_VHN8uMUfIgBw" />
@@ -82,18 +56,13 @@
 
 
 
-<!-- end SEO -->
 
+<!-- end _includes/seo.html -->
 
-
-
-<meta name="author" content="">
 
 <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Max Barrass Feed">
 
-<!-- http://t.co/dKP3o1e -->
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
+<!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script>
@@ -102,56 +71,42 @@
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
 
-<meta http-equiv="cleartype" content="on">
-
-
-<script>
-    function wrap(el, wrapper) {
-        el.parentNode.insertBefore(wrapper, el);
-        wrapper.appendChild(el);
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
     }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
 
-    document.addEventListener("DOMContentLoaded", function() {
-        var elements = document.querySelectorAll(".page__content p img");
-        elements.forEach(element => {
-            var url = element.getAttribute('src');
-            var alt = element.getAttribute('alt');
-            if(url) {
-                var a = document.createElement('a');
-                a.setAttribute("href",url);
-                a.setAttribute("data-lightbox",'');
-                a.setAttribute("title",alt);
-                wrap(element, a);
-            }
-        });
 
-    });
-</script>
+  
+    <script src="/assets/scripts/lightbox.js"></script>
+  
+
 
     <!-- start custom head snippets -->
 
 <!-- insert favicons. use http://realfavicongenerator.net/ -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet">
 
-<link rel="apple-touch-icon" sizes="57x57" href="/assets/images/icons/apple-touch-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/assets/images/icons/apple-touch-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/assets/images/icons/apple-touch-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/assets/images/icons/apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/assets/images/icons/apple-touch-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/assets/images/icons/apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/assets/images/icons/apple-touch-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/assets/images/icons/apple-touch-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon-180x180.png">
-<link rel="icon" type="image/png" href="/assets/images/icons/favicon-32x32.png" sizes="32x32">
-<link rel="icon" type="image/png" href="/assets/images/icons/android-chrome-192x192.png" sizes="192x192">
-<link rel="icon" type="image/png" href="/assets/images/icons/favicon-16x16.png" sizes="16x16">
-<link rel="manifest" href="/assets/images/icons/manifest.json">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/icons/site.webmanifest">
 <link rel="mask-icon" href="/assets/images/icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/images/icons/favicon.ico">
 <meta name="msapplication-TileColor" content="#da532c">
-<meta name="msapplication-TileImage" content="/assets/images/icons/mstile-144x144.png">
+<meta name="msapplication-config" content="/assets/images/icons/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
-
 
 
 <style>
@@ -172,13 +127,15 @@
 </style>
 
 <!-- end custom head snippets -->
+
     <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-9B95B');</script>
 <!-- End Google Tag Manager -->
+
   </head>
 
   <body class="layout--single">
@@ -187,61 +144,91 @@
                   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
     <!--[if lt IE 9]>
 <div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
 <![endif]-->
 
-
     
 
 <div class="masthead">
-    <div class="masthead__inner-wrap">
-        <div class="masthead__menu">
-            <nav id="site-nav" class="greedy-nav">
-                
-                <a class="site-title" href="/">
-                    Max Barrass
-                    
-                </a>
-                <ul class="visible-links"><li class="masthead__menu-item">
-                        <a target="" href="/">Home</a>
-                    </li><li class="masthead__menu-item">
-                        <a target="" href="/tools/">Tools</a>
-                    </li><li class="masthead__menu-item">
-                        <a target="" href="/blog/">Blog</a>
-                    </li><li class="masthead__menu-item">
-                        <a target="" href="/about/">About</a>
-                    </li><li class="masthead__menu-item">
-                        <a target="_blank" href="https://github.com/wildone/maxbarrass.com">GitHub</a>
-                    </li><li class="masthead__menu-item">
-                        <a target="" href="/search/">Search</a>
-                    </li></ul>
-                
-                <button class="greedy-nav__toggle hidden" type="button">
-                    <span class="visually-hidden">Toggle Menu</span>
-                    <div class="navicon"></div>
-                </button>
-                <ul class="hidden-links hidden"></ul>
-            </nav>
-        </div>
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-logo" href="/"><img src="/assets/images/site-logo.png" alt="site logo"></a>
+        
+        <a class="site-title" href="/"><span class="title">Max Barrass</span>
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a target="" href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a target="" href="/tools/">Tools</a>
+            </li><li class="masthead__menu-item">
+              <a target="" href="/blog/">Blog</a>
+            </li><li class="masthead__menu-item">
+              <a target="" href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a target="_blank" href="https://github.com/wildone/maxbarrass.com">GitHub</a>
+            </li><li class="masthead__menu-item">
+              <a target="" href="/search/">Search</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
     </div>
+  </div>
 </div>
 
-    
+<style>
+#site-nav .site-title {
+  width: 150px;
+  line-height: 1em;
+  border-left: 4px rgb(4,9,21) solid;
+  padding-left: .5em;
+  font-style: italic;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+#site-nav .site-title .site-subtitle {
+  display: none;
+}
+</style>
+  
+
+
+    <div class="initial-content">
+      
 
 
 
 <div id="main" role="main">
-    
+  
   <div class="sidebar sticky">
-    
+  
 
-<div itemscope itemtype="http://schema.org/Person">
+
+<div itemscope itemtype="https://schema.org/Person">
 
   
 
   <div class="author__content">
-    <h3 class="author__name" itemprop="name"></h3>
+    
+      <h3 class="author__name" itemprop="name"></h3>
+    
     
   </div>
 
@@ -251,70 +238,78 @@
       
 
       
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-        <li>
-          <a href="https://github.com/https://github.com/wildone" itemprop="sameAs">
-            <i class="fab fa-github" aria-hidden="true"></i> GitHub
-          </a>
-        </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
         
       
-      
+
       
 
-      <!--
-  <li>
-    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
-      <i class="fa fa-fw" aria-hidden="true"></i> Custom Social Profile Link
-    </a>
-  </li>
--->
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+
+
+
+
+
+
+
     </ul>
   </div>
 </div>
@@ -325,25 +320,26 @@
 
 
 
-    <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-        <meta itemprop="headline" content="Page Not Found">
-        <meta itemprop="description" content="Page not found. Your pixels are in another canvas.">
-        
-        
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Page Not Found">
+    <meta itemprop="description" content="Page not found. Your pixels are in another canvas.">
+    
+    
 
-        <div class="page__inner-wrap">
-            
-            <header>
-
-
-                <h1 class="page__title" itemprop="headline">Page Not Found
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Page Not Found
 </h1>
-                
-            </header>
-            
+          
 
-            <section class="page__content" itemprop="text">
-                <p>Sorry, but the page you were trying to view does not exist — perhaps you can try searching for it below.</p>
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>Sorry, but the page you were trying to view does not exist — perhaps you can try searching for it below.</p>
 
 <script type="text/javascript">
   var GOOG_FIXURL_LANG = 'en';
@@ -354,18 +350,17 @@
 </script>
 
 
-                
-            </section>
-
-            <style>
-                .page__content_adspace_bottom {
-                    height: 200px;
-                    display: inline-block;
-                    width: 100%;
-                }
-            </style>
-            <section class="page__content_adspace_bottom">
-            
+        
+      </section>
+      <style>
+        .page__content_adspace_bottom {
+          height: 200px;
+          display: inline-block;
+          width: 100%;
+        }
+      </style>
+      <section class="page__content_adspace_bottom">
+        
 <div align="center" style="margin: 1em 0;">
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <ins class="adsbygoogle"
@@ -379,38 +374,33 @@
     </script>
 </div>
 
-            </section>
+      </section>
+      <footer class="page__meta">
+        
+        
 
-            <footer class="page__meta">
-                
-                
-
-
-                
-            </footer>
-
-            
-
-            
-        </div>
 
         
-        <div class="page__comments">
+
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
   
   
-      <h4 class="page__comments-title">Leave a Comment</h4>
-      <section id="disqus_thread"></section>
-    
 </div>
 
-        
-    </article>
+    </div>
 
     
-    
-</div>
 
-    <div class="page__footer">
+    <div id="footer" class="page__footer">
       <footer>
         <!-- start custom footer snippets -->
 
@@ -421,6 +411,20 @@
       <li><strong>Follow:</strong></li>
     
 
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
 
     <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
@@ -434,7 +438,6 @@
 
     
   <script src="/assets/js/main.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/js/fontawesome.min.js"></script>
 
 
 
@@ -459,6 +462,7 @@
 
 
   
+
 
 
 
