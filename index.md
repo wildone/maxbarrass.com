@@ -11,17 +11,23 @@ header:
   caption:
 excerpt: 'My blog about things of interest...'
 feature_row:
-  - image_path: /assets/images/cards/aem6.5-1280x768.jpg
+  - image_path: /assets/images/cards/governance.foundation.png
     alt: "Governance Foundation"
     title: "Governance Foundation"
     excerpt: "Governance community I am contributing to"
     url: "https://governance.foundation"
     btn_label: "View"
-  - image_path: /assets/images/cards/aem6.5-1280x768.jpg
+  - image_path: /assets/images/cards/aem.design.png
     alt: "AEM.Design"
     title: "AEM.Design"
     excerpt: "AEM community I am contributing to"
     url: "https://aem.design"
+    btn_label: "View"
+  - image_path: /assets/images/cards/sia.png
+    alt: "Syntelligent.org"
+    title: "Syntelligent.org"
+    excerpt: "Synthetic Intelligence Association"
+    url: "https://syntelligent.org/"
     btn_label: "View"
   - image_path: /assets/images/cards/mm-free-feature.png
     alt: "See some of my handy tools"
