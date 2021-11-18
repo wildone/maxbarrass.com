@@ -73,8 +73,18 @@ yandex_site_verification :
 naver_site_verification  :
 
 logo: "/assets/images/icons/android-chrome-384x384.png"
+
 head_scripts:
   - /assets/scripts/lightbox.js
+  - /assets/scripts/code-copy.js
+  - https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js
+
+head_styles:
+  - https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css
+  - /assets/styles/head.css
+  - /assets/styles/tiny-slider.css
+  - /assets/styles/code-copy.css
+  - https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css
 
 # Social Sharing
 twitter:
@@ -83,13 +93,17 @@ facebook:
   username               :
   app_id                 :
   publisher              :
+
 og_image                 : "/assets/images/background/keyboard.jpg" # Open Graph/Twitter default site image
+og_image_override        : true # add og_image to all poges
+
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
   type                   : # Person or Organization (defaults to Person)
   name                   : # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
+    - https://www.linkedin.com/in/maxbarrass/
 
 # Analytics
 analytics:
@@ -99,7 +113,6 @@ analytics:
     anonymize_ip         : # true, false (default)
     gtm_id               : GTM-9B95B
     gcse_id              : 73a39e4f2d03e56fb   #https://cse.google.com/cse/all
-
 
 advertising:
   show                   : true
@@ -186,8 +199,6 @@ exclude:
   - Rakefile
   - README
   - tmp
-  - /docs # ignore Minimal Mistakes /docs
-  - /test # ignore Minimal Mistakes /test
 keep_files:
   - .git
   - .svn
@@ -245,6 +256,8 @@ plugins:
   - jemoji
   - jekyll-redirect-from
   - jekyll-include-cache
+  - jekyll-last-modified-at
+  - jekyll-archives
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -255,6 +268,7 @@ whitelist:
   - jemoji
   - jekyll-redirect-from
   - jekyll-include-cache
+  - jekyll-last-modified-at
 
 
 # Archives
@@ -268,22 +282,22 @@ whitelist:
 #  - <base_path>/categories/my-awesome-category/index.html ~> path: /categories/
 #  - <base_path>/my-awesome-category/index.html ~> path: /
 category_archive:
-  type: liquid
+  type: jekyll-archives
   path: /categories/
 tag_archive:
-  type: liquid
+  type: jekyll-archives
   path: /tags/
 # https://github.com/jekyll/jekyll-archives
-# jekyll-archives:
-#   enabled:
-#     - categories
-#     - tags
-#   layouts:
-#     category: archive-taxonomy
-#     tag: archive-taxonomy
-#   permalinks:
-#     category: /categories/:name/
-#     tag: /tags/:name/
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive-taxonomy
+    tag: archive-taxonomy
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
 
 
 # HTML Compression
@@ -296,6 +310,16 @@ compress_html:
 
 # Defaults
 defaults:
+  - scope:
+      path: ""
+      type: tag
+    values:
+      author_profile: true
+  - scope:
+      path: ""
+      type: category
+    values:
+      comments: false
   # _posts
   - scope:
       path: ""

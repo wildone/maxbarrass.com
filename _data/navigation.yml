@@ -11,8 +11,6 @@ main:
   - title: "GitHub"
     target: _blank
     url: https://github.com/wildone/maxbarrass.com
-  - title: "Search"
-    url: /search/
 
 #tools links
 tools:
