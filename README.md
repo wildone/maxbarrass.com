@@ -61,6 +61,8 @@ bundle exec jekyll serve --host 0.0.0.0 --livereload
 
 Config is located in `_data/advertising.yml` html should not need to be changed and located in `_includes/adds/adsense.html`
 
+Admin at https://www.google.com/adsense/login/
+
 # Project Structure Description
 
 Following is the description of important sections in the project. 
