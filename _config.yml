@@ -39,6 +39,8 @@ comments:
     appid                :
     num_posts            : # 5 (default)
     colorscheme          : # "light" (default), "dark"
+    nonce                : #
+    href                 : #
   utterances:
     theme                : # "github-light" (default), "github-dark"
     issue_term           : # "pathname" (default)
@@ -48,35 +50,20 @@ comments:
 reCaptcha:
   siteKey                :
   secret                 :
-staticman:
-  allowedFields          : ['name', 'email', 'url', 'message']
-  branch                 : "master"
-  commitMessage          : "New comment."
-  filename               : comment-{@timestamp}
-  format                 : "yml"
-  moderation             : true
-  path                   : "docs/_data/comments/{options.slug}" # "/_data/comments/{options.slug}" (default)
-  requiredFields         : ['name', 'email', 'message']
-  transforms:
-    email                : "md5"
-  generatedFields:
-    date:
-      type               : "date"
-      options:
-        format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
 atom_feed:
   path                   : # blank (default) uses feed.xml
-search                   : # true, false (default)
-search_full_content      : # true, false (default)
-search_provider          : # lunr (default), algolia, google
+  hide                   : # true, false (default)
+search                   : true # true, false (default)
+search_full_content      : true # true, false (default)
+search_provider          : google # lunr (default), algolia, google
 algolia:
   application_id         : # YOUR_APPLICATION_ID
   index_name             : # YOUR_INDEX_NAME
   search_only_api_key    : # YOUR_SEARCH_ONLY_API_KEY
   powered_by             : # true (default), false
 google:
-  search_engine_id       : # YOUR_SEARCH_ENGINE_ID
-  instant_search         : # false (default), true
+  search_engine_id       : 73a39e4f2d03e56fb # YOUR_SEARCH_ENGINE_ID
+  instant_search         : true # false (default), true
 
 # SEO Related
 google_site_verification : "UuKsKonXwFAcpjarBr3SIx6p8QGmuP_VHN8uMUfIgBw"
@@ -109,9 +96,9 @@ analytics:
   provider               : google-universal # false (default), "google", "google-universal", "custom"
   google:
     tracking_id          : UA-11857068-1
-    gtm_id               : GTM-9B95B
     anonymize_ip         : # true, false (default)
-    gcse_id              : b2fd5012bfe49267e
+    gtm_id               : GTM-9B95B
+    gcse_id              : 73a39e4f2d03e56fb   #https://cse.google.com/cse/all
 
 
 advertising:
@@ -238,7 +225,7 @@ sass:
 permalink: /:categories/:title/
 #paginate: 5 # amount of posts to show
 #paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Australia/Melbourne # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 pagination:
   enabled: true
