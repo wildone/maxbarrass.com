@@ -76,3 +76,7 @@ Additional Notes
 
 * all items with `_` (underscore) are essentially hidden.
 * to add new sections and items to navigation `_config.yml` and `_data/navigation.yml` should be updated
+
+## FavIcons
+
+Generate new favicons at [https://realfavicongenerator.net/](https://realfavicongenerator.net/)
