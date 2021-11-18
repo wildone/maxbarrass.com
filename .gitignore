@@ -6,3 +6,4 @@ _site
 Gemfile.lock
 .ssl/
 *.iml
+Thumbs.db
