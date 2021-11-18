@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>How to pair iPhone and Blueant ST3… - Max Barrass</title>
-<meta name="description" content="If you are having trouble pairing your iPhone4 with Blueant ST3, try to turn off Blueant by holding down the green button, once off press and hold the green button to reset to factory a settings. Then use iPhone Bluetooth detected devices to pair both devices.">
+<!-- begin _includes/seo.html --><title>Windows 11 installation has failed - Max Barrass</title>
+<meta name="description" content="If you have been attempting to upgrade to Windows 11 and having issues then read on!">
 
 
   <meta name="author" content="Max Barrass">
@@ -16,32 +16,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en">
 <meta property="og:site_name" content="Max Barrass">
-<meta property="og:title" content="How to pair iPhone and Blueant ST3…">
-<meta property="og:url" content="https://maxbarrass.com/blog/2010/10/04/how-to-pair-iphone4-and-blueant-st3">
+<meta property="og:title" content="Windows 11 installation has failed">
+<meta property="og:url" content="https://maxbarrass.com/blog/2021/11/18/windows-11-installation-has-failed%F0%9F%98%AD%F0%9F%92%AA%F0%9F%98%98">
 
 
-  <meta property="og:description" content="If you are having trouble pairing your iPhone4 with Blueant ST3, try to turn off Blueant by holding down the green button, once off press and hold the green button to reset to factory a settings. Then use iPhone Bluetooth detected devices to pair both devices.">
-
-
-
-  <meta property="og:image" content="https://maxbarrass.com/assets/images/site-logo.png">
+  <meta property="og:description" content="If you have been attempting to upgrade to Windows 11 and having issues then read on!">
 
 
 
-
-
-  <meta property="article:published_time" content="2010-10-03T13:00:00+00:00">
+  <meta property="og:image" content="https://maxbarrass.com/assets/images/posts/windows11upgrade/windows-11-installation-has-failed-banner.png">
 
 
 
 
 
-  
+  <meta property="article:published_time" content="2021-11-17T13:00:00+00:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="https://maxbarrass.com/blog/2010/10/04/how-to-pair-iphone4-and-blueant-st3">
+
+<link rel="canonical" href="https://maxbarrass.com/blog/2021/11/18/windows-11-installation-has-failed%F0%9F%98%AD%F0%9F%92%AA%F0%9F%98%98">
 
 
 
@@ -218,6 +218,58 @@
 
     <div class="initial-content">
       
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay"
+  style=" background-image: url('/assets/images/posts/windows11upgrade/windows-11-installation-has-failed-banner.png');"
+>
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          Windows 11 installation has failed
+
+        
+      </h1>
+      
+        <p class="page__lead">If you have been attempting to upgrade to Windows 11 and having issues then read on!
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+      
+      
+    </div>
+  
+  
+</div>
+
+
 
 
 
@@ -377,43 +429,54 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="How to pair iPhone and Blueant ST3…">
-    <meta itemprop="description" content="If you are having trouble pairing your iPhone4 with Blueant ST3, try to turn off Blueant by holding down the green button, once off press and hold the green button to reset to factory a settings. Then use iPhone Bluetooth detected devices to pair both devices.">
-    <meta itemprop="datePublished" content="2010-10-03T13:00:00+00:00">
+    <meta itemprop="headline" content="Windows 11 installation has failed">
+    <meta itemprop="description" content="If you have been attempting to upgrade to Windows 11 and having issues then read on!">
+    <meta itemprop="datePublished" content="2021-11-17T13:00:00+00:00">
     
 
     <div class="page__inner-wrap">
       
-        <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">How to pair iPhone and Blueant ST3…
-</h1>
-          
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-        </header>
-      
 
       <section class="page__content" itemprop="text">
         
-        <p>If you are having trouble pairing your iPhone4 with Blueant ST3, try to turn off Blueant by holding down the green button, once off press and hold the green button to reset to factory a settings. Then use iPhone Bluetooth detected devices to pair both devices.</p>
+        <p>If you have been attempting to upgrade to Windows 11 and having issues then read on!</p>
+
+<p>It would be amazing if everyone would go out and buy the latest PC’s with the latest TPM and latest CPU and install windows 11 on it following the supported pathway. Well, in reality, most people will update their existing Windows 10 to Windows 11; that’s just logical, right?</p>
+
+<p>So this is my case; I have updated my registry to allow installation with unsupported CPU as follows:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[HKEY_LOCAL_MACHINE\SYSTEM\Setup\MoSetup]
+"AllowUpgradesWithUnsupportedTPMOrCPU"=dword:00000001
+</code></pre></div></div>
+
+<p>Downloaded an ISO from <a href="https://www.microsoft.com/software-download/windows11">Micorosfts Download Windows 11</a> and created a USB using <a href="https://rufus.ie/en/">Rufus</a>. Then I started setup from the USB and waited patiently for the 100% on this screen:</p>
+
+<p><img src="/assets/images/posts/windows11upgrade/windows-11-setup-progress.png" alt="Windows 11 setup progress" /></p>
+
+<p>Not surprisingly, this screen closed and just gave me an good-old self explanatory error message:</p>
+
+<p><img src="/assets/images/posts/windows11upgrade/windows-11-installation-has-failed.png" alt="Windows 11 installation has failed" /></p>
+
+<p>Typical as it is, googling will not help; no one knows why it is failing on my PC.</p>
+
+<p>In this case, Uncle Bill is relying on you to fix your problem, as he has already given you all the tools and give you all the bread crumbs to follow.</p>
+
+<p>So let’s see if you can find your issue and fix it.</p>
+
+<ul>
+  <li>open Event Viewer</li>
+  <li>open Application Log</li>
+  <li>start at the top and look for information entry for the upgrade process failure (yeah, breadcrumbs)</li>
+  <li>when you find the log entry, it should list a bunch of log files, open the top Setup log file</li>
+  <li>scroll to the bottom of the setup log file and scroll up slowly, looking for ERROR lines; you can also search for the <code class="language-plaintext highlighter-rouge">aborting</code> keyword from the bottom up</li>
+  <li>now you should be finding some real breadcrumbs</li>
+</ul>
+
+<p>The log should tell you why it aborted the install. The reasons for this are specific to your PC, so you would need to do some googling to fix them.</p>
+
+<p>My setup aborted because it detected a duplicate account without a profile, so I deleted that in the registry, restarted and ran the install successfully. You should be able to google all the issues that will appear in the log and fix them one by one. I feel that the upgrade process is probably the same as the old process, so it’s going to have similar issues and existing solutions.</p>
+
+<p>I hope this will help; leave a comment if it did, or leave your errors for others to know about.</p>
 
         
       </section>
@@ -452,9 +515,11 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#blueant-st3" class="page__taxonomy-item" rel="tag">blueant-st3</a><span class="sep">, </span>
+      <a href="/tags/#failed" class="page__taxonomy-item" rel="tag">failed</a><span class="sep">, </span>
     
-      <a href="/tags/#iphone" class="page__taxonomy-item" rel="tag">iphone</a>
+      <a href="/tags/#setup" class="page__taxonomy-item" rel="tag">setup</a><span class="sep">, </span>
+    
+      <a href="/tags/#windows-11" class="page__taxonomy-item" rel="tag">windows-11</a>
     
     </span>
   </p>
@@ -479,7 +544,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2010-10-03T13:00:00+00:00">October 3, 2010</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-11-17T13:00:00+00:00">November 17, 2021</time></p>
 
 
       </footer>
@@ -489,23 +554,22 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=How+to+pair+iPhone+and+Blueant+ST3...%20https%3A%2F%2Fmaxbarrass.com%2Fblog%2F2010%2F10%2F04%2Fhow-to-pair-iphone4-and-blueant-st3" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Windows+11+installation+has+failed%20https%3A%2F%2Fmaxbarrass.com%2Fblog%2F2021%2F11%2F18%2Fwindows-11-installation-has-failed%25F0%259F%2598%25AD%25F0%259F%2592%25AA%25F0%259F%2598%2598" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmaxbarrass.com%2Fblog%2F2010%2F10%2F04%2Fhow-to-pair-iphone4-and-blueant-st3" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmaxbarrass.com%2Fblog%2F2021%2F11%2F18%2Fwindows-11-installation-has-failed%25F0%259F%2598%25AD%25F0%259F%2592%25AA%25F0%259F%2598%2598" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmaxbarrass.com%2Fblog%2F2010%2F10%2F04%2Fhow-to-pair-iphone4-and-blueant-st3" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmaxbarrass.com%2Fblog%2F2021%2F11%2F18%2Fwindows-11-installation-has-failed%25F0%259F%2598%25AD%25F0%259F%2592%25AA%25F0%259F%2598%2598" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/blog/2010/09/15/training-for-your-first-marathon" class="pagination--pager" title="Training for your first marathon.
+      <a href="/blog/2020/05/21/google-photos-metadata%F0%9F%98%97%F0%9F%98%99%F0%9F%98%9A" class="pagination--pager" title="Google Photos Metadata 😗😙😚
 ">Previous</a>
     
     
-      <a href="/blog/2010/11/24/how-to-manually-update-iphone-4-from" class="pagination--pager" title="How to manually update iPhone 4 from ipsw file?
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -519,46 +583,6 @@
     <div class="page__related">
       <h4 class="page__related-title">You May Also Enjoy</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/blog/2021/11/18/windows-11-installation-has-failed%F0%9F%98%AD%F0%9F%92%AA%F0%9F%98%98" rel="permalink">Windows 11 installation has failed
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          2 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">If you have been attempting to upgrade to Windows 11 and having issues then read on!
-</p>
-  </article>
-</div>
-
         
           
 
@@ -587,7 +611,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          1 minute read
+          less than 1 minute read
         
       </span>
     
@@ -679,6 +703,46 @@
 </div>
 
         
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/2015/06/01/aem-capability-matrix" rel="permalink">AEM Capability Matrix
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I always get asked does AEM has any components that come out of the box (OOTB)? What is the list of OOTB component?  Can I use them?
+</p>
+  </article>
+</div>
+
+        
       </div>
     </div>
   
@@ -739,8 +803,8 @@
     
   <script>
     var disqus_config = function () {
-      this.page.url = "https://maxbarrass.com/blog/2010/10/04/how-to-pair-iphone4-and-blueant-st3";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/blog/2010/10/04/how-to-pair-iphone4-and-blueant-st3"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "https://maxbarrass.com/blog/2021/11/18/windows-11-installation-has-failed%F0%9F%98%AD%F0%9F%92%AA%F0%9F%98%98";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/blog/2021/11/18/windows-11-installation-has-failed"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');

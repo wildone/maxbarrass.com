@@ -1,4 +1,41 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://maxbarrass.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://maxbarrass.com/" rel="alternate" type="text/html" /><updated>2020-10-04T13:41:11+00:00</updated><id>https://maxbarrass.com/feed.xml</id><title type="html">Max Barrass</title><subtitle>My Blog</subtitle><author><name>{&quot;name&quot;=&gt;nil, &quot;avatar&quot;=&gt;nil, &quot;bio&quot;=&gt;nil, &quot;location&quot;=&gt;nil, &quot;email&quot;=&gt;nil, &quot;links&quot;=&gt;[{&quot;label&quot;=&gt;&quot;Email&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-envelope-square&quot;}, {&quot;label&quot;=&gt;&quot;Website&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-link&quot;}, {&quot;label&quot;=&gt;&quot;Twitter&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-twitter-square&quot;}, {&quot;label&quot;=&gt;&quot;Facebook&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-facebook-square&quot;}, {&quot;label&quot;=&gt;&quot;GitHub&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-github&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-instagram&quot;}]}</name></author><entry><title type="html">Google Photos Metadata 😗😙😚</title><link href="https://maxbarrass.com/blog/2020/05/21/google-photos-metadata%F0%9F%98%97%F0%9F%98%99%F0%9F%98%9A" rel="alternate" type="text/html" title="Google Photos Metadata 😗😙😚" /><published>2020-05-20T13:00:00+00:00</published><updated>2020-05-20T13:00:00+00:00</updated><id>https://maxbarrass.com/blog/2020/05/21/google-photos-metadata</id><content type="html" xml:base="https://maxbarrass.com/blog/2020/05/21/google-photos-metadata%F0%9F%98%97%F0%9F%98%99%F0%9F%98%9A">&lt;p&gt;My cousin Anton, in Moscow, and I making a cross-continental photo album. We have started scanning some old photos so that we can preserve the memory of our ancestors for generations.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="https://maxbarrass.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://maxbarrass.com/" rel="alternate" type="text/html" /><updated>2021-11-18T12:28:00+00:00</updated><id>https://maxbarrass.com/feed.xml</id><title type="html">Max Barrass</title><subtitle>My Blog</subtitle><author><name>{&quot;name&quot;=&gt;nil, &quot;avatar&quot;=&gt;nil, &quot;bio&quot;=&gt;nil, &quot;location&quot;=&gt;nil, &quot;email&quot;=&gt;nil, &quot;links&quot;=&gt;[{&quot;label&quot;=&gt;&quot;Email&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-envelope-square&quot;}, {&quot;label&quot;=&gt;&quot;Website&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-link&quot;}, {&quot;label&quot;=&gt;&quot;Twitter&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-twitter-square&quot;}, {&quot;label&quot;=&gt;&quot;Facebook&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-facebook-square&quot;}, {&quot;label&quot;=&gt;&quot;GitHub&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-github&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-instagram&quot;}]}</name></author><entry><title type="html">Windows 11 installation has failed</title><link href="https://maxbarrass.com/blog/2021/11/18/windows-11-installation-has-failed%F0%9F%98%AD%F0%9F%92%AA%F0%9F%98%98" rel="alternate" type="text/html" title="Windows 11 installation has failed" /><published>2021-11-17T13:00:00+00:00</published><updated>2021-11-17T13:00:00+00:00</updated><id>https://maxbarrass.com/blog/2021/11/18/windows-11-installation-has-failed</id><content type="html" xml:base="https://maxbarrass.com/blog/2021/11/18/windows-11-installation-has-failed%F0%9F%98%AD%F0%9F%92%AA%F0%9F%98%98">&lt;p&gt;If you have been attempting to upgrade to Windows 11 and having issues then read on!&lt;/p&gt;
+
+&lt;p&gt;It would be amazing if everyone would go out and buy the latest PC’s with the latest TPM and latest CPU and install windows 11 on it following the supported pathway. Well, in reality, most people will update their existing Windows 10 to Windows 11; that’s just logical, right?&lt;/p&gt;
+
+&lt;p&gt;So this is my case; I have updated my registry to allow installation with unsupported CPU as follows:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[HKEY_LOCAL_MACHINE\SYSTEM\Setup\MoSetup]
+&quot;AllowUpgradesWithUnsupportedTPMOrCPU&quot;=dword:00000001
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Downloaded an ISO from &lt;a href=&quot;https://www.microsoft.com/software-download/windows11&quot;&gt;Micorosfts Download Windows 11&lt;/a&gt; and created a USB using &lt;a href=&quot;https://rufus.ie/en/&quot;&gt;Rufus&lt;/a&gt;. Then I started setup from the USB and waited patiently for the 100% on this screen:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/windows11upgrade/windows-11-setup-progress.png&quot; alt=&quot;Windows 11 setup progress&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Not surprisingly, this screen closed and just gave me an good-old self explanatory error message:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/windows11upgrade/windows-11-installation-has-failed.png&quot; alt=&quot;Windows 11 installation has failed&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Typical as it is, googling will not help; no one knows why it is failing on my PC.&lt;/p&gt;
+
+&lt;p&gt;In this case, Uncle Bill is relying on you to fix your problem, as he has already given you all the tools and give you all the bread crumbs to follow.&lt;/p&gt;
+
+&lt;p&gt;So let’s see if you can find your issue and fix it.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;open Event Viewer&lt;/li&gt;
+  &lt;li&gt;open Application Log&lt;/li&gt;
+  &lt;li&gt;start at the top and look for information entry for the upgrade process failure (yeah, breadcrumbs)&lt;/li&gt;
+  &lt;li&gt;when you find the log entry, it should list a bunch of log files, open the top Setup log file&lt;/li&gt;
+  &lt;li&gt;scroll to the bottom of the setup log file and scroll up slowly, looking for ERROR lines; you can also search for the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;aborting&lt;/code&gt; keyword from the bottom up&lt;/li&gt;
+  &lt;li&gt;now you should be finding some real breadcrumbs&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The log should tell you why it aborted the install. The reasons for this are specific to your PC, so you would need to do some googling to fix them.&lt;/p&gt;
+
+&lt;p&gt;My setup aborted because it detected a duplicate account without a profile, so I deleted that in the registry, restarted and ran the install successfully. You should be able to google all the issues that will appear in the log and fix them one by one. I feel that the upgrade process is probably the same as the old process, so it’s going to have similar issues and existing solutions.&lt;/p&gt;
+
+&lt;p&gt;I hope this will help; leave a comment if it did, or leave your errors for others to know about.&lt;/p&gt;</content><author><name>Max Barrass</name><email>me@maxbarrass.com</email><uri>http://maxbarrass.com</uri></author><category term="blog" /><category term="windows-11" /><category term="setup" /><category term="failed" /><summary type="html">If you have been attempting to upgrade to Windows 11 and having issues then read on!</summary></entry><entry><title type="html">Google Photos Metadata 😗😙😚</title><link href="https://maxbarrass.com/blog/2020/05/21/google-photos-metadata%F0%9F%98%97%F0%9F%98%99%F0%9F%98%9A" rel="alternate" type="text/html" title="Google Photos Metadata 😗😙😚" /><published>2020-05-20T13:00:00+00:00</published><updated>2020-05-20T13:00:00+00:00</updated><id>https://maxbarrass.com/blog/2020/05/21/google-photos-metadata</id><content type="html" xml:base="https://maxbarrass.com/blog/2020/05/21/google-photos-metadata%F0%9F%98%97%F0%9F%98%99%F0%9F%98%9A">&lt;p&gt;My cousin Anton, in Moscow, and I making a cross-continental photo album. We have started scanning some old photos so that we can preserve the memory of our ancestors for generations.&lt;/p&gt;
 
 &lt;p&gt;We have all the latest scanning technology that black market offers. And we have managed to acquire all the photos we need to scan. Now the question is, how do we search for codes and text content that we want to preserve with the photos.&lt;/p&gt;
 
@@ -442,43 +479,4 @@ Function IsItTrue() As Boolean
 End Function
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;glhf!&lt;/p&gt;</content><author><name>Max Barrass</name><email>me@maxbarrass.com</email><uri>http://maxbarrass.com</uri></author><category term="blog" /><category term="vba" /><category term="try-catch-finally" /><summary type="html">When writing function and in particular custom error handling in VBA please remember this common patern for error handling when using “On Error”.</summary></entry><entry><title type="html">How to manually update iPhone 4 from ipsw file?</title><link href="https://maxbarrass.com/blog/2010/11/24/how-to-manually-update-iphone-4-from" rel="alternate" type="text/html" title="How to manually update iPhone 4 from ipsw file?" /><published>2010-11-23T13:00:00+00:00</published><updated>2010-11-23T13:00:00+00:00</updated><id>https://maxbarrass.com/blog/2010/11/24/how-to-manually-update-iphone-4-from</id><content type="html" xml:base="https://maxbarrass.com/blog/2010/11/24/how-to-manually-update-iphone-4-from">&lt;p&gt;I followed the following steps to restore my iPhone from IPSW file:&lt;/p&gt;
-
-&lt;p&gt;These steps are for the following scenarios:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Your download in iTunes does not work!&lt;/li&gt;
-  &lt;li&gt;You have lots of iPhones and you don’t want to download the file for all of them!&lt;/li&gt;
-  &lt;li&gt;You just want to be a geek!&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;The two options bellow are self explanatory please choose one at your leisure.&lt;/p&gt;
-
-&lt;h2 id=&quot;i-just-want-it-to-work-option&quot;&gt;“I just want it to work!” Option:&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;Updated iTunes to latest 10+ version&lt;/li&gt;
-  &lt;li&gt;Synced and backed up iPhone in iTunes&lt;/li&gt;
-  &lt;li&gt;Press “Download Only” when prompted to download the file and accept conditions.&lt;/li&gt;
-  &lt;li&gt;Pause the download and close iTunes.&lt;/li&gt;
-  &lt;li&gt;Downloaded the version of OS I wanted which was “iPhone3 4.2.1” from apple, you can get the links from here: http://iclarified.com/entry/index.php?enid=750&lt;/li&gt;
-  &lt;li&gt;Copy the IPWS file into the iTunes/”iPhone Software Updates” folder.&lt;/li&gt;
-  &lt;li&gt;Open iTunes it should prompt you to update your iPhone.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;geek-option&quot;&gt;“Geek” Option:&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;Updated iTunes to latest 10+ version&lt;/li&gt;
-  &lt;li&gt;Downloaded the version of OS I wanted which was “iPhone3 4.2.1” from apple, you can get the links from here: http://iclarified.com/entry/index.php?enid=750&lt;/li&gt;
-  &lt;li&gt;Synced and backed up iPhone in iTunes&lt;/li&gt;
-  &lt;li&gt;Shift+alt clicked on the Restore button and selected the downloaded file.&lt;/li&gt;
-  &lt;li&gt;Waited and followed onscreen and iPhone instructions.&lt;/li&gt;
-  &lt;li&gt;Restored a backup of iPhone settings made earlier.&lt;/li&gt;
-  &lt;li&gt;Synced the reminded of MP3’s and apps&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;That’s all.&lt;/p&gt;
-
-&lt;p&gt;NOTES:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;To use a manually downloaded IPSW file in iTunes you will need to hold down SHIFT+ALT and click the Restore button. On mac its Option button.&lt;/li&gt;
-  &lt;li&gt;My Internet disconnected while it was in the process and iTunes spit the dummy and iPhone OS was mia, but I just reconnected the Internet and restarted the process, she worked as a charm after that.&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>Max Barrass</name><email>me@maxbarrass.com</email><uri>http://maxbarrass.com</uri></author><category term="blog" /><category term="iphone" /><category term="restore" /><category term="ipsw" /><summary type="html">I followed the following steps to restore my iPhone from IPSW file:</summary></entry></feed>
+&lt;p&gt;glhf!&lt;/p&gt;</content><author><name>Max Barrass</name><email>me@maxbarrass.com</email><uri>http://maxbarrass.com</uri></author><category term="blog" /><category term="vba" /><category term="try-catch-finally" /><summary type="html">When writing function and in particular custom error handling in VBA please remember this common patern for error handling when using “On Error”.</summary></entry></feed>
