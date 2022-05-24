@@ -1029,10 +1029,18 @@
                 $("#parse").click(function () {
                     //var o = { /*...*/ },  // the 'store' JSON object from above
 
+                    var outputPaths = $("#txtOutputPaths").val();
+
                     var sj = JSON.parse(editors.jsonsource.getValue().replace("\n", ""));
                     var jp = editors.jsonpath.getValue().replace("\n", "");
 
-                    var output = jsonPath(sj, jp);
+                    var options = {resultType:"VALUE"};
+                    
+                    if (outputPaths === "on") {
+                      options = {resultType:"PATH"}
+                    }
+
+                    var output = jsonPath(sj, jp, options);
 
                     var stro = JSON.stringify(output);
 

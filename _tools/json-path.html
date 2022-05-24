@@ -105,11 +105,19 @@ tags:
         </div>
 
         <div class="row">
+          <div class="col-md-12">
+            <h4>Config</h4>
+            <div class="form-group">
+                <div class="pull-right"><input id="chkJsonPathOutputPath" type="checkbox" class="make-switch" data-on="success" data-off="danger"> Enable Output Paths</div>
+              </div>
+          </div>
+      </div>
+
+        <div class="row">
             <div class="col-md-12">
+                <h4>History <a id="historyClear" class="btn red btn-sm"><i class="fa fa-trash"></i> Clear</a></h4>
                 <div class="form-group">
-                    <h4>History <a id="historyClear" class="btn red btn-sm"><i class="fa fa-trash"></i> Clear</a>
-                        <div class="pull-right"><input id="chkTrackHistory" type="checkbox" class="make-switch" data-on="success" data-off="danger"></div>
-                    </h4>
+                    <div class="pull-right"><input id="chkTrackHistory" type="checkbox" class="make-switch" data-on="success" data-off="danger"> Enable Track History</div>
                 </div>
                 <div class="form-group">
                     <!--<select id="selHistory" ondblclick="doHistoryReplay()" class="form-control" size="8" multiple></select>-->
