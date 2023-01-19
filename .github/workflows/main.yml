@@ -22,7 +22,7 @@ jobs:
       - name: build
         run: |
           bundle exec jekyll build --trace
-          bundle exec htmlproofer --trace --assume-extension --disable-external --url-ignore "/#.*/" --file-ignore /tools/ _site
+          bundle exec htmlproofer --trace --assume-extension --disable-external --file-ignore /tools/ _site
       - name: Deploy docs
         uses: peaceiris/actions-gh-pages@v3
         with:
