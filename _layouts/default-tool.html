@@ -19,7 +19,8 @@
       <script src="/assets/tools/plugins/bootstrap-modal/js/bootstrap.js"></script>
       <script src="//stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.4.0/bootbox.js" type="text/javascript"></script>
-
+      
+      <script type="text/javascript" src="//unpkg.com/browse/saxon-js@2.5.0/SaxonJS2N.js"></script>
 
       <!-- BEGIN PAGE LEVEL STYLES -->
       <link rel="stylesheet" type="text/css" href="/assets/tools/plugins/select2/select2.css"/>
@@ -539,7 +540,7 @@
             actionProcess: 1
         }
 
-        function doXMLTransform(XMLTransformAction) {
+        function doXMLTransformBrowserBased(XMLTransformAction) {
             //console.log('doXMLTransform');
             var strEval = "";
             var objSource = $("#txtXMLSource")[0]; //document.getElementById("txtXMLSource");
@@ -628,6 +629,45 @@
 
         }
 
+        // transform using SaxonJS
+        function doXMLTransform(XMLTransformAction) {
+            //console.log('doXMLTransform');
+            var strEval = "";
+            var objSource = $("#txtXMLSource")[0]; //document.getElementById("txtXMLSource");
+            var objTransform = $("#txtXMLTransformSource")[0]; //document.getElementById("txtXMLTransformSource");
+            var objError = $("#txtXMLTransformError")[0]; //document.getElementById("txtXMLTransformError");
+            var objOutput = $("#txtXMLTransformOutput")[0]; //document.getElementById("txtXMLTransformOutput");
+            var objXmlSource;// = document.getElementById("xmlSource");
+            var objXmlStyle;// = document.getElementById("xmlStyle");
+
+            if (!SaxonJS) {
+              console.log("Is Saxon JS loaded?");
+              return;
+            }
+
+            switch (XMLTransformAction) {
+                case enumXMLTransformAction.actionEval:
+                    break;
+                case enumXMLTransformAction.actionProcess:
+                    try {
+                        var sOut = SaxonJS.transform({
+                          stylesheetText: editors.xsltsource.getValue(),
+                          sourceText: editors.xmlsource.getValue()
+                        });
+                        console.log(sOut);
+                        editors.xmlout.setValue(sOut)
+                    } catch (ex) {
+                        var sError = "<b>Error:</b><br>" + ex;
+                        sError += "<br><br><b>Source Error:</b><br>" + objXmlSource.parseError.reason + "<br><b>Line:</b><br>" + objXmlSource.parseError.srcText;
+                        sError += "<br><br><b>Style Error:</b><br>" + objXmlStyle.parseError.reason + "<br><b>Line:</b><br>" + objXmlStyle.parseError.srcText;
+                        editors.xmlerror.setValue(sError);
+                    }
+                    break;
+                   
+            }
+
+
+        }
 
         jQuery(document).ready(function() {
             //App.initAjax();
