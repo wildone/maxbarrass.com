@@ -1,4 +1,5 @@
 require 'tmpdir'
+require 'active_support/core_ext'
 require 'html-proofer'
 HTMLProofer.check_directory("./_site").run
 

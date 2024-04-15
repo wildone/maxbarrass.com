@@ -3,12 +3,12 @@ $SITE_NAME = Get-Content .\CNAME -Raw
 $SITE_NAME = $SITE_NAME -replace "[.\n\r]", "-"
 $CONATINER_NAME = "build-$SITE_NAME"
 
-$DOCKER_INSPECT_CHECK=$( docker inspect --format "{{.State.Status}}" $CONATINER_NAME )
+$PORT = Get-Content .\dev.port -Raw
+$PORT_LIVERELOAD = Get-Content .\dev-livereload.port -Raw
 
-if ($DOCKER_INSPECT_CHECK -contains "running") {
-  Write-Host "Shell into existing Docker container:"
-  docker exec -it $CONATINER_NAME bash
-} else {
-  Write-Host "Starting Docker container to run build server:"
-  docker run --name $CONATINER_NAME -it --rm -p 8102:8100 -p 35731:35729 -v ${PWD}:/build/source:rw aemdesign/centos-java-buildpack bash --login /build/source/docker-serve.sh
-}
+Write-Host "Remove existing container:"
+docker stop $CONATINER_NAME
+docker rm -f $CONATINER_NAME
+
+Write-Host "Starting Docker container to run build server on ports ${PORT},${PORT_LIVERELOAD}:"
+docker run --name $CONATINER_NAME -it --rm -p ${PORT}:${PORT} -p ${PORT_LIVERELOAD}:${PORT_LIVERELOAD} -e LANG=en_US.UTF-8 -e TZ=Australia/Melbourne  -v ${PWD}:/build/source:rw aemdesign/java-buildpack:ubuntu bash --login /build/source/docker-serve.sh
