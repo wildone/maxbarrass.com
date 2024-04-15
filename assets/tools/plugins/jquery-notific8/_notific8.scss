@@ -9,6 +9,8 @@
  */
 
 // compass includes
+@use "sass:math";
+
 @import "compass/css3/transform";
 
 // mixins
@@ -53,14 +55,14 @@
 .jquery-notific8-notification {
   position: relative;
   display: none;
-  padding: (10em/16);
+  padding: math.div(10em, 16);
   color: #fff;
-  height: (66em/16);
-  max-height: (66em/16);
+  height: math.div(66em, 16);
+  max-height: math.div(66em, 16);
   overflow: hidden;
   border-style: solid;
   border-width: 2px;
-  width: (343em/16);
+  width: math.div(343em, 16);
   &:hover {
     .jquery-notific8-close {
       display: block;
@@ -70,11 +72,11 @@
 
 .jquery-notific8-heading {
   font-weight: bold;
-  margin-bottom: (5em/16);
+  margin-bottom: math.div(5em, 16);
 }
 
 .jquery-notific8-message {
-  font-size: (14em/16);
+  font-size: math.div(14em, 16);
 }
 
 .jquery-notific8-close {
@@ -88,12 +90,12 @@
 .jquery-notific8-close-sticky {
   text-align: center;
   position: absolute;
-  width: (89em/16);
-  padding: (2em/16) 0;
+  width: math.div(89em, 16);
+  padding: math.div(2em, 16) 0;
   cursor: pointer;
   text-transform: uppercase;
   span {
-    font-size: (10em/16);
+    font-size: math.div(10em, 16);
   }
 }
 
@@ -101,14 +103,14 @@
   .jquery-notific8-notification {
     float: right;
     clear: right;
-    padding-right: (33em/16);
+    padding-right: math.div(33em, 16);
   }
   .jquery-notific8-close {
     right: -2px;
   }
   .jquery-notific8-close-sticky {
-    top: (31em/16);
-    right: (-38em/16);
+    top: math.div(31em, 16);
+    right: math.div(-38em, 16);
     @include rotate(90deg);
   }
 }
@@ -117,22 +119,22 @@
   .jquery-notific8-notification {
     float: left;
     clear: left;
-    padding-left: (33em/16);
+    padding-left: math.div(33em, 16);
   }
   .jquery-notific8-close {
     left: -2px;
   }
   .jquery-notific8-close-sticky {
-    top: (31em/16);
-    left: (-38em/16);
+    top: math.div(31em, 16);
+    left: math.div(-38em, 16);
     @include rotate(270deg);
   }
 }
 
 .top .jquery-notific8-notification {
-  margin-top: (10em/16);
+  margin-top: math.div(10em, 16);
 }
 
 .bottom .jquery-notific8-notification {
-  margin-bottom: (10em/16);
+  margin-bottom: math.div(10em, 16);
 }
