@@ -1,15 +1,18 @@
 name: ci
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   build:
     if: "!contains(github.event.head_commit.message, 'skip ci')"
 
-    runs-on: ubuntu-latest
     env:
       NOKOGIRI_USE_SYSTEM_LIBRARIES: true
 
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
@@ -19,20 +22,19 @@ jobs:
 
       - name: install dependencies
         run: |
+          sudo apt-get update
           sudo apt-get install libcurl4-openssl-dev libxslt-dev libxml2-dev
-      - uses: ruby/setup-ruby@v1
+      - uses: actions/setup-ruby@v1
         with:
-          ruby-version: '3.x' # Not needed with a .ruby-version file
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          ruby-version: '3.x' # Version range or exact version of a Ruby version to use, using semvers version range syntax.
       - name: build
         run: |
           export LANG=en_US.UTF-8
           export JEKYLL_ENV=production
           bundle install
           bundle exec jekyll build --future --profile --trace  --verbose
-      - name: Deploy docs
+      - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
-
