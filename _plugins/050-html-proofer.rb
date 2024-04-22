@@ -10,7 +10,7 @@ Jekyll::Hooks.register :site, :post_write do |site|
     :assume_extension => ".html",
     :allow_hash_href => true,
     :verbose => true,
-    :swap_urls => { :%r{localhost:8100} => "https://maxbarrass.com", :%r{localhost:8111} => "https://maxbarrass.com", :%r{localhost} => "https://maxbarrass.com" },
+    :swap_urls => { "%r{localhost:8100}" => "https://maxbarrass.com", "%r{localhost:8111}" => "https://maxbarrass.com", "%r{localhost}" => "https://maxbarrass.com" },
     :ignore_files => ["/assets/", "/tools/"],
     :root_dir => "_site",
     :ignore_urls => [
