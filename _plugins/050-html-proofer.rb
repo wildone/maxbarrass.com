@@ -12,7 +12,7 @@ Jekyll::Hooks.register :site, :post_write do |site|
     :allow_hash_href => true,
     :verbose => true,
     :internal_domains => ["localhost:8100","localhost:8111", "localhost"],
-    :file_ignore => ["/assets/"],
+    :file_ignore => ["/assets/", "/tools/"],
     :root_dir => "_site",
     :href_ignore => [
       /.*#data=.*/,
