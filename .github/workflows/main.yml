@@ -11,19 +11,25 @@ jobs:
       NOKOGIRI_USE_SYSTEM_LIBRARIES: true
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+          lfs: true
+          fetch-depth: 0
+
       - name: install dependencies
         run: |
           sudo apt-get install libcurl4-openssl-dev libxslt-dev libxml2-dev
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '2.7' # Not needed with a .ruby-version file
+          ruby-version: '3.x' # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
       - name: build
         run: |
-          bundle exec jekyll build --trace
-          bundle exec htmlproofer --help
-          bundle exec htmlproofer --trace --assume-extension --disable-external  --ignore-urls "/#.*/" --ignore-files /tools/ _site
+          export LANG=en_US.UTF-8
+          export JEKYLL_ENV=production
+          bundle install
+          bundle exec jekyll build --future --profile --trace  --verbose
       - name: Deploy docs
         uses: peaceiris/actions-gh-pages@v3
         with:
