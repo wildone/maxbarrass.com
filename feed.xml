@@ -1,432 +1,432 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="https://maxbarrass.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://maxbarrass.com/" rel="alternate" type="text/html" /><updated>2021-11-19T00:56:17+11:00</updated><id>https://maxbarrass.com/feed.xml</id><title type="html">Max Barrass</title><subtitle>My Blog</subtitle><author><name>{&quot;name&quot;=&gt;nil, &quot;avatar&quot;=&gt;nil, &quot;bio&quot;=&gt;nil, &quot;location&quot;=&gt;nil, &quot;email&quot;=&gt;nil, &quot;links&quot;=&gt;[{&quot;label&quot;=&gt;&quot;Email&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-envelope-square&quot;}, {&quot;label&quot;=&gt;&quot;Website&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-link&quot;}, {&quot;label&quot;=&gt;&quot;Twitter&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-twitter-square&quot;}, {&quot;label&quot;=&gt;&quot;Facebook&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-facebook-square&quot;}, {&quot;label&quot;=&gt;&quot;GitHub&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-github&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-instagram&quot;}]}</name></author><entry><title type="html">Windows 11 installation has failed</title><link href="https://maxbarrass.com/blog/2021/11/18/windows-11-installation-has-failed%F0%9F%98%AD%F0%9F%92%AA%F0%9F%98%98" rel="alternate" type="text/html" title="Windows 11 installation has failed" /><published>2021-11-18T00:00:00+11:00</published><updated>2021-11-18T00:00:00+11:00</updated><id>https://maxbarrass.com/blog/2021/11/18/windows-11-installation-has-failed</id><content type="html" xml:base="https://maxbarrass.com/blog/2021/11/18/windows-11-installation-has-failed%F0%9F%98%AD%F0%9F%92%AA%F0%9F%98%98">&lt;p&gt;If you have been attempting to upgrade to Windows 11 and having issues then read on!&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://maxbarrass.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://maxbarrass.com/" rel="alternate" type="text/html" /><updated>2024-04-30T15:21:23+10:00</updated><id>https://maxbarrass.com/feed.xml</id><title type="html">Max Barrass</title><subtitle>My Blog</subtitle><author><name>{&quot;name&quot;=&gt;nil, &quot;avatar&quot;=&gt;nil, &quot;bio&quot;=&gt;nil, &quot;location&quot;=&gt;nil, &quot;email&quot;=&gt;nil, &quot;links&quot;=&gt;[{&quot;label&quot;=&gt;&quot;Email&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-envelope-square&quot;}, {&quot;label&quot;=&gt;&quot;Website&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-link&quot;}, {&quot;label&quot;=&gt;&quot;Twitter&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-twitter-square&quot;}, {&quot;label&quot;=&gt;&quot;Facebook&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-facebook-square&quot;}, {&quot;label&quot;=&gt;&quot;GitHub&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-github&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-instagram&quot;}]}</name></author><entry><title type="html">Windows 11 installation has failed</title><link href="https://maxbarrass.com/blog/2021/11/18/windows-11-installation-has-failed%F0%9F%98%AD%F0%9F%92%AA%F0%9F%98%98" rel="alternate" type="text/html" title="Windows 11 installation has failed" /><published>2021-11-18T00:00:00+11:00</published><updated>2021-11-18T15:15:23+11:00</updated><id>https://maxbarrass.com/blog/2021/11/18/windows-11-installation-has-failed</id><content type="html" xml:base="https://maxbarrass.com/blog/2021/11/18/windows-11-installation-has-failed%F0%9F%98%AD%F0%9F%92%AA%F0%9F%98%98"><![CDATA[<p>If you have been attempting to upgrade to Windows 11 and having issues then read on!</p>
 
-&lt;p&gt;It would be amazing if everyone would go out and buy the latest PC’s with the latest TPM and latest CPU and install windows 11 on it following the supported pathway. Well, in reality, most people will update their existing Windows 10 to Windows 11; that’s just logical, right?&lt;/p&gt;
+<p>It would be amazing if everyone would go out and buy the latest PC’s with the latest TPM and latest CPU and install windows 11 on it following the supported pathway. Well, in reality, most people will update their existing Windows 10 to Windows 11; that’s just logical, right?</p>
 
-&lt;p&gt;So this is my case; I have updated my registry to allow installation with unsupported CPU as follows:&lt;/p&gt;
+<p>So this is my case; I have updated my registry to allow installation with unsupported CPU as follows:</p>
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[HKEY_LOCAL_MACHINE\SYSTEM\Setup\MoSetup]
-&quot;AllowUpgradesWithUnsupportedTPMOrCPU&quot;=dword:00000001
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[HKEY_LOCAL_MACHINE\SYSTEM\Setup\MoSetup]
+"AllowUpgradesWithUnsupportedTPMOrCPU"=dword:00000001
+</code></pre></div></div>
 
-&lt;p&gt;Downloaded an ISO from &lt;a href=&quot;https://www.microsoft.com/software-download/windows11&quot;&gt;Micorosfts Download Windows 11&lt;/a&gt; and created a USB using &lt;a href=&quot;https://rufus.ie/en/&quot;&gt;Rufus&lt;/a&gt;. Then I started setup from the USB and waited patiently for the 100% on this screen:&lt;/p&gt;
+<p>Downloaded an ISO from <a href="https://www.microsoft.com/software-download/windows11">Micorosfts Download Windows 11</a> and created a USB using <a href="https://rufus.ie/en/">Rufus</a>. Then I started setup from the USB and waited patiently for the 100% on this screen:</p>
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/posts/windows11upgrade/windows-11-setup-progress.png&quot; alt=&quot;Windows 11 setup progress&quot; /&gt;&lt;/p&gt;
+<p><img src="/assets/images/posts/windows11upgrade/windows-11-setup-progress.png" alt="Windows 11 setup progress" /></p>
 
-&lt;p&gt;Not surprisingly, this screen closed and just gave me an good-old self explanatory error message:&lt;/p&gt;
+<p>Not surprisingly, this screen closed and just gave me an good-old self explanatory error message:</p>
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/posts/windows11upgrade/windows-11-installation-has-failed.png&quot; alt=&quot;Windows 11 installation has failed&quot; /&gt;&lt;/p&gt;
+<p><img src="/assets/images/posts/windows11upgrade/windows-11-installation-has-failed.png" alt="Windows 11 installation has failed" /></p>
 
-&lt;p&gt;Typical as it is, googling will not help; no one knows why it is failing on my PC.&lt;/p&gt;
+<p>Typical as it is, googling will not help; no one knows why it is failing on my PC.</p>
 
-&lt;p&gt;In this case, Uncle Bill is relying on you to fix your problem, as he has already given you all the tools and give you all the bread crumbs to follow.&lt;/p&gt;
+<p>In this case, Uncle Bill is relying on you to fix your problem, as he has already given you all the tools and give you all the bread crumbs to follow.</p>
 
-&lt;p&gt;So let’s see if you can find your issue and fix it.&lt;/p&gt;
+<p>So let’s see if you can find your issue and fix it.</p>
 
-&lt;ul&gt;
-  &lt;li&gt;open Event Viewer&lt;/li&gt;
-  &lt;li&gt;open Application Log&lt;/li&gt;
-  &lt;li&gt;start at the top and look for information entry for the upgrade process failure (yeah, breadcrumbs)&lt;/li&gt;
-  &lt;li&gt;when you find the log entry, it should list a bunch of log files, open the top Setup log file&lt;/li&gt;
-  &lt;li&gt;scroll to the bottom of the setup log file and scroll up slowly, looking for ERROR lines; you can also search for the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;aborting&lt;/code&gt; keyword from the bottom up&lt;/li&gt;
-  &lt;li&gt;now you should be finding some real breadcrumbs&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li>open Event Viewer</li>
+  <li>open Application Log</li>
+  <li>start at the top and look for information entry for the upgrade process failure (yeah, breadcrumbs)</li>
+  <li>when you find the log entry, it should list a bunch of log files, open the top Setup log file</li>
+  <li>scroll to the bottom of the setup log file and scroll up slowly, looking for ERROR lines; you can also search for the <code class="language-plaintext highlighter-rouge">aborting</code> keyword from the bottom up</li>
+  <li>now you should be finding some real breadcrumbs</li>
+</ul>
 
-&lt;p&gt;The log should tell you why it aborted the install. The reasons for this are specific to your PC, so you would need to do some googling to fix them.&lt;/p&gt;
+<p>The log should tell you why it aborted the install. The reasons for this are specific to your PC, so you would need to do some googling to fix them.</p>
 
-&lt;p&gt;My setup aborted because it detected a duplicate account without a profile, so I deleted that in the registry, restarted and ran the install successfully. You should be able to google all the issues that will appear in the log and fix them one by one. I feel that the upgrade process is probably the same as the old process, so it’s going to have similar issues and existing solutions.&lt;/p&gt;
+<p>My setup aborted because it detected a duplicate account without a profile, so I deleted that in the registry, restarted and ran the install successfully. You should be able to google all the issues that will appear in the log and fix them one by one. I feel that the upgrade process is probably the same as the old process, so it’s going to have similar issues and existing solutions.</p>
 
-&lt;p&gt;I hope this will help; leave a comment if it did, or leave your errors for others to know about.&lt;/p&gt;</content><author><name>Max Barrass</name><email>me@maxbarrass.com</email><uri>http://maxbarrass.com</uri></author><category term="blog" /><category term="windows-11" /><category term="setup" /><category term="failed" /><summary type="html">If you have been attempting to upgrade to Windows 11 and having issues then read on!</summary></entry><entry><title type="html">Google Photos Metadata 😗😙😚</title><link href="https://maxbarrass.com/blog/2020/05/21/google-photos-metadata%F0%9F%98%97%F0%9F%98%99%F0%9F%98%9A" rel="alternate" type="text/html" title="Google Photos Metadata 😗😙😚" /><published>2020-05-20T23:00:00+10:00</published><updated>2020-05-20T23:00:00+10:00</updated><id>https://maxbarrass.com/blog/2020/05/21/google-photos-metadata</id><content type="html" xml:base="https://maxbarrass.com/blog/2020/05/21/google-photos-metadata%F0%9F%98%97%F0%9F%98%99%F0%9F%98%9A">&lt;p&gt;My cousin Anton, in Moscow, and I making a cross-continental photo album. We have started scanning some old photos so that we can preserve the memory of our ancestors for generations.&lt;/p&gt;
+<p>I hope this will help; leave a comment if it did, or leave your errors for others to know about.</p>]]></content><author><name>Max Barrass</name><email>me@maxbarrass.com</email><uri>http://maxbarrass.com</uri></author><category term="blog" /><category term="windows-11" /><category term="setup" /><category term="failed" /><summary type="html"><![CDATA[If you have been attempting to upgrade to Windows 11 and having issues then read on!]]></summary></entry><entry><title type="html">Google Photos Metadata 😗😙😚</title><link href="https://maxbarrass.com/blog/2020/05/21/google-photos-metadata%F0%9F%98%97%F0%9F%98%99%F0%9F%98%9A" rel="alternate" type="text/html" title="Google Photos Metadata 😗😙😚" /><published>2020-05-20T23:00:00+10:00</published><updated>2020-05-22T00:54:22+10:00</updated><id>https://maxbarrass.com/blog/2020/05/21/google-photos-metadata</id><content type="html" xml:base="https://maxbarrass.com/blog/2020/05/21/google-photos-metadata%F0%9F%98%97%F0%9F%98%99%F0%9F%98%9A"><![CDATA[<p>My cousin Anton, in Moscow, and I making a cross-continental photo album. We have started scanning some old photos so that we can preserve the memory of our ancestors for generations.</p>
 
-&lt;p&gt;We have all the latest scanning technology that black market offers. And we have managed to acquire all the photos we need to scan. Now the question is, how do we search for codes and text content that we want to preserve with the photos.&lt;/p&gt;
+<p>We have all the latest scanning technology that black market offers. And we have managed to acquire all the photos we need to scan. Now the question is, how do we search for codes and text content that we want to preserve with the photos.</p>
 
-&lt;p&gt;Well after a round of googling, it’s apparent that this information needs to be purchased from your favourite neighbourhood black market. After that, it turns out that, just setting properties on the file using your favourite windows file properties box, you can update file metadata.&lt;/p&gt;
+<p>Well after a round of googling, it’s apparent that this information needs to be purchased from your favourite neighbourhood black market. After that, it turns out that, just setting properties on the file using your favourite windows file properties box, you can update file metadata.</p>
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/posts/google-photos-metadata/FileProperties.png&quot; alt=&quot;File Properties&quot; /&gt;&lt;/p&gt;
+<p><img src="/assets/images/posts/google-photos-metadata/FileProperties.png" alt="File Properties" /></p>
 
-&lt;p&gt;When you upload the photo back to google drive, the only file property that will appear in Google is the Title property.&lt;/p&gt;
+<p>When you upload the photo back to google drive, the only file property that will appear in Google is the Title property.</p>
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/posts/google-photos-metadata/file-with-properties-in-google-photos.jpg&quot; alt=&quot;File with properties in google photos&quot; /&gt;&lt;/p&gt;
+<p><img src="/assets/images/posts/google-photos-metadata/file-with-properties-in-google-photos.jpg" alt="File with properties in google photos" /></p>
 
-&lt;p&gt;For us, this will be enough to smuggle additional information with the image. Here you can checkout the metadata on this image.&lt;/p&gt;
+<p>For us, this will be enough to smuggle additional information with the image. Here you can checkout the metadata on this image.</p>
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/posts/google-photos-metadata/cousin-anton-smiling.jpg&quot; alt=&quot;Cousin anton smiling&quot; /&gt;&lt;/p&gt;
+<p><img src="/assets/images/posts/google-photos-metadata/cousin-anton-smiling.jpg" alt="Cousin anton smiling" /></p>
 
-&lt;p&gt;Once you have done this, you can do a search to test your handy work.&lt;/p&gt;
+<p>Once you have done this, you can do a search to test your handy work.</p>
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/posts/google-photos-metadata/search-for-file-with-properties-in-google-photos.jpg&quot; alt=&quot;Search for file with properties in google photos&quot; /&gt;&lt;/p&gt;
+<p><img src="/assets/images/posts/google-photos-metadata/search-for-file-with-properties-in-google-photos.jpg" alt="Search for file with properties in google photos" /></p>
 
-&lt;p&gt;I hope this will help you with your family albums or whatever you want it to call it.&lt;/p&gt;</content><author><name>Max Barrass</name><email>me@maxbarrass.com</email><uri>http://maxbarrass.com</uri></author><category term="blog" /><category term="google-photos" /><category term="metadata" /><category term="exif" /><summary type="html">My cousin Anton, in Moscow, and I making a cross-continental photo album. We have started scanning some old photos so that we can preserve the memory of our ancestors for generations.</summary></entry><entry><title type="html">Downloading Files from RSS with Jdownloader Packegizer 💻💥😍</title><link href="https://maxbarrass.com/blog/2020/04/10/downloading-files-from-rss-with-jdownloader-packegizer%F0%9F%92%BB%F0%9F%92%A5%F0%9F%98%8D" rel="alternate" type="text/html" title="Downloading Files from RSS with Jdownloader Packegizer 💻💥😍" /><published>2020-04-09T23:00:00+10:00</published><updated>2020-04-09T23:00:00+10:00</updated><id>https://maxbarrass.com/blog/2020/04/10/downloading-files-from-rss-with-jdownloader-packegizer</id><content type="html" xml:base="https://maxbarrass.com/blog/2020/04/10/downloading-files-from-rss-with-jdownloader-packegizer%F0%9F%92%BB%F0%9F%92%A5%F0%9F%98%8D">&lt;h1 id=&quot;intro&quot;&gt;Intro&lt;/h1&gt;
+<p>I hope this will help you with your family albums or whatever you want it to call it.</p>]]></content><author><name>Max Barrass</name><email>me@maxbarrass.com</email><uri>http://maxbarrass.com</uri></author><category term="blog" /><category term="google-photos" /><category term="metadata" /><category term="exif" /><summary type="html"><![CDATA[My cousin Anton, in Moscow, and I making a cross-continental photo album. We have started scanning some old photos so that we can preserve the memory of our ancestors for generations.]]></summary></entry><entry><title type="html">Downloading Files from RSS with Jdownloader Packegizer 💻💥😍</title><link href="https://maxbarrass.com/blog/2020/04/10/downloading-files-from-rss-with-jdownloader-packegizer%F0%9F%92%BB%F0%9F%92%A5%F0%9F%98%8D" rel="alternate" type="text/html" title="Downloading Files from RSS with Jdownloader Packegizer 💻💥😍" /><published>2020-04-09T23:00:00+10:00</published><updated>2020-04-10T22:31:26+10:00</updated><id>https://maxbarrass.com/blog/2020/04/10/downloading-files-from-rss-with-jdownloader-packegizer</id><content type="html" xml:base="https://maxbarrass.com/blog/2020/04/10/downloading-files-from-rss-with-jdownloader-packegizer%F0%9F%92%BB%F0%9F%92%A5%F0%9F%98%8D"><![CDATA[<h1 id="intro">Intro</h1>
 
-&lt;p&gt;I wanted to download some podcasts from an RSS feed, here is how to do this with help of RSS, XML Tools and JDownloader (be care full downloading this, Ill make a safe source verison of this some day)&lt;/p&gt;
+<p>I wanted to download some podcasts from an RSS feed, here is how to do this with help of RSS, XML Tools and JDownloader (be care full downloading this, Ill make a safe source verison of this some day)</p>
 
-&lt;p&gt;To do this I just transformed the RSS into a list of good URLS with appended #TITLE and used JDownloaded Packagizer Rule to rename downloaded fiels.&lt;/p&gt;
+<p>To do this I just transformed the RSS into a list of good URLS with appended #TITLE and used JDownloaded Packagizer Rule to rename downloaded fiels.</p>
 
-&lt;h1 id=&quot;rss-source&quot;&gt;RSS Source&lt;/h1&gt;
-&lt;p&gt;https://feeds.megaphone.fm/WWO4858695911&lt;/p&gt;
+<h1 id="rss-source">RSS Source</h1>
+<p>https://feeds.megaphone.fm/WWO4858695911</p>
 
-&lt;p&gt;This source has a bunch of generated names but I want to use “# - Title” as good file name.&lt;/p&gt;
+<p>This source has a bunch of generated names but I want to use “# - Title” as good file name.</p>
 
-&lt;h1 id=&quot;xslt-for-rss&quot;&gt;XSLT for RSS&lt;/h1&gt;
+<h1 id="xslt-for-rss">XSLT for RSS</h1>
 
-&lt;p&gt;You can run it here https://maxbarrass.com/tools/xml-transform, download the RSS source and transform it, you will get a list of urls with #title, we will use this # in jdownloader to create proper names for files.&lt;/p&gt;
+<p>You can run it here https://maxbarrass.com/tools/xml-transform, download the RSS source and transform it, you will get a list of urls with #title, we will use this # in jdownloader to create proper names for files.</p>
 
-&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;xsl:stylesheet&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;version=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;2.0&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:xsl=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.w3.org/1999/XSL/Transform&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;xmlns:itunes=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.itunes.com/dtds/podcast-1.0.dtd&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;xsl:output&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;method=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;xml&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;omit-xml-declaration=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;yes&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;indent=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;yes&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;encoding=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;utf-16&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;xsl:template&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;match=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;xsl:apply-templates/&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/xsl:template&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;xsl:template&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;match=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;//channel&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;xsl:for-each&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;select=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;//item&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;xsl:apply-templates&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;select=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;enclosure/@url&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;mode=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fixtext&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-                &lt;span class=&quot;nt&quot;&gt;&amp;lt;xsl:text&amp;gt;&lt;/span&gt;#&lt;span class=&quot;nt&quot;&gt;&amp;lt;/xsl:text&amp;gt;&lt;/span&gt;
-          &lt;span class=&quot;nt&quot;&gt;&amp;lt;xsl:if&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;test=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;not(string(itunes:episode))&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-         &lt;span class=&quot;nt&quot;&gt;&amp;lt;xsl:value-of&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;select=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;concat(normalize-space(title),'.mp3')&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/xsl:if&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;xsl:if&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;test=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;string(itunes:episode)&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-         &lt;span class=&quot;nt&quot;&gt;&amp;lt;xsl:value-of&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;select=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;concat(itunes:episode,' - ',normalize-space(title),'.mp3')&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/xsl:if&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;xsl:text&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/xsl:text&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/xsl:for-each&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/xsl:template&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;xsl:template&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;match=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;*&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;mode=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fixtext&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;xsl:value-of&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;select=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;normalize-space(.)&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/xsl:template&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/xsl:stylesheet&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;</span>
+<span class="nt">&lt;xsl:stylesheet</span> <span class="na">version=</span><span class="s">"2.0"</span> <span class="na">xmlns:xsl=</span><span class="s">"http://www.w3.org/1999/XSL/Transform"</span>
+                <span class="na">xmlns:itunes=</span><span class="s">"http://www.itunes.com/dtds/podcast-1.0.dtd"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;xsl:output</span> <span class="na">method=</span><span class="s">"xml"</span> <span class="na">omit-xml-declaration=</span><span class="s">"yes"</span> <span class="na">indent=</span><span class="s">"yes"</span> <span class="na">encoding=</span><span class="s">"utf-16"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">"/"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xsl:apply-templates/&gt;</span>
+  <span class="nt">&lt;/xsl:template&gt;</span>
+  <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">"//channel"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">"//item"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:apply-templates</span> <span class="na">select=</span><span class="s">"enclosure/@url"</span> <span class="na">mode=</span><span class="s">"fixtext"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;xsl:text&gt;</span>#<span class="nt">&lt;/xsl:text&gt;</span>
+          <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">"not(string(itunes:episode))"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"concat(normalize-space(title),'.mp3')"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsl:if&gt;</span>
+        <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">"string(itunes:episode)"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"concat(itunes:episode,' - ',normalize-space(title),'.mp3')"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsl:if&gt;</span>
+      <span class="nt">&lt;xsl:text&gt;</span>
+<span class="nt">&lt;/xsl:text&gt;</span>
+    <span class="nt">&lt;/xsl:for-each&gt;</span>
+  <span class="nt">&lt;/xsl:template&gt;</span>
+  <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">"*"</span> <span class="na">mode=</span><span class="s">"fixtext"</span> <span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"normalize-space(.)"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</code></pre></div></div>
 
-&lt;h1 id=&quot;jdownloader-setup&quot;&gt;Jdownloader Setup&lt;/h1&gt;
+<h1 id="jdownloader-setup">Jdownloader Setup</h1>
 
-&lt;p&gt;Packegizer rule - HTML RSS Links&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;If
-    &lt;ul&gt;
-      &lt;li&gt;Sourceurls(s) using Regex: .&lt;em&gt;#(.&lt;/em&gt;)
-        &lt;ul&gt;
-          &lt;li&gt;this will split url into group wich will be everything after #&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Then
-    &lt;ul&gt;
-      &lt;li&gt;Filename: &amp;lt;jd:source:1&amp;gt;
-        &lt;ul&gt;
-          &lt;li&gt;this will grab proper name for our download file&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+<p>Packegizer rule - HTML RSS Links</p>
+<ul>
+  <li>If
+    <ul>
+      <li>Sourceurls(s) using Regex: .<em>#(.</em>)
+        <ul>
+          <li>this will split url into group wich will be everything after #</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Then
+    <ul>
+      <li>Filename: &lt;jd:source:1&gt;
+        <ul>
+          <li>this will grab proper name for our download file</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
-&lt;p&gt;Thats all save and copy your link you will now see a list of RSS link to download with proper titles.&lt;/p&gt;
+<p>Thats all save and copy your link you will now see a list of RSS link to download with proper titles.</p>
 
-&lt;h1 id=&quot;reference&quot;&gt;Reference&lt;/h1&gt;
+<h1 id="reference">Reference</h1>
 
-&lt;p&gt;Here is a list of config variable that can be used in &lt;a href=&quot;https://board.jdownloader.org/showpost.php?p=421993&amp;amp;postcount=2&quot;&gt;Jdownloader Packegizer rules config&lt;/a&gt;.&lt;/p&gt;
+<p>Here is a list of config variable that can be used in <a href="https://board.jdownloader.org/showpost.php?p=421993&amp;postcount=2">Jdownloader Packegizer rules config</a>.</p>
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;jd:append&amp;gt;
--&amp;gt; this placeholder will be replaced by previous value where the placeholder is being used in
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;jd:append&gt;
+-&gt; this placeholder will be replaced by previous value where the placeholder is being used in
 
-&amp;lt;jd:prop:KEY&amp;gt;
--&amp;gt; this placeholder reads out an internal property of the downloadlink itself. properties are plugin specific and there are plans that plugins can return a list of supported properties that can be used here
+&lt;jd:prop:KEY&gt;
+-&gt; this placeholder reads out an internal property of the downloadlink itself. properties are plugin specific and there are plans that plugins can return a list of supported properties that can be used here
 
-&amp;lt;jd:indexof&amp;gt;
--&amp;gt; this placeholder will be replaced by number of index of the downloadlink within its package. first link will be 1, second link will be 2 and so on. It's just the index within the package!
--&amp;gt; will be replaced in real time
+&lt;jd:indexof&gt;
+-&gt; this placeholder will be replaced by number of index of the downloadlink within its package. first link will be 1, second link will be 2 and so on. It's just the index within the package!
+-&gt; will be replaced in real time
 
-&amp;lt;jd:subfolderbyplugin&amp;gt;
--&amp;gt; some plugins support recursive folder support. if supported by plugin, then the downloads will have same directory structure like shown in browser
+&lt;jd:subfolderbyplugin&gt;
+-&gt; some plugins support recursive folder support. if supported by plugin, then the downloads will have same directory structure like shown in browser
 
-&amp;lt;jd:env:KEY&amp;gt;
--&amp;gt; this placeholder will be replaced by KEY environment variable of your system
--&amp;gt; will be replaced in real time
+&lt;jd:env:KEY&gt;
+-&gt; this placeholder will be replaced by KEY environment variable of your system
+-&gt; will be replaced in real time
 
-&amp;lt;jd:orgfilename&amp;gt; &amp;lt;jd:orgfilename:number&amp;gt;
--&amp;gt; this placeholder will be replaced by original filename or matching group(number) of filename pattern
+&lt;jd:orgfilename&gt; &lt;jd:orgfilename:number&gt;
+-&gt; this placeholder will be replaced by original filename or matching group(number) of filename pattern
 
-&amp;lt;jd:packagename&amp;gt;
--&amp;gt; this placeholder will be replaced by the current package name
--&amp;gt; will be replaced in real time
+&lt;jd:packagename&gt;
+-&gt; this placeholder will be replaced by the current package name
+-&gt; will be replaced in real time
 
-&amp;lt;jd:orgfiletype&amp;gt; &amp;lt;jd:orgfiletype:Pattern&amp;gt;
--&amp;gt; this placeholder will be replaced by the file extension of the file or the match of the given pattern
+&lt;jd:orgfiletype&gt; &lt;jd:orgfiletype:Pattern&gt;
+-&gt; this placeholder will be replaced by the file extension of the file or the match of the given pattern
 
-&amp;lt;jd:orgfilenamewithoutext&amp;gt;
--&amp;gt; this placeholder will be replaced by original filename without file extension
+&lt;jd:orgfilenamewithoutext&gt;
+-&gt; this placeholder will be replaced by original filename without file extension
 
-&amp;lt;jd:hoster:number&amp;gt;
--&amp;gt; this placeholder will be replaced by the matching group(number) of downloadurl pattern or the host itself if number is -1
+&lt;jd:hoster:number&gt;
+-&gt; this placeholder will be replaced by the matching group(number) of downloadurl pattern or the host itself if number is -1
 
-&amp;lt;jd:source:(number)pattern&amp;gt;
--&amp;gt; this placeholder will be replaced by the match of sourceurl pattern. with number you can specify which sourceurl to process
+&lt;jd:source:(number)pattern&gt;
+-&gt; this placeholder will be replaced by the match of sourceurl pattern. with number you can specify which sourceurl to process
 
-&amp;lt;jd:simpledate:simpleDateFormatString&amp;gt;
--&amp;gt; this placeholder will be replaced by time formatted with simpleDateFormatString, see docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html
--&amp;gt; will be replaced in real time
+&lt;jd:simpledate:simpleDateFormatString&gt;
+-&gt; this placeholder will be replaced by time formatted with simpleDateFormatString, see docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html
+-&gt; will be replaced in real time
 
-&amp;lt;jd:orgpackagename&amp;gt;
--&amp;gt; this placeholder will be replaced by the original package name
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Max Barrass</name><email>me@maxbarrass.com</email><uri>http://maxbarrass.com</uri></author><category term="blog" /><category term="jdownloader" /><category term="packegizer" /><category term="rss" /><category term="xslt" /><summary type="html">Intro</summary></entry><entry><title type="html">Linkmoji 💪😎👍</title><link href="https://maxbarrass.com/blog/2016/11/04/linkmoji%F0%9F%92%AA%F0%9F%98%8E%F0%9F%91%8D" rel="alternate" type="text/html" title="Linkmoji 💪😎👍" /><published>2016-11-04T00:00:00+11:00</published><updated>2016-11-04T00:00:00+11:00</updated><id>https://maxbarrass.com/blog/2016/11/04/linkmoji</id><content type="html" xml:base="https://maxbarrass.com/blog/2016/11/04/linkmoji%F0%9F%92%AA%F0%9F%98%8E%F0%9F%91%8D">&lt;p&gt;Linkmoji!&lt;/p&gt;
+&lt;jd:orgpackagename&gt;
+-&gt; this placeholder will be replaced by the original package name
+</code></pre></div></div>]]></content><author><name>Max Barrass</name><email>me@maxbarrass.com</email><uri>http://maxbarrass.com</uri></author><category term="blog" /><category term="jdownloader" /><category term="packegizer" /><category term="rss" /><category term="xslt" /><summary type="html"><![CDATA[Intro]]></summary></entry><entry><title type="html">Linkmoji 💪😎👍</title><link href="https://maxbarrass.com/blog/2016/11/04/linkmoji%F0%9F%92%AA%F0%9F%98%8E%F0%9F%91%8D" rel="alternate" type="text/html" title="Linkmoji 💪😎👍" /><published>2016-11-04T00:00:00+11:00</published><updated>2020-03-19T13:30:59+11:00</updated><id>https://maxbarrass.com/blog/2016/11/04/linkmoji</id><content type="html" xml:base="https://maxbarrass.com/blog/2016/11/04/linkmoji%F0%9F%92%AA%F0%9F%98%8E%F0%9F%91%8D"><![CDATA[<p>Linkmoji!</p>
 
-&lt;p&gt;Something random doing the rounds online at the moment Linkmoji.&lt;/p&gt;
+<p>Something random doing the rounds online at the moment Linkmoji.</p>
 
-&lt;p&gt;http://🎁🍊🎩🍍🐌🐱😐🐙.🍕💩.ws&lt;/p&gt;
+<p>http://🎁🍊🎩🍍🐌🐱😐🐙.🍕💩.ws</p>
 
-&lt;p&gt;Translates to:&lt;/p&gt;
+<p>Translates to:</p>
 
-&lt;p&gt;&lt;a href=&quot;http://pizza-poop.ws/present-orange-tophat-pineapple-snail-kitty-speechless-tako&quot;&gt;http://pizza-poop.ws/present-orange-tophat-pineapple-snail-kitty-speechless-tako&lt;/a&gt;&lt;/p&gt;
+<p><a href="http://pizza-poop.ws/present-orange-tophat-pineapple-snail-kitty-speechless-tako">http://pizza-poop.ws/present-orange-tophat-pineapple-snail-kitty-speechless-tako</a></p>
 
-&lt;p&gt;These guys wrote this service in an hour very impressive :)&lt;/p&gt;
+<p>These guys wrote this service in an hour very impressive :)</p>
 
-&lt;p&gt;Also, you can use emoji’s in you article url’s and  I use this &lt;a href=&quot;https://gist.github.com/rxaviers/7360908&quot;&gt;list of emoji’s&lt;/a&gt; to create URL and add some punch to my articles.&lt;/p&gt;
+<p>Also, you can use emoji’s in you article url’s and  I use this <a href="https://gist.github.com/rxaviers/7360908">list of emoji’s</a> to create URL and add some punch to my articles.</p>
 
-&lt;p&gt;You can check &lt;a href=&quot;https://github.com/wildone/maxbarrass.com/blob/master/_posts/2016-11-04-linkmoji.md&quot;&gt;source&lt;/a&gt; of this article to see how it’s done.&lt;/p&gt;
+<p>You can check <a href="https://github.com/wildone/maxbarrass.com/blob/master/_posts/2016-11-04-linkmoji.md">source</a> of this article to see how it’s done.</p>
 
-&lt;p&gt;Let the linkmoji make your articles standout!&lt;/p&gt;</content><author><name>Max Barrass</name><email>me@maxbarrass.com</email><uri>http://maxbarrass.com</uri></author><category term="blog" /><category term="linkmoji" /><summary type="html">Linkmoji!</summary></entry><entry><title type="html">AEM Capability Matrix</title><link href="https://maxbarrass.com/blog/2015/06/01/aem-capability-matrix" rel="alternate" type="text/html" title="AEM Capability Matrix" /><published>2015-05-31T23:00:00+10:00</published><updated>2015-05-31T23:00:00+10:00</updated><id>https://maxbarrass.com/blog/2015/06/01/aem-capability-matrix</id><content type="html" xml:base="https://maxbarrass.com/blog/2015/06/01/aem-capability-matrix">&lt;p&gt;I always get asked does AEM has any components that come out of the box (OOTB)? What is the list of OOTB component?  Can I use them?&lt;/p&gt;
+<p>Let the linkmoji make your articles standout!</p>]]></content><author><name>Max Barrass</name><email>me@maxbarrass.com</email><uri>http://maxbarrass.com</uri></author><category term="blog" /><category term="linkmoji" /><summary type="html"><![CDATA[Linkmoji!]]></summary></entry><entry><title type="html">AEM Capability Matrix</title><link href="https://maxbarrass.com/blog/2015/06/01/aem-capability-matrix" rel="alternate" type="text/html" title="AEM Capability Matrix" /><published>2015-05-31T23:00:00+10:00</published><updated>2020-05-22T00:10:46+10:00</updated><id>https://maxbarrass.com/blog/2015/06/01/aem-capability-matrix</id><content type="html" xml:base="https://maxbarrass.com/blog/2015/06/01/aem-capability-matrix"><![CDATA[<p>I always get asked does AEM has any components that come out of the box (OOTB)? What is the list of OOTB component?  Can I use them?</p>
 
-&lt;p&gt;A lot of people don’t know and believe that AEM is a blank canvas and you just start from scratch. Obviously this assumptions are built on other platform people have used in the past. Now of course I would not be writing this if this was the case, but it can be cumbersome to get hand on this information.&lt;/p&gt;
+<p>A lot of people don’t know and believe that AEM is a blank canvas and you just start from scratch. Obviously this assumptions are built on other platform people have used in the past. Now of course I would not be writing this if this was the case, but it can be cumbersome to get hand on this information.</p>
 
-&lt;p&gt;Anyways, YES AEM does have OOTB component and yes you can use them for your projects and I would recommend use and build on them as needed. Primary reasons is that OOTB components:&lt;/p&gt;
+<p>Anyways, YES AEM does have OOTB component and yes you can use them for your projects and I would recommend use and build on them as needed. Primary reasons is that OOTB components:</p>
 
-&lt;ol&gt;
-  &lt;li&gt;can and will save you development work&lt;/li&gt;
-  &lt;li&gt;already have a Authoring Experience which you should pay attention to, as they already have tried and tested pattern that you should look at adopting. If you don’t consider them you end up with building lots of components with totally disconnected authoring experiences across components and you won’t be able to train your Authors how to use each and every component.&lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li>can and will save you development work</li>
+  <li>already have a Authoring Experience which you should pay attention to, as they already have tried and tested pattern that you should look at adopting. If you don’t consider them you end up with building lots of components with totally disconnected authoring experiences across components and you won’t be able to train your Authors how to use each and every component.</li>
+</ol>
 
-&lt;p&gt;Now before you jump in I suggest read additional information about AEM so that you understand AEM terminology etc:&lt;/p&gt;
+<p>Now before you jump in I suggest read additional information about AEM so that you understand AEM terminology etc:</p>
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://docs.adobe.com/docs/en/aem/6-1/develop/components.html&quot;&gt;What is a component?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://docs.adobe.com/docs/en/aem/6-1/develop/the-basics/templates.html&quot;&gt;What is a template?&lt;/a&gt; (you must not have a lot of these in CMS)&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://docs.adobe.com/docs/en/aem/6-1/author/page-authoring/default-components.html&quot;&gt;Default components in AEM&lt;/a&gt; - You will notice that list on Adobe site is very short.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://docs.adobe.com/docs/en/aem/6-1/develop/extending/granite/granite-reference.html&quot;&gt;Granite UI Reference&lt;/a&gt; -  When you want to build and update  new Authoring Experiences in “Touch UI”&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://docs.adobe.com/docs/en/aem/6-1/develop/the-basics/touch-ui-concepts.html&quot;&gt;Touch UI Concepts&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://docs.adobe.com/docs/en/aem/6-1/develop/components/widgets.html&quot;&gt;Classic UI Widgets&lt;/a&gt; - Updating Classic UI&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://docs.adobe.com/docs/en/aem/6-1/ref/widgets-api/index.html&quot;&gt;Classic UI Widgets API Library&lt;/a&gt;  - more detailed widget API reference&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li><a href="https://docs.adobe.com/docs/en/aem/6-1/develop/components.html">What is a component?</a></li>
+  <li><a href="https://docs.adobe.com/docs/en/aem/6-1/develop/the-basics/templates.html">What is a template?</a> (you must not have a lot of these in CMS)</li>
+  <li><a href="https://docs.adobe.com/docs/en/aem/6-1/author/page-authoring/default-components.html">Default components in AEM</a> - You will notice that list on Adobe site is very short.</li>
+  <li><a href="https://docs.adobe.com/docs/en/aem/6-1/develop/extending/granite/granite-reference.html">Granite UI Reference</a> -  When you want to build and update  new Authoring Experiences in “Touch UI”</li>
+  <li><a href="https://docs.adobe.com/docs/en/aem/6-1/develop/the-basics/touch-ui-concepts.html">Touch UI Concepts</a></li>
+  <li><a href="https://docs.adobe.com/docs/en/aem/6-1/develop/components/widgets.html">Classic UI Widgets</a> - Updating Classic UI</li>
+  <li><a href="https://docs.adobe.com/docs/en/aem/6-1/ref/widgets-api/index.html">Classic UI Widgets API Library</a>  - more detailed widget API reference</li>
+</ul>
 
-&lt;p&gt;So finally have had some time to compile and publish this list. This list is a combination of all components available in the Design Mode in each of the AEM version.&lt;/p&gt;
+<p>So finally have had some time to compile and publish this list. This list is a combination of all components available in the Design Mode in each of the AEM version.</p>
 
-&lt;p&gt;In addition to this many clients I have spoken to always ask about AEM Capabilities and Features, so I have started to put together a list of these so that it can be used for all sorts of Strategic and Analytical work.&lt;/p&gt;
+<p>In addition to this many clients I have spoken to always ask about AEM Capabilities and Features, so I have started to put together a list of these so that it can be used for all sorts of Strategic and Analytical work.</p>
 
-&lt;p&gt;You could use this list to drive your Discovery of AEM and use it to compare AEM to other CMS platform.&lt;/p&gt;
+<p>You could use this list to drive your Discovery of AEM and use it to compare AEM to other CMS platform.</p>
 
-&lt;p&gt;The document is located here please feel free to have a look and add comments if you wish:&lt;/p&gt;
+<p>The document is located here please feel free to have a look and add comments if you wish:</p>
 
-&lt;p&gt;&lt;a href=&quot;https://docs.google.com/spreadsheets/d/11sESEtCSf45j5JWknVLE3DJt9NOJaDHfeBBJFOsxt5o/edit?usp=sharing&quot;&gt;AEM Capability Matrix&lt;/a&gt;&lt;/p&gt;
+<p><a href="https://docs.google.com/spreadsheets/d/11sESEtCSf45j5JWknVLE3DJt9NOJaDHfeBBJFOsxt5o/edit?usp=sharing">AEM Capability Matrix</a></p>
 
-&lt;p&gt;Have fun!&lt;/p&gt;</content><author><name>Max Barrass</name><email>me@maxbarrass.com</email><uri>http://maxbarrass.com</uri></author><category term="blog" /><category term="aem" /><category term="capability-matrix" /><summary type="html">I always get asked does AEM has any components that come out of the box (OOTB)? What is the list of OOTB component? Can I use them?</summary></entry><entry><title type="html">Lucene Index Configuration in AEM</title><link href="https://maxbarrass.com/blog/2014/05/28/lucene-index-configuration-in-aem" rel="alternate" type="text/html" title="Lucene Index Configuration in AEM" /><published>2014-05-27T23:00:00+10:00</published><updated>2014-05-27T23:00:00+10:00</updated><id>https://maxbarrass.com/blog/2014/05/28/lucene-index-configuration-in-aem</id><content type="html" xml:base="https://maxbarrass.com/blog/2014/05/28/lucene-index-configuration-in-aem">&lt;p&gt;If you need to update index configuration to speed up your searches in AEM,  you will need to add add an indexing_config.xml to your quickstart.&lt;/p&gt;
+<p>Have fun!</p>]]></content><author><name>Max Barrass</name><email>me@maxbarrass.com</email><uri>http://maxbarrass.com</uri></author><category term="blog" /><category term="aem" /><category term="capability-matrix" /><summary type="html"><![CDATA[I always get asked does AEM has any components that come out of the box (OOTB)? What is the list of OOTB component? Can I use them?]]></summary></entry><entry><title type="html">Lucene Index Configuration in AEM</title><link href="https://maxbarrass.com/blog/2014/05/28/lucene-index-configuration-in-aem" rel="alternate" type="text/html" title="Lucene Index Configuration in AEM" /><published>2014-05-27T23:00:00+10:00</published><updated>2020-03-19T12:58:05+11:00</updated><id>https://maxbarrass.com/blog/2014/05/28/lucene-index-configuration-in-aem</id><content type="html" xml:base="https://maxbarrass.com/blog/2014/05/28/lucene-index-configuration-in-aem"><![CDATA[<p>If you need to update index configuration to speed up your searches in AEM,  you will need to add add an indexing_config.xml to your quickstart.</p>
 
-&lt;p&gt;A good example of why you would extend would be if you have searches that search cq:Page and cq:PageContent at the same time, or you may have multilevel search requirement and you are tempted to do traditional subquery mechanism. In this scenario you can just create an index with all the attributes you want to use for search.&lt;/p&gt;
+<p>A good example of why you would extend would be if you have searches that search cq:Page and cq:PageContent at the same time, or you may have multilevel search requirement and you are tempted to do traditional subquery mechanism. In this scenario you can just create an index with all the attributes you want to use for search.</p>
 
-&lt;p&gt;Do note that the more indexes the more space this will take up. Also if you have a large dataset this will take a long time to create, so you need to think about this early on.&lt;/p&gt;
+<p>Do note that the more indexes the more space this will take up. Also if you have a large dataset this will take a long time to create, so you need to think about this early on.</p>
 
-&lt;p&gt;Location for the config:&lt;/p&gt;
+<p>Location for the config:</p>
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;crx-quickstart/repository/workspaces/crx.default/indexing_config.xml
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crx-quickstart/repository/workspaces/crx.default/indexing_config.xml
+</code></pre></div></div>
 
-&lt;p&gt;Default configuration can be found here: &lt;a href=&quot;http://helpx.adobe.com/experience-manager/kb/SearchIndexingConfig.html&quot;&gt;How to modify the search index configurations in CQ5&lt;/a&gt;&lt;/p&gt;
+<p>Default configuration can be found here: <a href="http://helpx.adobe.com/experience-manager/kb/SearchIndexingConfig.html">How to modify the search index configurations in CQ5</a></p>
 
-&lt;p&gt;Extended configuration&lt;/p&gt;
+<p>Extended configuration</p>
 
-&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot;?&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE configuration SYSTEM &quot;http://jackrabbit.apache.org/dtd/indexing-configuration-1.2.dtd&quot;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;configuration&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;xmlns:cq=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.day.com/jcr/cq/1.0&quot;&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;xmlns:dam=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.day.com/dam/1.0&quot;&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;xmlns:nt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.jcp.org/jcr/nt/1.0&quot;&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;xmlns:jcr=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.jcp.org/jcr/1.0&quot;&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;xmlns:sling=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://sling.apache.org/jcr/sling/1.0&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="cp">&lt;!DOCTYPE configuration SYSTEM "http://jackrabbit.apache.org/dtd/indexing-configuration-1.2.dtd"&gt;</span>
+<span class="nt">&lt;configuration</span>
+<span class="na">xmlns:cq=</span><span class="s">"http://www.day.com/jcr/cq/1.0"</span>
+<span class="na">xmlns:dam=</span><span class="s">"http://www.day.com/dam/1.0"</span>
+<span class="na">xmlns:nt=</span><span class="s">"http://www.jcp.org/jcr/nt/1.0"</span>
+<span class="na">xmlns:jcr=</span><span class="s">"http://www.jcp.org/jcr/1.0"</span>
+<span class="na">xmlns:sling=</span><span class="s">"http://sling.apache.org/jcr/sling/1.0"</span><span class="nt">&gt;</span>
 
-&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Disable indexing of cq:AuditEvent --&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;index-rule&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cq:AuditEvent&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/index-rule&amp;gt;&lt;/span&gt;
+<span class="c">&lt;!-- Disable indexing of cq:AuditEvent --&gt;</span>
+<span class="nt">&lt;index-rule</span> <span class="na">nodeType=</span><span class="s">"cq:AuditEvent"</span><span class="nt">&gt;&lt;/index-rule&gt;</span>
 
-&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Do not index content of subassets --&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;index-rule&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;nt:resource&quot;&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;condition=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ancestor::subassets/@jcr:primaryType='{http://www.jcp.org/jcr/nt/1.0}unstructured'&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/index-rule&amp;gt;&lt;/span&gt;
+<span class="c">&lt;!-- Do not index content of subassets --&gt;</span>
+<span class="nt">&lt;index-rule</span> <span class="na">nodeType=</span><span class="s">"nt:resource"</span>
+<span class="na">condition=</span><span class="s">"ancestor::subassets/@jcr:primaryType='{http://www.jcp.org/jcr/nt/1.0}unstructured'"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/index-rule&gt;</span>
 
-&lt;span class=&quot;c&quot;&gt;&amp;lt;!--
+<span class="c">&lt;!--
 Exclude some well known properties from the node scope
 fulltext index. Do not add rules below this one, since
 this rule matches any node and acts as a default/fallback.
---&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;index-rule&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;nt:base&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;analyticsProvider&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;analyticsSnippet&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;hideInNav&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;offTime&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;onTime&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;cq:allowedTemplates&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;cq:childrenOrder&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;cq:cugEnabled&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;cq:cugPrincipals&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;cq:cugRealm&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;cq:designPath&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;cq:isCancelledForChildren&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;cq:isDeep&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;cq:lastModified&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;cq:lastModifiedBy&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;cq:lastPublished&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;cq:lastPublishedBy&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;cq:lastReplicated&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;cq:lastReplicatedBy&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;cq:lastReplicationAction&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;cq:lastReplicationStatus&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;cq:lastRolledout&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;cq:lastRolledoutBy&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;cq:name&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;cq:parentPath&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;cq:segments&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;cq:siblingOrder&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;cq:template&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;cq:trigger&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;cq:versionComment&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;jcr:createdBy&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;jcr:lastModifiedBy&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;sling:alias&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;sling:resourceType&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;nodeScopeIndex=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;sling:vanityPath&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;isRegexp=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;.*:.*&lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/index-rule&amp;gt;&lt;/span&gt;
+--&gt;</span>
+<span class="nt">&lt;index-rule</span> <span class="na">nodeType=</span><span class="s">"nt:base"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>analyticsProvider<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>analyticsSnippet<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>hideInNav<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>offTime<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>onTime<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>cq:allowedTemplates<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>cq:childrenOrder<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>cq:cugEnabled<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>cq:cugPrincipals<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>cq:cugRealm<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>cq:designPath<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>cq:isCancelledForChildren<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>cq:isDeep<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>cq:lastModified<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>cq:lastModifiedBy<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>cq:lastPublished<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>cq:lastPublishedBy<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>cq:lastReplicated<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>cq:lastReplicatedBy<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>cq:lastReplicationAction<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>cq:lastReplicationStatus<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>cq:lastRolledout<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>cq:lastRolledoutBy<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>cq:name<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>cq:parentPath<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>cq:segments<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>cq:siblingOrder<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>cq:template<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>cq:trigger<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>cq:versionComment<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>jcr:createdBy<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>jcr:lastModifiedBy<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>sling:alias<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>sling:resourceType<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">nodeScopeIndex=</span><span class="s">"false"</span><span class="nt">&gt;</span>sling:vanityPath<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">isRegexp=</span><span class="s">"true"</span><span class="nt">&gt;</span>.*:.*<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;/index-rule&gt;</span>
 
-&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Cq Page for jcr:contains(jcr:content, &quot;...&quot;) searches --&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;aggregate&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;primaryType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cq:PageContent&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;include&amp;gt;&lt;/span&gt;*&lt;span class=&quot;nt&quot;&gt;&amp;lt;/include&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;include&amp;gt;&lt;/span&gt;*/*&lt;span class=&quot;nt&quot;&gt;&amp;lt;/include&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;include&amp;gt;&lt;/span&gt;*/*/*&lt;span class=&quot;nt&quot;&gt;&amp;lt;/include&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;include&amp;gt;&lt;/span&gt;*/*/*/*&lt;span class=&quot;nt&quot;&gt;&amp;lt;/include&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/aggregate&amp;gt;&lt;/span&gt;
+<span class="c">&lt;!-- Cq Page for jcr:contains(jcr:content, "...") searches --&gt;</span>
+<span class="nt">&lt;aggregate</span> <span class="na">primaryType=</span><span class="s">"cq:PageContent"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;include&gt;</span>*<span class="nt">&lt;/include&gt;</span>
+<span class="nt">&lt;include&gt;</span>*/*<span class="nt">&lt;/include&gt;</span>
+<span class="nt">&lt;include&gt;</span>*/*/*<span class="nt">&lt;/include&gt;</span>
+<span class="nt">&lt;include&gt;</span>*/*/*/*<span class="nt">&lt;/include&gt;</span>
+<span class="nt">&lt;/aggregate&gt;</span>
 
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;aggregate&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;primaryType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;dam:Asset&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;include&amp;gt;&lt;/span&gt;jcr:content&lt;span class=&quot;nt&quot;&gt;&amp;lt;/include&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;include&amp;gt;&lt;/span&gt;jcr:content/metadata&lt;span class=&quot;nt&quot;&gt;&amp;lt;/include&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;include&amp;gt;&lt;/span&gt;jcr:content/metadata/*&lt;span class=&quot;nt&quot;&gt;&amp;lt;/include&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;include&amp;gt;&lt;/span&gt;jcr:content/renditions&lt;span class=&quot;nt&quot;&gt;&amp;lt;/include&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;include&amp;gt;&lt;/span&gt;jcr:content/renditions/original&lt;span class=&quot;nt&quot;&gt;&amp;lt;/include&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;include&amp;gt;&lt;/span&gt;jcr:content/renditions/original/jcr:content&lt;span class=&quot;nt&quot;&gt;&amp;lt;/include&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- child axis orderby index --&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;include&amp;gt;&lt;/span&gt;jcr:content/renditions/original/jcr:content/jcr:lastModified&lt;span class=&quot;nt&quot;&gt;&amp;lt;/include&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/aggregate&amp;gt;&lt;/span&gt;
+<span class="nt">&lt;aggregate</span> <span class="na">primaryType=</span><span class="s">"dam:Asset"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;include&gt;</span>jcr:content<span class="nt">&lt;/include&gt;</span>
+<span class="nt">&lt;include&gt;</span>jcr:content/metadata<span class="nt">&lt;/include&gt;</span>
+<span class="nt">&lt;include&gt;</span>jcr:content/metadata/*<span class="nt">&lt;/include&gt;</span>
+<span class="nt">&lt;include&gt;</span>jcr:content/renditions<span class="nt">&lt;/include&gt;</span>
+<span class="nt">&lt;include&gt;</span>jcr:content/renditions/original<span class="nt">&lt;/include&gt;</span>
+<span class="nt">&lt;include&gt;</span>jcr:content/renditions/original/jcr:content<span class="nt">&lt;/include&gt;</span>
+<span class="c">&lt;!-- child axis orderby index --&gt;</span>
+<span class="nt">&lt;include&gt;</span>jcr:content/renditions/original/jcr:content/jcr:lastModified<span class="nt">&lt;/include&gt;</span>
+<span class="nt">&lt;/aggregate&gt;</span>
 
-&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- nt:file child axis orderby index --&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;aggregate&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;primaryType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;nt:file&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;include&amp;gt;&lt;/span&gt;jcr:content&lt;span class=&quot;nt&quot;&gt;&amp;lt;/include&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;include&amp;gt;&lt;/span&gt;jcr:content/jcr:lastModified&lt;span class=&quot;nt&quot;&gt;&amp;lt;/include&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/aggregate&amp;gt;&lt;/span&gt;
+<span class="c">&lt;!-- nt:file child axis orderby index --&gt;</span>
+<span class="nt">&lt;aggregate</span> <span class="na">primaryType=</span><span class="s">"nt:file"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;include&gt;</span>jcr:content<span class="nt">&lt;/include&gt;</span>
+<span class="nt">&lt;include&gt;</span>jcr:content/jcr:lastModified<span class="nt">&lt;/include&gt;</span>
+<span class="nt">&lt;/aggregate&gt;</span>
 
-&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- cq:Page child axis orderby index --&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;aggregate&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;primaryType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cq:Page&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;include&amp;gt;&lt;/span&gt;jcr:content&lt;span class=&quot;nt&quot;&gt;&amp;lt;/include&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;include&amp;gt;&lt;/span&gt;jcr:content/cq:lastModified&lt;span class=&quot;nt&quot;&gt;&amp;lt;/include&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/aggregate&amp;gt;&lt;/span&gt;
+<span class="c">&lt;!-- cq:Page child axis orderby index --&gt;</span>
+<span class="nt">&lt;aggregate</span> <span class="na">primaryType=</span><span class="s">"cq:Page"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;include&gt;</span>jcr:content<span class="nt">&lt;/include&gt;</span>
+<span class="nt">&lt;include&gt;</span>jcr:content/cq:lastModified<span class="nt">&lt;/include&gt;</span>
+<span class="nt">&lt;/aggregate&gt;</span>
 
-&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- cq:Page child axis orderby index --&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;aggregate&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;primaryType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cq:Page&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;include&amp;gt;&lt;/span&gt;jcr:content&lt;span class=&quot;nt&quot;&gt;&amp;lt;/include&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;include&amp;gt;&lt;/span&gt;jcr:content/par/*/date&lt;span class=&quot;nt&quot;&gt;&amp;lt;/include&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;include&amp;gt;&lt;/span&gt;jcr:content/par/*/tags&lt;span class=&quot;nt&quot;&gt;&amp;lt;/include&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;include&amp;gt;&lt;/span&gt;jcr:content/par/*/sling:resourceType&lt;span class=&quot;nt&quot;&gt;&amp;lt;/include&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;include&amp;gt;&lt;/span&gt;jcr:content/cq:tags&lt;span class=&quot;nt&quot;&gt;&amp;lt;/include&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/aggregate&amp;gt;&lt;/span&gt;
+<span class="c">&lt;!-- cq:Page child axis orderby index --&gt;</span>
+<span class="nt">&lt;aggregate</span> <span class="na">primaryType=</span><span class="s">"cq:Page"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;include&gt;</span>jcr:content<span class="nt">&lt;/include&gt;</span>
+<span class="nt">&lt;include&gt;</span>jcr:content/par/*/date<span class="nt">&lt;/include&gt;</span>
+<span class="nt">&lt;include&gt;</span>jcr:content/par/*/tags<span class="nt">&lt;/include&gt;</span>
+<span class="nt">&lt;include&gt;</span>jcr:content/par/*/sling:resourceType<span class="nt">&lt;/include&gt;</span>
+<span class="nt">&lt;include&gt;</span>jcr:content/cq:tags<span class="nt">&lt;/include&gt;</span>
+<span class="nt">&lt;/aggregate&gt;</span>
 
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/configuration&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Max Barrass</name><email>me@maxbarrass.com</email><uri>http://maxbarrass.com</uri></author><category term="blog" /><category term="aem" /><category term="lucene-index" /><category term="configuration" /><summary type="html">If you need to update index configuration to speed up your searches in AEM, you will need to add add an indexing_config.xml to your quickstart.</summary></entry><entry><title type="html">JCR Predicate Operations in AEM</title><link href="https://maxbarrass.com/blog/2014/05/27/jcr-predicate-operations-in-aem" rel="alternate" type="text/html" title="JCR Predicate Operations in AEM" /><published>2014-05-26T23:00:00+10:00</published><updated>2014-05-26T23:00:00+10:00</updated><id>https://maxbarrass.com/blog/2014/05/27/jcr-predicate-operations-in-aem</id><content type="html" xml:base="https://maxbarrass.com/blog/2014/05/27/jcr-predicate-operations-in-aem">&lt;p&gt;Here are some samples of JCR search in AEM. There is very little doco on this so here it goes.&lt;/p&gt;
+<span class="nt">&lt;/configuration&gt;</span>
+</code></pre></div></div>]]></content><author><name>Max Barrass</name><email>me@maxbarrass.com</email><uri>http://maxbarrass.com</uri></author><category term="blog" /><category term="aem" /><category term="lucene-index" /><category term="configuration" /><summary type="html"><![CDATA[If you need to update index configuration to speed up your searches in AEM, you will need to add add an indexing_config.xml to your quickstart.]]></summary></entry><entry><title type="html">JCR Predicate Operations in AEM</title><link href="https://maxbarrass.com/blog/2014/05/27/jcr-predicate-operations-in-aem" rel="alternate" type="text/html" title="JCR Predicate Operations in AEM" /><published>2014-05-26T23:00:00+10:00</published><updated>2020-03-19T12:58:05+11:00</updated><id>https://maxbarrass.com/blog/2014/05/27/jcr-predicate-operations-in-aem</id><content type="html" xml:base="https://maxbarrass.com/blog/2014/05/27/jcr-predicate-operations-in-aem"><![CDATA[<p>Here are some samples of JCR search in AEM. There is very little doco on this so here it goes.</p>
 
-&lt;p&gt;Two things you maybe wondering, number one how to use the Operations on a predicate and second how to do full text case insensitive search on attributes. Well without any further ado:&lt;/p&gt;
+<p>Two things you maybe wondering, number one how to use the Operations on a predicate and second how to do full text case insensitive search on attributes. Well without any further ado:</p>
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://localhost:4502/libs/cq/search/content/querydebug.html?_charset_=UTF-8&amp;amp;query=path%3D%2Fcontent%2Fgeometrixx%0D%0Atype%3Dcq%3APage%0D%0Aproperty%3Djcr%3Acontent%2Fcq%3Atoolbars%0D%0Aproperty.operation%3Dexists%0D%0A&quot;&gt;Operation Exists&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://localhost:4502/libs/cq/search/content/querydebug.html?_charset_=UTF-8&amp;amp;query=path%3D%2Fcontent%2Fgeometrixx%0D%0Atype%3Dcq%3APage%0D%0Aproperty%3Djcr%3Acontent%2Fjcr%3Atitle%0D%0Aproperty.operation%3Dlike%0D%0Aproperty.value%3D%25ac%25&quot;&gt;Operation Like&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://localhost:4502/libs/cq/search/content/querydebug.html?_charset_=UTF-8&amp;amp;query=path%3D%2Fcontent%2Fgeometrixx%0D%0Atype%3Dcq%3APage%0D%0Aproperty%3Djcr%3Acontent%2Fjcr%3Atitle%0D%0Aproperty.operation%3Dequals%0D%0Aproperty.value%3DContact&quot;&gt;Operation Equals&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://localhost:4502/libs/cq/search/content/querydebug.html?_charset_=UTF-8&amp;amp;query=path%3D%2Fcontent%2Fgeometrixx%0D%0Atype%3Dcq%3APage%0D%0Aproperty%3Djcr%3Acontent%2Fjcr%3Atitle%0D%0Aproperty.operation%3Dunequals%0D%0Aproperty.value%3DContact&quot;&gt;Operation UnEquals&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://localhost:4502/libs/cq/search/content/querydebug.html?_charset_=UTF-8&amp;amp;query=path%3D%2Fcontent%2Fgeometrixx%0D%0Atype%3Dcq%3APage%0D%0Aproperty%3Djcr%3Acontent%2Fcq%3Atoolbars%0D%0Aproperty.operation%3Dnot&quot;&gt;Operation Not Exist&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://localhost:4502/libs/cq/search/content/querydebug.html?_charset_=UTF-8&amp;amp;query=path%3D%2Fcontent%2Fgeometrixx%0D%0Atype%3Dcq%3APage%0D%0Agroup.p.or%3Dtrue%0D%0Agroup.1_fulltext%3D*Z*%0D%0Agroup.1_fulltext.relPath%3D%40jcr%3Acontent%2Fjcr%3Atitle%0D%0Agroup.2_fulltext%3D*tt*%0D%0Agroup.2_fulltext.relPath%3D%40jcr%3Acontent%2Fcq%3Atoolbars%0D%0A%0D%0A&quot;&gt;Full Text Case-Insensitive Search Example&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li><a href="http://localhost:4502/libs/cq/search/content/querydebug.html?_charset_=UTF-8&amp;query=path%3D%2Fcontent%2Fgeometrixx%0D%0Atype%3Dcq%3APage%0D%0Aproperty%3Djcr%3Acontent%2Fcq%3Atoolbars%0D%0Aproperty.operation%3Dexists%0D%0A">Operation Exists</a></li>
+  <li><a href="http://localhost:4502/libs/cq/search/content/querydebug.html?_charset_=UTF-8&amp;query=path%3D%2Fcontent%2Fgeometrixx%0D%0Atype%3Dcq%3APage%0D%0Aproperty%3Djcr%3Acontent%2Fjcr%3Atitle%0D%0Aproperty.operation%3Dlike%0D%0Aproperty.value%3D%25ac%25">Operation Like</a></li>
+  <li><a href="http://localhost:4502/libs/cq/search/content/querydebug.html?_charset_=UTF-8&amp;query=path%3D%2Fcontent%2Fgeometrixx%0D%0Atype%3Dcq%3APage%0D%0Aproperty%3Djcr%3Acontent%2Fjcr%3Atitle%0D%0Aproperty.operation%3Dequals%0D%0Aproperty.value%3DContact">Operation Equals</a></li>
+  <li><a href="http://localhost:4502/libs/cq/search/content/querydebug.html?_charset_=UTF-8&amp;query=path%3D%2Fcontent%2Fgeometrixx%0D%0Atype%3Dcq%3APage%0D%0Aproperty%3Djcr%3Acontent%2Fjcr%3Atitle%0D%0Aproperty.operation%3Dunequals%0D%0Aproperty.value%3DContact">Operation UnEquals</a></li>
+  <li><a href="http://localhost:4502/libs/cq/search/content/querydebug.html?_charset_=UTF-8&amp;query=path%3D%2Fcontent%2Fgeometrixx%0D%0Atype%3Dcq%3APage%0D%0Aproperty%3Djcr%3Acontent%2Fcq%3Atoolbars%0D%0Aproperty.operation%3Dnot">Operation Not Exist</a></li>
+  <li><a href="http://localhost:4502/libs/cq/search/content/querydebug.html?_charset_=UTF-8&amp;query=path%3D%2Fcontent%2Fgeometrixx%0D%0Atype%3Dcq%3APage%0D%0Agroup.p.or%3Dtrue%0D%0Agroup.1_fulltext%3D*Z*%0D%0Agroup.1_fulltext.relPath%3D%40jcr%3Acontent%2Fjcr%3Atitle%0D%0Agroup.2_fulltext%3D*tt*%0D%0Agroup.2_fulltext.relPath%3D%40jcr%3Acontent%2Fcq%3Atoolbars%0D%0A%0D%0A">Full Text Case-Insensitive Search Example</a></li>
+</ul>
 
-&lt;p&gt;You can find lots more examples in &lt;a href=&quot;https://github.com/wildone/aem-links/blob/master/querybuilder_cheatsheet.md&quot;&gt;Query Builder Cheat Sheet&lt;/a&gt; and Adobe info &lt;a href=&quot;http://dev.day.com/docs/en/cq/current/dam/customizing_and_extendingcq5dam/query_builder.html&quot;&gt;AEM Query Builder API Docs&lt;/a&gt;&lt;/p&gt;</content><author><name>Max Barrass</name><email>me@maxbarrass.com</email><uri>http://maxbarrass.com</uri></author><category term="blog" /><category term="aem" /><category term="querybuilder" /><category term="cheatsheet" /><summary type="html">Here are some samples of JCR search in AEM. There is very little doco on this so here it goes.</summary></entry><entry><title type="html">My move from Polar to Garmin</title><link href="https://maxbarrass.com/blog/2013/10/05/my-move-from-polar-to-garmin" rel="alternate" type="text/html" title="My move from Polar to Garmin" /><published>2013-10-04T23:00:00+10:00</published><updated>2013-10-04T23:00:00+10:00</updated><id>https://maxbarrass.com/blog/2013/10/05/my-move-from-polar-to-garmin</id><content type="html" xml:base="https://maxbarrass.com/blog/2013/10/05/my-move-from-polar-to-garmin">&lt;p&gt;I’ve finally completed my journey from Polar to Garmin. Just after I started running 3 years ago and before my first marathon I bough my self a training watch and a GPS from Polar. The version at the time I settled for was RXS800 with a matching GPS unit. That watch saw me though my first marathon, several races, athletics events and another 3 marathons. I think it was a worthy investment now that I look over the amount of activities I accumulated in the Polar Pro Trainer.&lt;/p&gt;
+<p>You can find lots more examples in <a href="https://github.com/wildone/aem-links/blob/master/querybuilder_cheatsheet.md">Query Builder Cheat Sheet</a> and Adobe info <a href="http://dev.day.com/docs/en/cq/current/dam/customizing_and_extendingcq5dam/query_builder.html">AEM Query Builder API Docs</a></p>]]></content><author><name>Max Barrass</name><email>me@maxbarrass.com</email><uri>http://maxbarrass.com</uri></author><category term="blog" /><category term="aem" /><category term="querybuilder" /><category term="cheatsheet" /><summary type="html"><![CDATA[Here are some samples of JCR search in AEM. There is very little doco on this so here it goes.]]></summary></entry><entry><title type="html">My move from Polar to Garmin</title><link href="https://maxbarrass.com/blog/2013/10/05/my-move-from-polar-to-garmin" rel="alternate" type="text/html" title="My move from Polar to Garmin" /><published>2013-10-04T23:00:00+10:00</published><updated>2020-03-19T12:58:05+11:00</updated><id>https://maxbarrass.com/blog/2013/10/05/my-move-from-polar-to-garmin</id><content type="html" xml:base="https://maxbarrass.com/blog/2013/10/05/my-move-from-polar-to-garmin"><![CDATA[<p>I’ve finally completed my journey from Polar to Garmin. Just after I started running 3 years ago and before my first marathon I bough my self a training watch and a GPS from Polar. The version at the time I settled for was RXS800 with a matching GPS unit. That watch saw me though my first marathon, several races, athletics events and another 3 marathons. I think it was a worthy investment now that I look over the amount of activities I accumulated in the Polar Pro Trainer.</p>
 
-&lt;p&gt;Despite the times that Polar saw me though, before my last marathon I switched to a Garmin 900xt, this was largely because the GPS unit on Polar take way to long to find satellites, its not water-off (more on this later) and its separate from the watch (only so many times half way though your run you realize that GPS is back home and then you look with envy at all the Garmin users).&lt;/p&gt;
+<p>Despite the times that Polar saw me though, before my last marathon I switched to a Garmin 900xt, this was largely because the GPS unit on Polar take way to long to find satellites, its not water-off (more on this later) and its separate from the watch (only so many times half way though your run you realize that GPS is back home and then you look with envy at all the Garmin users).</p>
 
-&lt;p&gt;The GPS unit for Polar run of a AA battery, which you have to make sure you charge pretty much before each run. The unit it self gives you little indication that it will run out of juice by the time you are done. As I mentioned earlier its not actually water proof. I would say its splash proof, submersion proof or what ever you want to call it, but as long as it describes the usage withing first ~50 battery replacements after coming out of the box. This is is because after a while the O-ring on the round battery door stops being effective, as the whole door comes out! After this happens and you get it wet it turns into a paperweight.&lt;/p&gt;
+<p>The GPS unit for Polar run of a AA battery, which you have to make sure you charge pretty much before each run. The unit it self gives you little indication that it will run out of juice by the time you are done. As I mentioned earlier its not actually water proof. I would say its splash proof, submersion proof or what ever you want to call it, but as long as it describes the usage withing first ~50 battery replacements after coming out of the box. This is is because after a while the O-ring on the round battery door stops being effective, as the whole door comes out! After this happens and you get it wet it turns into a paperweight.</p>
 
-&lt;p&gt;Moving right along, I’ve switched to Garmin, I use their Garmin online offering [1] and I sync activities to Strava [2] automatically [3]! Cool right! Yes, but. All my polar activities still sat in the Polar Pro Trainer, which is a desktop software, its ok but in this day and age its a little 90’s nostalgia. I’ve tried Polar’s online offering and its not Garmin and its not Strava, its clinically sterile which is not always about fun.&lt;/p&gt;
+<p>Moving right along, I’ve switched to Garmin, I use their Garmin online offering [1] and I sync activities to Strava [2] automatically [3]! Cool right! Yes, but. All my polar activities still sat in the Polar Pro Trainer, which is a desktop software, its ok but in this day and age its a little 90’s nostalgia. I’ve tried Polar’s online offering and its not Garmin and its not Strava, its clinically sterile which is not always about fun.</p>
 
-&lt;p&gt;Anyways, my transition Polar and Garmin was quick and it did not effect my training, but I can say that much for the amount of exercise data that I collected in the Polar Pro Trainer. There is no actual working migration tools available to do this painlessly and I did not want to write one. I tried all the tools available on both  Mac and Windows including import and cleanup mechanisms and found the following process to work like a charm.&lt;/p&gt;
+<p>Anyways, my transition Polar and Garmin was quick and it did not effect my training, but I can say that much for the amount of exercise data that I collected in the Polar Pro Trainer. There is no actual working migration tools available to do this painlessly and I did not want to write one. I tried all the tools available on both  Mac and Windows including import and cleanup mechanisms and found the following process to work like a charm.</p>
 
-&lt;p&gt;Over all process is to convert your Polar GPX and HRM files to TCX files [4] then import them into Garmin’s Training Center [5], then use Garmin Training Center and upload those activities in bulk to Garmin and you are in business! If you are syncing from Garmin to Strava [3], go to Garmin and set default activity privacy to Everyone before you do a bulk upload from Garmin Training Center. This will save you lots of time after :)&lt;/p&gt;
+<p>Over all process is to convert your Polar GPX and HRM files to TCX files [4] then import them into Garmin’s Training Center [5], then use Garmin Training Center and upload those activities in bulk to Garmin and you are in business! If you are syncing from Garmin to Strava [3], go to Garmin and set default activity privacy to Everyone before you do a bulk upload from Garmin Training Center. This will save you lots of time after :)</p>
 
-&lt;p&gt;Good luck and keep running!&lt;/p&gt;
+<p>Good luck and keep running!</p>
 
-&lt;p&gt;Links&lt;/p&gt;
+<p>Links</p>
 
-&lt;ol&gt;
-  &lt;li&gt;http://connect.garmin.com/&lt;/li&gt;
-  &lt;li&gt;http://www.strava.com&lt;/li&gt;
-  &lt;li&gt;http://www.copymysports.com/&lt;/li&gt;
-  &lt;li&gt;http://github.com/wildone/gpx2tcx&lt;/li&gt;
-  &lt;li&gt;http://www8.garmin.com/support/collection.jsp?product=999-99999-04&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>Max Barrass</name><email>me@maxbarrass.com</email><uri>http://maxbarrass.com</uri></author><category term="blog" /><category term="running" /><category term="polar" /><category term="garmin" /><summary type="html">I’ve finally completed my journey from Polar to Garmin. Just after I started running 3 years ago and before my first marathon I bough my self a training watch and a GPS from Polar. The version at the time I settled for was RXS800 with a matching GPS unit. That watch saw me though my first marathon, several races, athletics events and another 3 marathons. I think it was a worthy investment now that I look over the amount of activities I accumulated in the Polar Pro Trainer.</summary></entry><entry><title type="html">VBA and Office 2013</title><link href="https://maxbarrass.com/blog/2012/09/10/vba-and-office-2013" rel="alternate" type="text/html" title="VBA and Office 2013" /><published>2012-09-09T23:00:00+10:00</published><updated>2012-09-09T23:00:00+10:00</updated><id>https://maxbarrass.com/blog/2012/09/10/vba-and-office-2013</id><content type="html" xml:base="https://maxbarrass.com/blog/2012/09/10/vba-and-office-2013">&lt;p&gt;I’ve installed office 2013 Preview and found one of my projects not working in my case it was WebBrowser component. Well turns out bunch of ActiveX controls are disabled to protect you from yourself. But nothing to complicated that a bit of registry magic did not fix.&lt;/p&gt;
+<ol>
+  <li>http://connect.garmin.com/</li>
+  <li>http://www.strava.com</li>
+  <li>http://www.copymysports.com/</li>
+  <li>http://github.com/wildone/gpx2tcx</li>
+  <li>http://www8.garmin.com/support/collection.jsp?product=999-99999-04</li>
+</ol>]]></content><author><name>Max Barrass</name><email>me@maxbarrass.com</email><uri>http://maxbarrass.com</uri></author><category term="blog" /><category term="running" /><category term="polar" /><category term="garmin" /><summary type="html"><![CDATA[I’ve finally completed my journey from Polar to Garmin. Just after I started running 3 years ago and before my first marathon I bough my self a training watch and a GPS from Polar. The version at the time I settled for was RXS800 with a matching GPS unit. That watch saw me though my first marathon, several races, athletics events and another 3 marathons. I think it was a worthy investment now that I look over the amount of activities I accumulated in the Polar Pro Trainer.]]></summary></entry><entry><title type="html">VBA and Office 2013</title><link href="https://maxbarrass.com/blog/2012/09/10/vba-and-office-2013" rel="alternate" type="text/html" title="VBA and Office 2013" /><published>2012-09-09T23:00:00+10:00</published><updated>2020-03-19T12:58:05+11:00</updated><id>https://maxbarrass.com/blog/2012/09/10/vba-and-office-2013</id><content type="html" xml:base="https://maxbarrass.com/blog/2012/09/10/vba-and-office-2013"><![CDATA[<p>I’ve installed office 2013 Preview and found one of my projects not working in my case it was WebBrowser component. Well turns out bunch of ActiveX controls are disabled to protect you from yourself. But nothing to complicated that a bit of registry magic did not fix.</p>
 
-&lt;p&gt;The key and value is:&lt;/p&gt;
+<p>The key and value is:</p>
 
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Office\15.0\Common\COM Compatibility\{8856F961-340A-11D0-A96B-00C04FD705A2}]
-&quot;Compatibility Flags&quot;=dword:00000000
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Office\15.0\Common\COM Compatibility\{8856F961-340A-11D0-A96B-00C04FD705A2}]
+"Compatibility Flags"=dword:00000000
+</code></pre></div></div>
 
-&lt;p&gt;If you don’t do this you will get a surprisingly detailed message: “The subject is not trusted for the specified action.” to get you started with your investigation! :) Oh and you don’t even need to restart anything… it just works… like magic….&lt;/p&gt;</content><author><name>Max Barrass</name><email>me@maxbarrass.com</email><uri>http://maxbarrass.com</uri></author><category term="blog" /><category term="vba" /><category term="office" /><summary type="html">I’ve installed office 2013 Preview and found one of my projects not working in my case it was WebBrowser component. Well turns out bunch of ActiveX controls are disabled to protect you from yourself. But nothing to complicated that a bit of registry magic did not fix.</summary></entry><entry><title type="html">VBA Try…Catch…Finally</title><link href="https://maxbarrass.com/blog/2011/09/09/vba-try-catch-finally" rel="alternate" type="text/html" title="VBA Try…Catch…Finally" /><published>2011-09-08T23:00:00+10:00</published><updated>2011-09-08T23:00:00+10:00</updated><id>https://maxbarrass.com/blog/2011/09/09/vba-try-catch-finally</id><content type="html" xml:base="https://maxbarrass.com/blog/2011/09/09/vba-try-catch-finally">&lt;p&gt;When writing function and in particular custom error handling in VBA please remember this common patern for error handling when using “On Error”.&lt;/p&gt;
+<p>If you don’t do this you will get a surprisingly detailed message: “The subject is not trusted for the specified action.” to get you started with your investigation! :) Oh and you don’t even need to restart anything… it just works… like magic….</p>]]></content><author><name>Max Barrass</name><email>me@maxbarrass.com</email><uri>http://maxbarrass.com</uri></author><category term="blog" /><category term="vba" /><category term="office" /><summary type="html"><![CDATA[I’ve installed office 2013 Preview and found one of my projects not working in my case it was WebBrowser component. Well turns out bunch of ActiveX controls are disabled to protect you from yourself. But nothing to complicated that a bit of registry magic did not fix.]]></summary></entry><entry><title type="html">VBA Try…Catch…Finally</title><link href="https://maxbarrass.com/blog/2011/09/09/vba-try-catch-finally" rel="alternate" type="text/html" title="VBA Try…Catch…Finally" /><published>2011-09-08T23:00:00+10:00</published><updated>2020-03-19T12:58:05+11:00</updated><id>https://maxbarrass.com/blog/2011/09/09/vba-try-catch-finally</id><content type="html" xml:base="https://maxbarrass.com/blog/2011/09/09/vba-try-catch-finally"><![CDATA[<p>When writing function and in particular custom error handling in VBA please remember this common patern for error handling when using “On Error”.</p>
 
-&lt;p&gt;Function template:&lt;/p&gt;
+<p>Function template:</p>
 
-&lt;p&gt;Sub|Function SomeName()
+<p>Sub|Function SomeName()
     On Error GoTo Err_SomeName                  ‘ Initialize error handling.
     ‘ Code to do something here.
 Exit_SomeName:                                  ‘ Label to resume after error.
     Exit Sub|Function                           ‘ Exit before error handler.
 Err_SomeName:                                   ‘ Label to jump to on error.
-    Call MsgBox(Err.Number &amp;amp; Err.Description)   ‘ Place error handling here.
+    Call MsgBox(Err.Number &amp; Err.Description)   ‘ Place error handling here.
     Call Err.Clear                              ‘ Clear the error
     Resume Exit_SomeName                        ‘ Pick up again and quit.
-End Sub|Function&lt;/p&gt;
+End Sub|Function</p>
 
-&lt;p&gt;In-line template:&lt;/p&gt;
+<p>In-line template:</p>
 
-&lt;p&gt;On Error Resume Next                            ‘ Initialize error handling.
+<p>On Error Resume Next                            ‘ Initialize error handling.
     ‘ Code to do something here.
-    If Err.Number &amp;lt;&amp;gt; 0 Then                     ‘ Check if error occured
+    If Err.Number &lt;&gt; 0 Then                     ‘ Check if error occured
         ‘ Code to do something here on error
         Call Err.Clear                          ‘ Clear the error
     End If
 On Error GoTo 0                                 ‘ Disable error handling in current procedure
-                                                ‘ make other unexpected errors bubble up&lt;/p&gt;
+                                                ‘ make other unexpected errors bubble up</p>
 
-&lt;p&gt;Why you ask?! Well because VBA only has single Error object into which all function write their errors, so if you are going to use “On Error Resume Next”, handle the error and clear it, because when an error occurs its not cleared automatically when leave a function. Basically using this pattern you are mimicking the Try..Catch..Finally statements that are explicit in other languages.&lt;/p&gt;
+<p>Why you ask?! Well because VBA only has single Error object into which all function write their errors, so if you are going to use “On Error Resume Next”, handle the error and clear it, because when an error occurs its not cleared automatically when leave a function. Basically using this pattern you are mimicking the Try..Catch..Finally statements that are explicit in other languages.</p>
 
-&lt;p&gt;This is particular important if you write a deterministic functions (functions that supposed to return a value, not an error) because you are going to use them to perform logic not a good idea to leave errors handing around!&lt;/p&gt;
+<p>This is particular important if you write a deterministic functions (functions that supposed to return a value, not an error) because you are going to use them to perform logic not a good idea to leave errors handing around!</p>
 
-&lt;p&gt;Here is an example of a conundrum you could experience:&lt;/p&gt;
+<p>Here is an example of a conundrum you could experience:</p>
 
-&lt;pre&gt;&lt;code class=&quot;language-asp&quot;&gt;Sub WhatOnEarth()
+<pre><code class="language-asp">Sub WhatOnEarth()
     Dim ItsTrue As Boolean
     
     On Error Resume Next
     
     ItsTrue = IsItTrue
     
-    If Err.Number &amp;lt;&amp;gt; 0 Then
+    If Err.Number &lt;&gt; 0 Then
         MsgBox Err.Description
         ItsTrue = False
     End If
     
     If ItsTrue = True Then
-        Call MsgBox(&quot;Eureka!&quot;)
+        Call MsgBox("Eureka!")
     Else
-        Call MsgBox(&quot;Eureka!...NOT!!&quot;)
+        Call MsgBox("Eureka!...NOT!!")
     End If
 End Sub
 
@@ -440,26 +440,26 @@ Function IsItTrue() As Boolean
     IsItTrue = True
         
 End Function
-&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
 
-&lt;p&gt;And really this is all you should have experienced:&lt;/p&gt;
+<p>And really this is all you should have experienced:</p>
 
-&lt;pre&gt;&lt;code class=&quot;language-asp&quot;&gt;Sub WhatOnEarth()
+<pre><code class="language-asp">Sub WhatOnEarth()
     Dim ItsTrue As Boolean
     
     On Error Resume Next
     
     ItsTrue = IsItTrue
     
-    If Err.Number &amp;lt;&amp;gt; 0 Then
+    If Err.Number &lt;&gt; 0 Then
         MsgBox Err.Description
         ItsTrue = False
     End If
     
     If ItsTrue = True Then
-        Call MsgBox(&quot;Eureka!&quot;)
+        Call MsgBox("Eureka!")
     Else
-        Call MsgBox(&quot;Eureka!...NOT!!&quot;)
+        Call MsgBox("Eureka!...NOT!!")
     End If
 End Sub
 
@@ -471,12 +471,12 @@ Function IsItTrue() As Boolean
     
     tester = 1 / 0
     
-    If Err.Number &amp;lt;&amp;gt; 0 Then     'catch
+    If Err.Number &lt;&gt; 0 Then     'catch
         Call Err.Clear
     End If
                             
     IsItTrue = True             'finaly
 End Function
-&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
 
-&lt;p&gt;glhf!&lt;/p&gt;</content><author><name>Max Barrass</name><email>me@maxbarrass.com</email><uri>http://maxbarrass.com</uri></author><category term="blog" /><category term="vba" /><category term="try-catch-finally" /><summary type="html">When writing function and in particular custom error handling in VBA please remember this common patern for error handling when using “On Error”.</summary></entry></feed>
+<p>glhf!</p>]]></content><author><name>Max Barrass</name><email>me@maxbarrass.com</email><uri>http://maxbarrass.com</uri></author><category term="blog" /><category term="vba" /><category term="try-catch-finally" /><summary type="html"><![CDATA[When writing function and in particular custom error handling in VBA please remember this common patern for error handling when using “On Error”.]]></summary></entry></feed>

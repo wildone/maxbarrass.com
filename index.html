@@ -1,4 +1,11 @@
 <!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.25.1 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
 <html lang="en" class="no-js">
   <head>
     <meta charset="utf-8">
@@ -45,7 +52,8 @@
     
       "@type": "Person",
       "name": "Max Barrass",
-      "url": "https://maxbarrass.com/"
+      "url": "https://maxbarrass.com/",
+      "sameAs": ["https://www.linkedin.com/in/maxbarrass/"]
     
   }
 </script>
@@ -57,12 +65,12 @@
 
 
 
+
 <!-- end _includes/seo.html -->
 
 
-<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Max Barrass Feed">
 
-<!-- https://t.co/dKP3o1e -->
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Max Barrass Feed">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script>
@@ -71,26 +79,16 @@
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
-
-<!--[if IE]>
-  <style>
-    /* old IE unsupported flexbox fixes */
-    .greedy-nav .site-title {
-      padding-right: 3em;
-    }
-    .greedy-nav button {
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 100%;
-    }
-  </style>
-<![endif]-->
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
 
 
   
     <script src="/assets/scripts/lightbox.js"></script>
+  
+    <script src="/assets/scripts/code-copy.js"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
   
 
 
@@ -104,27 +102,28 @@
 <link rel="manifest" href="/assets/images/icons/site.webmanifest">
 <link rel="mask-icon" href="/assets/images/icons/safari-pinned-tab.svg" color="#5bbad5">
 <link rel="shortcut icon" href="/assets/images/icons/favicon.ico">
-<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileColor" content="#603cba">
 <meta name="msapplication-config" content="/assets/images/icons/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
 
 
-<style>
-    .archive__item-teaser {
-        min-height: 238px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgb(222,228,228);
-        background: radial-gradient(circle, rgba(222,228,228,1) 0%, rgba(255,179,107,1) 100%);
-    }
 
-    /*add tint to images*/
-    .page__hero--overlay {
-        background-color: rgba(255,179,107,.5);
-        background-blend-mode: multiply;
-    }
-</style>
+  <meta property="og:image" content="https://maxbarrass.com/assets/images/background/keyboard.jpg">
+
+
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
+  
+    <link rel="stylesheet" href="/assets/styles/head.css">
+  
+    <link rel="stylesheet" href="/assets/styles/tiny-slider.css">
+  
+    <link rel="stylesheet" href="/assets/styles/code-copy.css">
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+  
+
 
 <!-- adsense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6707033742178132"
@@ -133,22 +132,11 @@
 
 <!-- end custom head snippets -->
 
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-9B95B');</script>
-<!-- End Google Tag Manager -->
+
 
   </head>
 
   <body class="layout--splash">
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-9B95B"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -156,10 +144,6 @@
     <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
   </ul>
 </nav>
-
-    <!--[if lt IE 9]>
-<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
-<![endif]-->
 
     
 
@@ -183,8 +167,6 @@
               <a target="" href="/about/">About</a>
             </li><li class="masthead__menu-item">
               <a target="_blank" href="https://github.com/wildone/maxbarrass.com">GitHub</a>
-            </li><li class="masthead__menu-item">
-              <a target="" href="/search/">Search</a>
             </li></ul>
         
         <button class="search__toggle" type="button">
@@ -265,7 +247,7 @@
     
     <meta itemprop="description" content="My blog about things of interest…">
     
-    
+    <meta itemprop="dateModified" content="2021-11-19T00:14:29+11:00">
 
     <section class="page__content" itemprop="text">
       
@@ -308,6 +290,7 @@
         
           <a href="https://governance.foundation"><div class="archive__item-teaser">
             <img src="/assets/images/cards/governance.foundation.png" alt="Governance Foundation" />
+            
           </div></a>
         
 
@@ -338,6 +321,7 @@
         
           <a href="https://aem.design"><div class="archive__item-teaser">
             <img src="/assets/images/cards/aem.design.png" alt="AEM.Design" />
+            
           </div></a>
         
 
@@ -368,6 +352,7 @@
         
           <a href="https://anchora.com.au/"><div class="archive__item-teaser">
             <img src="/assets/images/cards/anchora-background-main.png" alt="Anchora.com.au" />
+            
           </div></a>
         
 
@@ -398,6 +383,7 @@
         
           <a href="https://syntelligent.org/"><div class="archive__item-teaser">
             <img src="/assets/images/cards/sia.png" alt="Syntelligent.org" />
+            
           </div></a>
         
 
@@ -428,6 +414,7 @@
         
           <a href="/tools/"><div class="archive__item-teaser">
             <img src="/assets/images/cards/mm-free-feature.png" alt="See some of my handy tools" />
+            
           </div></a>
         
 
@@ -458,6 +445,7 @@
         
           <a href="/blog/"><div class="archive__item-teaser">
             <img src="/assets/images/cards/blog-hero.jpg" alt="blog" />
+            
           </div></a>
         
 
@@ -488,6 +476,7 @@
         
           <a href="/tools/string-tools"><div class="archive__item-teaser">
             <img src="/assets/images/tools/cards/strings.png" alt="String Tools" />
+            
           </div></a>
         
 
@@ -518,6 +507,7 @@
         
           <a href="/tools/script-tools"><div class="archive__item-teaser">
             <img src="/assets/images/tools/cards/scripts.png" alt="Script Tools" />
+            
           </div></a>
         
 
@@ -548,6 +538,7 @@
         
           <a href="/tools/xml-transform"><div class="archive__item-teaser">
             <img src="/assets/images/tools/cards/xml.png" alt="XML Transform" />
+            
           </div></a>
         
 
@@ -578,6 +569,7 @@
         
           <a href="/tools/json-xml"><div class="archive__item-teaser">
             <img src="/assets/images/tools/cards/json.png" alt="Json and XML Tools" />
+            
           </div></a>
         
 
@@ -608,6 +600,7 @@
         
           <a href="/tools/json-path"><div class="archive__item-teaser">
             <img src="/assets/images/tools/cards/json-path.png" alt="Json Path" />
+            
           </div></a>
         
 
@@ -638,6 +631,7 @@
         
           <a href="/tools/ascii-table"><div class="archive__item-teaser">
             <img src="/assets/images/tools/cards/ascii.png" alt="Ascii Table" />
+            
           </div></a>
         
 
@@ -668,6 +662,7 @@
         
           <a href="/tools/image-convert"><div class="archive__item-teaser">
             <img src="/assets/images/tools/cards/image-convert.png" alt="Image Convert" />
+            
           </div></a>
         
 
@@ -698,6 +693,7 @@
         
           <a href="/tools/image-map"><div class="archive__item-teaser">
             <img src="/assets/images/tools/cards/image-map.png" alt="Image Map Workbench" />
+            
           </div></a>
         
 
@@ -728,11 +724,12 @@
   </article>
 </div>
 
+      
     </div>
 
     
       <div class="search-content">
-        <div class="search-content__inner-wrap"><form onsubmit="return googleCustomSearchExecute();" id="cse-search-box-form-id">
+        <div class="search-content__inner-wrap"><form onsubmit="return googleCustomSearchExecute();" id="cse-search-box-form-id" role="search">
     <label class="sr-only" for="cse-search-input-box-id">
       Enter your search term...
     </label>
@@ -778,7 +775,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2021 Max Barrass. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2024 <a href="https://maxbarrass.com">Max Barrass</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
@@ -821,6 +818,19 @@
 
 
 
+  <script>
+  window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+  ga('create','UA-11857068-1','auto');
+  ga('set', 'anonymizeIp', false);
+  ga('send','pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+
+
+
+
+
+
     
   <script>
     var disqus_config = function () {
@@ -838,7 +848,6 @@
 
 
   
-
 
 
 

@@ -1,0 +1,79 @@
+version: "2.4"
+
+services:
+
+  server:
+    image: aemdesign/centos-java-buildpack:jdk11
+    restart: always
+    extends:
+      file: ../common/config-tz.yml
+      service: config
+    working_dir: /content
+    hostname: "server"
+    command: "bash -c -l /build/source/docker-serve.sh"
+    labels:
+      traefik.frontend.priority: 1
+      traefik.enable: true
+      traefik.http.routers.maxbarrass.rule: "Host(`maxbarrass.localhost`)"
+      traefik.http.routers.maxbarrass.entrypoints: web
+      traefik.http.routers.maxbarrass_https.rule: "Host(`maxbarrass.localhost`)"
+      traefik.http.routers.maxbarrass_https.tls: true
+      traefik.http.routers.maxbarrass_https.entrypoints: websecure
+      traefik.http.services.maxbarrass.loadbalancer.passHostHeader: true
+      traefik.http.services.maxbarrass.loadbalancer.server.port: 4000
+    environment:
+      - LANG=en_US.UTF-8
+      - PORT=4000
+      - PORT_LIVERELOAD=35129
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4000"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    volumes:
+      - ../../:/build/source
+    networks:
+      - internal
+
+  webp-create:
+    image: aemdesign/centos-java-buildpack:jdk11
+    extends:
+      file: ../common/config-tz.yml
+      service: config
+    working_dir: /content
+    hostname: "webp-create"
+    command: "bash -c -l /build/source/docker-webp.sh"
+    environment:
+      - LANG=en_US.UTF-8
+      - MODE=CREATE
+    volumes:
+      - ../../:/build/source
+    profiles:
+      - webp
+    networks:
+      - internal
+
+  webp-update:
+    image: aemdesign/centos-java-buildpack:jdk11
+    extends:
+      file: ../common/config-tz.yml
+      service: config
+    working_dir: /content
+    hostname: "webp-update"
+    command: "bash -c -l /build/source/docker-webp.sh"
+    environment:
+      - LANG=en_US.UTF-8
+      - MODE=UPDATE
+    volumes:
+      - ../../:/build/source
+    profiles:
+      - webp
+    networks:
+      - internal
+
+networks:
+  internal:
+
+volumes:
+  data:

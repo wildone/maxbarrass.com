@@ -4,8 +4,13 @@ $SITE_NAME = Get-Content .\CNAME -Raw
 $SITE_NAME = $SITE_NAME -replace "[.\n\r]", "-"
 $CONATINER_NAME = "build-$SITE_NAME"
 
+$PORT = Get-Content .\dev.port -Raw
+$PORT = $PORT -replace "[.\n\r]", ""
+$PORT_LIVERELOAD = Get-Content .\dev-livereload.port -Raw
+$PORT_LIVERELOAD = $PORT_LIVERELOAD -replace "[.\n\r]", ""
+
 #start docker build container
-docker run --name $CONATINER_NAME -d -p 8102:4000 -p 35731:35729 -v ${PWD}:/build/source:rw aemdesign/centos-java-buildpack sleep inf
+docker run --name $CONATINER_NAME -d -p ${PORT}:${PORT} -p ${PORT_LIVERELOAD}:${PORT_LIVERELOAD} -v ${PWD}:/build/source:rw aemdesign/centos-java-buildpack sleep inf
 
 #connect to container
 docker exec -it $CONATINER_NAME bash --login
