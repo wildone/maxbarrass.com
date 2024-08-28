@@ -11,7 +11,7 @@ tags:
   - society
   - ethics
 header:
-  overlay_image: /assets/images/posts/2024/tree-angel.webp
+  overlay_image: /assets/images/posts/2024/tree-angel2.webp
 ---
 
 The society from which we inherit benefits is, in many ways, a product of the past, and the individuals and communities that created it are no longer present to receive repayment. This raises an important philosophical point about the nature of social debt and how it can or cannot be repaid. Here's how this can be framed:
