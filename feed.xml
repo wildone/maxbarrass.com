@@ -1,4 +1,102 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://maxbarrass.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://maxbarrass.com/" rel="alternate" type="text/html" /><updated>2024-08-28T23:55:40+10:00</updated><id>https://maxbarrass.com/feed.xml</id><title type="html">Max Barrass</title><subtitle>My Blog</subtitle><author><name>{&quot;name&quot;=&gt;nil, &quot;avatar&quot;=&gt;nil, &quot;bio&quot;=&gt;nil, &quot;location&quot;=&gt;nil, &quot;email&quot;=&gt;nil, &quot;links&quot;=&gt;[{&quot;label&quot;=&gt;&quot;Email&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-envelope-square&quot;}, {&quot;label&quot;=&gt;&quot;Website&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-link&quot;}, {&quot;label&quot;=&gt;&quot;Twitter&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-twitter-square&quot;}, {&quot;label&quot;=&gt;&quot;Facebook&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-facebook-square&quot;}, {&quot;label&quot;=&gt;&quot;GitHub&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-github&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-instagram&quot;}]}</name></author><entry><title type="html">The Inherent Impossibility of Repaying Social Debt</title><link href="https://maxbarrass.com/blog/2024/08/28/the-inherent-impossibility-of-repaying-social-debt" rel="alternate" type="text/html" title="The Inherent Impossibility of Repaying Social Debt" /><published>2024-08-27T23:00:00+10:00</published><updated>2024-08-28T23:54:25+10:00</updated><id>https://maxbarrass.com/blog/2024/08/28/the-inherent-impossibility-of-repaying-social-debt</id><content type="html" xml:base="https://maxbarrass.com/blog/2024/08/28/the-inherent-impossibility-of-repaying-social-debt"><![CDATA[<p>The society from which we inherit benefits is, in many ways, a product of the past, and the individuals and communities that created it are no longer present to receive repayment. This raises an important philosophical point about the nature of social debt and how it can or cannot be repaid. Here’s how this can be framed:</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://maxbarrass.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://maxbarrass.com/" rel="alternate" type="text/html" /><updated>2026-02-17T17:42:16+11:00</updated><id>https://maxbarrass.com/feed.xml</id><title type="html">Max Barrass</title><subtitle>My Blog</subtitle><author><name>{&quot;name&quot;=&gt;nil, &quot;avatar&quot;=&gt;nil, &quot;bio&quot;=&gt;nil, &quot;location&quot;=&gt;nil, &quot;email&quot;=&gt;nil, &quot;links&quot;=&gt;[{&quot;label&quot;=&gt;&quot;Email&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-envelope-square&quot;}, {&quot;label&quot;=&gt;&quot;Website&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-link&quot;}, {&quot;label&quot;=&gt;&quot;Twitter&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-twitter-square&quot;}, {&quot;label&quot;=&gt;&quot;Facebook&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-facebook-square&quot;}, {&quot;label&quot;=&gt;&quot;GitHub&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-github&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-instagram&quot;}]}</name></author><entry><title type="html">Fixing OpenClaw Gateway: Forcing PowerShell 7 and Handling Path Errors</title><link href="https://maxbarrass.com/blog/2025/02/17/fixing-openclaw-gateway-powershell7-path-errors" rel="alternate" type="text/html" title="Fixing OpenClaw Gateway: Forcing PowerShell 7 and Handling Path Errors" /><published>2025-02-17T00:00:00+11:00</published><updated>2026-02-17T17:41:02+11:00</updated><id>https://maxbarrass.com/blog/2025/02/17/fixing-openclaw-gateway-powershell7-path-errors</id><content type="html" xml:base="https://maxbarrass.com/blog/2025/02/17/fixing-openclaw-gateway-powershell7-path-errors"><![CDATA[<p>If you’re running OpenClaw on Windows using NVM4W, you’ve likely run into two major headaches:</p>
+
+<ol>
+  <li>
+    <p><strong>OpenClaw runs in PowerShell.</strong> The gateway runs via a .cmd file that ultimately executes in PowerShell, which forces a visible window to stay open and causes parsing bugs (e.g., <code class="language-plaintext highlighter-rouge">#</code> in paths gets treated as a comment).</p>
+  </li>
+  <li>
+    <p><strong>Hardcoded PATH params.</strong> The generated gateway bakes in the PATH at install time. New apps (Node versions, tools) you install later never appear—the gateway keeps using the frozen PATH snapshot, so your new tools are invisible to OpenClaw.</p>
+  </li>
+</ol>
+
+<p>Here is the “Smart Bridge” solution I developed to force OpenClaw into PowerShell 7 (pwsh) while using your current system PATH—so new apps actually show up. When the process starts, a window will appear; that’s where you can see your gateway logs, and it runs in pwsh instead of CMD.</p>
+
+<p><img src="/assets/images/posts/2026/openclaw-pwsh.png" alt="OpenClaw gateway running in pwsh" /></p>
+
+<h2 id="the-problem">The Problem</h2>
+
+<p>OpenClaw generates a <code class="language-plaintext highlighter-rouge">gateway.cmd</code> that hardcodes environment variables and the system PATH. Because it runs in PowerShell, you get a visible window, and paths with <code class="language-plaintext highlighter-rouge">#</code> break. Worse, that hardcoded PATH never updates: install a new Node via NVM or add a new tool, and OpenClaw won’t see it.</p>
+
+<h2 id="the-solution-the-smart-bridge-script">The Solution: The Smart Bridge Script</h2>
+
+<p>Instead of editing the generated .cmd file every time OpenClaw updates, we use a PowerShell Bridge. This script reads the configuration (Port, Token) from the .cmd file but ignores the PATH variable, allowing pwsh to use your modern system paths.</p>
+
+<h3 id="1-create-gatewayps1">1. Create gateway.ps1</h3>
+
+<p>Save this in <code class="language-plaintext highlighter-rouge">~/.openclaw/gateway.ps1</code>:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 1. Path to your existing gateway.cmd</span><span class="w">
+</span><span class="nv">$cmdFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Join-Path</span><span class="w"> </span><span class="bp">$PSScriptRoot</span><span class="w"> </span><span class="s2">"gateway.cmd"</span><span class="w">
+
+</span><span class="c"># 2. Parse the CMD file, ignoring PATH and empty lines</span><span class="w">
+</span><span class="n">Get-Content</span><span class="w"> </span><span class="nv">$cmdFile</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">ForEach-Object</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nv">$line</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">$_</span><span class="o">.</span><span class="nf">Trim</span><span class="p">()</span><span class="w">
+    
+    </span><span class="c"># Extract SET commands, but SKIP 'set PATH='</span><span class="w">
+    </span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="nv">$line</span><span class="w"> </span><span class="o">-match</span><span class="w"> </span><span class="s1">'^set\s+(?!PATH=)([^=]+)=(.*)$'</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nv">$name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">$Matches</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="nf">Trim</span><span class="p">()</span><span class="w">
+        </span><span class="nv">$value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">$Matches</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="nf">Trim</span><span class="p">()</span><span class="w">
+        
+        </span><span class="c"># Expand any existing %variables% </span><span class="w">
+        </span><span class="nv">$expandedValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">System.Environment</span><span class="p">]::</span><span class="n">ExpandEnvironmentVariables</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span><span class="w">
+        
+        </span><span class="c"># FIX: Use Set-Item on the env: drive to avoid the ParserError</span><span class="w">
+        </span><span class="n">Set-Item</span><span class="w"> </span><span class="nt">-Path</span><span class="w"> </span><span class="s2">"env:</span><span class="nv">$name</span><span class="s2">"</span><span class="w"> </span><span class="nt">-Value</span><span class="w"> </span><span class="nv">$expandedValue</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    
+    </span><span class="c"># 3. Find and run the execution line</span><span class="w">
+    </span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="nv">$line</span><span class="w"> </span><span class="o">-match</span><span class="w"> </span><span class="s1">'node\.exe'</span><span class="w"> </span><span class="o">-or</span><span class="w"> </span><span class="nv">$line</span><span class="w"> </span><span class="o">-match</span><span class="w"> </span><span class="s1">'node\s'</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nv">$execLine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$line</span><span class="w"> </span><span class="o">-replace</span><span class="w"> </span><span class="s1">'^@?echo\s+off\s*'</span><span class="p">,</span><span class="w"> </span><span class="s1">''</span><span class="w">
+        
+        </span><span class="c"># Execute the command exactly as written in the CMD file</span><span class="w">
+        </span><span class="n">Invoke-Expression</span><span class="w"> </span><span class="s2">"&amp; </span><span class="nv">$execLine</span><span class="s2">"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="2-update-the-windows-task-scheduler">2. Update the Windows Task Scheduler</h3>
+
+<p>Windows Task Scheduler is notoriously bad at handling special characters in the “Arguments” field. To fix this, we Base64 encode the launch command.</p>
+
+<p>Run this in an Elevated (Admin) PowerShell window to update your existing OpenClaw task:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 1. Resolve ~/.openclaw path (works for any user)</span><span class="w">
+</span><span class="nv">$scriptPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Join-Path</span><span class="w"> </span><span class="bp">$HOME</span><span class="w"> </span><span class="s2">".openclaw\gateway.ps1"</span><span class="w">
+</span><span class="nv">$command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"&amp; { &amp; '</span><span class="nv">$scriptPath</span><span class="s2">' }"</span><span class="w">
+
+</span><span class="c"># 2. Encode to Base64 to bypass Task Scheduler parsing bugs</span><span class="w">
+</span><span class="nv">$bytes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">System.Text.Encoding</span><span class="p">]::</span><span class="n">Unicode.GetBytes</span><span class="p">(</span><span class="nv">$command</span><span class="p">)</span><span class="w">
+</span><span class="nv">$encoded</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">Convert</span><span class="p">]::</span><span class="n">ToBase64String</span><span class="p">(</span><span class="nv">$bytes</span><span class="p">)</span><span class="w">
+
+</span><span class="c"># 3. Apply to the existing task</span><span class="w">
+</span><span class="nv">$Action</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">New-ScheduledTaskAction</span><span class="w"> </span><span class="nt">-Execute</span><span class="w"> </span><span class="s2">"pwsh.exe"</span><span class="w"> </span><span class="se">`
+</span><span class="w">    </span><span class="nt">-Argument</span><span class="w"> </span><span class="s2">"-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -EncodedCommand </span><span class="nv">$encoded</span><span class="s2">"</span><span class="w">
+
+</span><span class="n">Set-ScheduledTask</span><span class="w"> </span><span class="nt">-TaskName</span><span class="w"> </span><span class="s2">"OpenClaw Gateway"</span><span class="w"> </span><span class="nt">-Action</span><span class="w"> </span><span class="nv">$Action</span><span class="w">
+
+</span><span class="c"># 4. Restart the task</span><span class="w">
+</span><span class="n">Stop-ScheduledTask</span><span class="w"> </span><span class="nt">-TaskName</span><span class="w"> </span><span class="s2">"OpenClaw Gateway"</span><span class="w"> </span><span class="nt">-ErrorAction</span><span class="w"> </span><span class="nx">SilentlyContinue</span><span class="w">
+</span><span class="n">Start-ScheduledTask</span><span class="w"> </span><span class="nt">-TaskName</span><span class="w"> </span><span class="s2">"OpenClaw Gateway"</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Once the update is done, run <code class="language-plaintext highlighter-rouge">openclaw gateway start</code> to start the gateway.</p>
+
+<h2 id="why-this-is-the-ultimate-fix">Why this is the ultimate fix</h2>
+
+<ul>
+  <li><strong>Runs in pwsh:</strong> The gateway runs in PowerShell 7 instead of CMD. When it starts, a window appears—that’s where you can see your logs—and it’s pwsh, so PATH handling, <code class="language-plaintext highlighter-rouge">#</code> in paths, and your modern tools work correctly.</li>
+  <li><strong>Path Safety:</strong> The <code class="language-plaintext highlighter-rouge">#</code> in paths like <code class="language-plaintext highlighter-rouge">C:\data\apps\#dev</code> is handled correctly by using Invoke-Expression and EncodedCommand, so PowerShell doesn’t treat it as a comment.</li>
+  <li><strong>Live PATH:</strong> By ignoring the hardcoded PATH in the .cmd file, pwsh uses your current system PATH. New apps you install (Node versions, CLI tools) appear automatically—no reinstall of OpenClaw needed.</li>
+</ul>
+
+<h2 id="verification">Verification</h2>
+
+<p>Once the gateway has started, you can confirm the scheduled task is running with:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Get-ScheduledTask</span><span class="w"> </span><span class="nt">-TaskName</span><span class="w"> </span><span class="s2">"OpenClaw Gateway"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Select-Object</span><span class="w"> </span><span class="nx">TaskName</span><span class="p">,</span><span class="w"> </span><span class="nx">State</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="/assets/images/posts/2026/openclaw-schtasks.png" alt="OpenClaw Gateway scheduled task status" /></p>]]></content><author><name>Max Barrass</name><email>me@maxbarrass.com</email><uri>http://maxbarrass.com</uri></author><category term="blog" /><category term="openclaw" /><category term="powershell" /><category term="windows" /><category term="nvm4w" /><summary type="html"><![CDATA[If you’re running OpenClaw on Windows using NVM4W, you’ve likely run into two major headaches:]]></summary></entry><entry><title type="html">The Inherent Impossibility of Repaying Social Debt</title><link href="https://maxbarrass.com/blog/2024/08/28/the-inherent-impossibility-of-repaying-social-debt" rel="alternate" type="text/html" title="The Inherent Impossibility of Repaying Social Debt" /><published>2024-08-27T23:00:00+10:00</published><updated>2024-08-28T23:54:25+10:00</updated><id>https://maxbarrass.com/blog/2024/08/28/the-inherent-impossibility-of-repaying-social-debt</id><content type="html" xml:base="https://maxbarrass.com/blog/2024/08/28/the-inherent-impossibility-of-repaying-social-debt"><![CDATA[<p>The society from which we inherit benefits is, in many ways, a product of the past, and the individuals and communities that created it are no longer present to receive repayment. This raises an important philosophical point about the nature of social debt and how it can or cannot be repaid. Here’s how this can be framed:</p>
 
 <h2 id="inherited-benefits-from-the-past">Inherited Benefits from the Past</h2>
 
@@ -389,12 +487,4 @@ this rule matches any node and acts as a default/fallback.
   <li>http://www.copymysports.com/</li>
   <li>http://github.com/wildone/gpx2tcx</li>
   <li>http://www8.garmin.com/support/collection.jsp?product=999-99999-04</li>
-</ol>]]></content><author><name>Max Barrass</name><email>me@maxbarrass.com</email><uri>http://maxbarrass.com</uri></author><category term="blog" /><category term="running" /><category term="polar" /><category term="garmin" /><summary type="html"><![CDATA[I’ve finally completed my journey from Polar to Garmin. Just after I started running 3 years ago and before my first marathon I bough my self a training watch and a GPS from Polar. The version at the time I settled for was RXS800 with a matching GPS unit. That watch saw me though my first marathon, several races, athletics events and another 3 marathons. I think it was a worthy investment now that I look over the amount of activities I accumulated in the Polar Pro Trainer.]]></summary></entry><entry><title type="html">VBA and Office 2013</title><link href="https://maxbarrass.com/blog/2012/09/10/vba-and-office-2013" rel="alternate" type="text/html" title="VBA and Office 2013" /><published>2012-09-09T23:00:00+10:00</published><updated>2020-03-19T12:58:05+11:00</updated><id>https://maxbarrass.com/blog/2012/09/10/vba-and-office-2013</id><content type="html" xml:base="https://maxbarrass.com/blog/2012/09/10/vba-and-office-2013"><![CDATA[<p>I’ve installed office 2013 Preview and found one of my projects not working in my case it was WebBrowser component. Well turns out bunch of ActiveX controls are disabled to protect you from yourself. But nothing to complicated that a bit of registry magic did not fix.</p>
-
-<p>The key and value is:</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Office\15.0\Common\COM Compatibility\{8856F961-340A-11D0-A96B-00C04FD705A2}]
-"Compatibility Flags"=dword:00000000
-</code></pre></div></div>
-
-<p>If you don’t do this you will get a surprisingly detailed message: “The subject is not trusted for the specified action.” to get you started with your investigation! :) Oh and you don’t even need to restart anything… it just works… like magic….</p>]]></content><author><name>Max Barrass</name><email>me@maxbarrass.com</email><uri>http://maxbarrass.com</uri></author><category term="blog" /><category term="vba" /><category term="office" /><summary type="html"><![CDATA[I’ve installed office 2013 Preview and found one of my projects not working in my case it was WebBrowser component. Well turns out bunch of ActiveX controls are disabled to protect you from yourself. But nothing to complicated that a bit of registry magic did not fix.]]></summary></entry></feed>
+</ol>]]></content><author><name>Max Barrass</name><email>me@maxbarrass.com</email><uri>http://maxbarrass.com</uri></author><category term="blog" /><category term="running" /><category term="polar" /><category term="garmin" /><summary type="html"><![CDATA[I’ve finally completed my journey from Polar to Garmin. Just after I started running 3 years ago and before my first marathon I bough my self a training watch and a GPS from Polar. The version at the time I settled for was RXS800 with a matching GPS unit. That watch saw me though my first marathon, several races, athletics events and another 3 marathons. I think it was a worthy investment now that I look over the amount of activities I accumulated in the Polar Pro Trainer.]]></summary></entry></feed>
