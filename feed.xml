@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://maxbarrass.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://maxbarrass.com/" rel="alternate" type="text/html" /><updated>2026-02-17T17:42:16+11:00</updated><id>https://maxbarrass.com/feed.xml</id><title type="html">Max Barrass</title><subtitle>My Blog</subtitle><author><name>{&quot;name&quot;=&gt;nil, &quot;avatar&quot;=&gt;nil, &quot;bio&quot;=&gt;nil, &quot;location&quot;=&gt;nil, &quot;email&quot;=&gt;nil, &quot;links&quot;=&gt;[{&quot;label&quot;=&gt;&quot;Email&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-envelope-square&quot;}, {&quot;label&quot;=&gt;&quot;Website&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-link&quot;}, {&quot;label&quot;=&gt;&quot;Twitter&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-twitter-square&quot;}, {&quot;label&quot;=&gt;&quot;Facebook&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-facebook-square&quot;}, {&quot;label&quot;=&gt;&quot;GitHub&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-github&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-instagram&quot;}]}</name></author><entry><title type="html">Fixing OpenClaw Gateway: Forcing PowerShell 7 and Handling Path Errors</title><link href="https://maxbarrass.com/blog/2025/02/17/fixing-openclaw-gateway-powershell7-path-errors" rel="alternate" type="text/html" title="Fixing OpenClaw Gateway: Forcing PowerShell 7 and Handling Path Errors" /><published>2025-02-17T00:00:00+11:00</published><updated>2026-02-17T17:41:02+11:00</updated><id>https://maxbarrass.com/blog/2025/02/17/fixing-openclaw-gateway-powershell7-path-errors</id><content type="html" xml:base="https://maxbarrass.com/blog/2025/02/17/fixing-openclaw-gateway-powershell7-path-errors"><![CDATA[<p>If you’re running OpenClaw on Windows using NVM4W, you’ve likely run into two major headaches:</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://maxbarrass.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://maxbarrass.com/" rel="alternate" type="text/html" /><updated>2026-02-17T17:58:35+11:00</updated><id>https://maxbarrass.com/feed.xml</id><title type="html">Max Barrass</title><subtitle>My Blog</subtitle><author><name>{&quot;name&quot;=&gt;nil, &quot;avatar&quot;=&gt;nil, &quot;bio&quot;=&gt;nil, &quot;location&quot;=&gt;nil, &quot;email&quot;=&gt;nil, &quot;links&quot;=&gt;[{&quot;label&quot;=&gt;&quot;Email&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-envelope-square&quot;}, {&quot;label&quot;=&gt;&quot;Website&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-link&quot;}, {&quot;label&quot;=&gt;&quot;Twitter&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-twitter-square&quot;}, {&quot;label&quot;=&gt;&quot;Facebook&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-facebook-square&quot;}, {&quot;label&quot;=&gt;&quot;GitHub&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-github&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-instagram&quot;}]}</name></author><entry><title type="html">Fixing OpenClaw Gateway: Forcing PowerShell 7 and Handling Path Errors</title><link href="https://maxbarrass.com/blog/2025/02/17/fixing-openclaw-gateway-powershell7-path-errors" rel="alternate" type="text/html" title="Fixing OpenClaw Gateway: Forcing PowerShell 7 and Handling Path Errors" /><published>2025-02-17T00:00:00+11:00</published><updated>2026-02-17T17:57:44+11:00</updated><id>https://maxbarrass.com/blog/2025/02/17/fixing-openclaw-gateway-powershell7-path-errors</id><content type="html" xml:base="https://maxbarrass.com/blog/2025/02/17/fixing-openclaw-gateway-powershell7-path-errors"><![CDATA[<p>If you’re running OpenClaw on Windows using NVM4W, you’ve likely run into two major headaches:</p>
 
 <ol>
   <li>
@@ -21,14 +21,28 @@
 
 <p>Instead of editing the generated .cmd file every time OpenClaw updates, we use a PowerShell Bridge. This script reads the configuration (Port, Token) from the .cmd file but ignores the PATH variable, allowing pwsh to use your modern system paths.</p>
 
-<h3 id="1-create-gatewayps1">1. Create gateway.ps1</h3>
+<h3 id="1-create-configjson">1. Create config.json</h3>
+
+<p>Create <code class="language-plaintext highlighter-rouge">~/.openclaw/config.json</code> with this content so OpenClaw uses pwsh as the gateway shell:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"gateway"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"shell"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pwsh"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="2-create-gatewayps1">2. Create gateway.ps1</h3>
 
 <p>Save this in <code class="language-plaintext highlighter-rouge">~/.openclaw/gateway.ps1</code>:</p>
 
-<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 1. Path to your existing gateway.cmd</span><span class="w">
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 1. Force pwsh as the shell</span><span class="w">
+</span><span class="nv">$</span><span class="nn">env</span><span class="p">:</span><span class="nv">SHELL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"pwsh"</span><span class="w">
+
+</span><span class="c"># 2. Path to your existing gateway.cmd</span><span class="w">
 </span><span class="nv">$cmdFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Join-Path</span><span class="w"> </span><span class="bp">$PSScriptRoot</span><span class="w"> </span><span class="s2">"gateway.cmd"</span><span class="w">
 
-</span><span class="c"># 2. Parse the CMD file, ignoring PATH and empty lines</span><span class="w">
+</span><span class="c"># 3. Parse the CMD file, ignoring PATH and empty lines</span><span class="w">
 </span><span class="n">Get-Content</span><span class="w"> </span><span class="nv">$cmdFile</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">ForEach-Object</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nv">$line</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">$_</span><span class="o">.</span><span class="nf">Trim</span><span class="p">()</span><span class="w">
     
@@ -44,7 +58,7 @@
         </span><span class="n">Set-Item</span><span class="w"> </span><span class="nt">-Path</span><span class="w"> </span><span class="s2">"env:</span><span class="nv">$name</span><span class="s2">"</span><span class="w"> </span><span class="nt">-Value</span><span class="w"> </span><span class="nv">$expandedValue</span><span class="w">
     </span><span class="p">}</span><span class="w">
     
-    </span><span class="c"># 3. Find and run the execution line</span><span class="w">
+    </span><span class="c"># 4. Find and run the execution line</span><span class="w">
     </span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="nv">$line</span><span class="w"> </span><span class="o">-match</span><span class="w"> </span><span class="s1">'node\.exe'</span><span class="w"> </span><span class="o">-or</span><span class="w"> </span><span class="nv">$line</span><span class="w"> </span><span class="o">-match</span><span class="w"> </span><span class="s1">'node\s'</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nv">$execLine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$line</span><span class="w"> </span><span class="o">-replace</span><span class="w"> </span><span class="s1">'^@?echo\s+off\s*'</span><span class="p">,</span><span class="w"> </span><span class="s1">''</span><span class="w">
         
@@ -54,7 +68,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<h3 id="2-update-the-windows-task-scheduler">2. Update the Windows Task Scheduler</h3>
+<h3 id="3-update-the-windows-task-scheduler">3. Update the Windows Task Scheduler</h3>
 
 <p>Windows Task Scheduler is notoriously bad at handling special characters in the “Arguments” field. To fix this, we Base64 encode the launch command.</p>
 
