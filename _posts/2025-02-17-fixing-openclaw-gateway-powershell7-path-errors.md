@@ -33,15 +33,30 @@ OpenClaw generates a `gateway.cmd` that hardcodes environment variables and the 
 
 Instead of editing the generated .cmd file every time OpenClaw updates, we use a PowerShell Bridge. This script reads the configuration (Port, Token) from the .cmd file but ignores the PATH variable, allowing pwsh to use your modern system paths.
 
-### 1. Create gateway.ps1
+### 1. Create config.json
+
+Create `~/.openclaw/config.json` with this content so OpenClaw uses pwsh as the gateway shell:
+
+```json
+{
+  "gateway": {
+    "shell": "pwsh"
+  }
+}
+```
+
+### 2. Create gateway.ps1
 
 Save this in `~/.openclaw/gateway.ps1`:
 
 ```powershell
-# 1. Path to your existing gateway.cmd
+# 1. Force pwsh as the shell
+$env:SHELL = "pwsh"
+
+# 2. Path to your existing gateway.cmd
 $cmdFile = Join-Path $PSScriptRoot "gateway.cmd"
 
-# 2. Parse the CMD file, ignoring PATH and empty lines
+# 3. Parse the CMD file, ignoring PATH and empty lines
 Get-Content $cmdFile | ForEach-Object {
     $line = $_.Trim()
     
@@ -57,7 +72,7 @@ Get-Content $cmdFile | ForEach-Object {
         Set-Item -Path "env:$name" -Value $expandedValue
     }
     
-    # 3. Find and run the execution line
+    # 4. Find and run the execution line
     if ($line -match 'node\.exe' -or $line -match 'node\s') {
         $execLine = $line -replace '^@?echo\s+off\s*', ''
         
@@ -67,7 +82,7 @@ Get-Content $cmdFile | ForEach-Object {
 }
 ```
 
-### 2. Update the Windows Task Scheduler
+### 3. Update the Windows Task Scheduler
 
 Windows Task Scheduler is notoriously bad at handling special characters in the "Arguments" field. To fix this, we Base64 encode the launch command.
 
