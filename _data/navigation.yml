@@ -8,6 +8,8 @@ main:
     url: /blog/
   - title: "About"
     url: /about/
+  - title: "Privacy"
+    url: /privacy/
   - title: "GitHub"
     target: _blank
     url: https://github.com/wildone/maxbarrass.com
