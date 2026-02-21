@@ -1,9 +1,9 @@
 ---
 layout: single
-permalink: /blog/2025/02/17/fixing-openclaw-gateway-powershell7-path-errors
+permalink: /blog/2026/02/17/fixing-openclaw-gateway-powershell7-path-errors
 author: max
 title:  "Fixing OpenClaw Gateway: Forcing PowerShell 7 and Handling Path Errors"
-date:   2025-02-17 00:00:00 +1100
+date:   2026-02-17 00:00:00 +1100
 categories:
   - blog
 tags:
