@@ -10,6 +10,8 @@ main:
     url: /about/
   - title: "Privacy"
     url: /privacy/
+  - title: "Terms"
+    url: /terms/
   - title: "GitHub"
     target: _blank
     url: https://github.com/wildone/maxbarrass.com
