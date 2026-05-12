@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Max Barrass | AI Governance &amp; Enterprise Advisory</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#353534",
+                    "surface-container-highest": "#353534",
+                    "on-tertiary-fixed-variant": "#6f3719",
+                    "on-background": "#e5e2e1",
+                    "on-secondary-container": "#342800",
+                    "surface-container-low": "#1c1b1b",
+                    "on-primary": "#003737",
+                    "secondary": "#e9c349",
+                    "surface-tint": "#83d4d4",
+                    "tertiary-container": "#c87f5b",
+                    "on-error": "#690005",
+                    "on-surface": "#e5e2e1",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-secondary-fixed": "#241a00",
+                    "secondary-fixed-dim": "#e9c349",
+                    "surface-dim": "#131313",
+                    "inverse-primary": "#006a6a",
+                    "on-primary-fixed-variant": "#004f50",
+                    "on-primary-container": "#002f30",
+                    "secondary-fixed": "#ffe088",
+                    "on-secondary-fixed-variant": "#574500",
+                    "primary": "#83d4d4",
+                    "surface-container": "#201f1f",
+                    "on-secondary": "#3c2f00",
+                    "primary-container": "#4b9d9d",
+                    "outline": "#889392",
+                    "inverse-surface": "#e5e2e1",
+                    "error-container": "#93000a",
+                    "background": "#131313",
+                    "tertiary": "#ffb693",
+                    "primary-fixed-dim": "#83d4d4",
+                    "surface-container-high": "#2a2a2a",
+                    "on-error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#351000",
+                    "secondary-container": "#af8d11",
+                    "inverse-on-surface": "#313030",
+                    "on-tertiary-container": "#4b1b01",
+                    "on-tertiary": "#532205",
+                    "on-primary-fixed": "#002020",
+                    "surface-bright": "#393939",
+                    "outline-variant": "#3e4948",
+                    "error": "#ffb4ab",
+                    "tertiary-fixed": "#ffdbcc",
+                    "on-surface-variant": "#bec9c8",
+                    "tertiary-fixed-dim": "#ffb693",
+                    "primary-fixed": "#9ff1f0",
+                    "surface": "#131313",
+                    "light-bg": "#F9F9F8",
+                    "light-on-surface": "#1B1B1B",
+                    "light-surface-container": "#F1F1F0",
+                    "light-outline": "#707878"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "section-gap": "120px",
+                    "margin-mobile": "20px",
+                    "container-max": "1200px",
+                    "gutter": "24px",
+                    "baseline": "4px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "label-sm": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Playfair Display"],
+                    "headline-md": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.03em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .knowledge-graph-bg {
+            background-image: radial-gradient(circle at 2px 2px, rgba(131, 212, 212, 0.05) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+        .theme-transition {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-light-bg dark:bg-background text-light-on-surface dark:text-on-surface font-body-md overflow-x-hidden selection:bg-primary selection:text-on-primary theme-transition">
+<script>
+    const getStoredTheme = () => localStorage.getItem('theme');
+    const setStoredTheme = theme => localStorage.setItem('theme', theme);
+
+    const getPreferredTheme = () => {
+        const storedTheme = getStoredTheme();
+        if (storedTheme) return storedTheme;
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+
+    const setTheme = theme => {
+        if (theme === 'auto') {
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        } else if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    };
+
+    setTheme(getPreferredTheme());
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        const storedTheme = getStoredTheme();
+        if (storedTheme !== 'light' && storedTheme !== 'dark') {
+            setTheme('auto');
+        }
+    });
+
+    function cycleTheme() {
+        const current = getStoredTheme() || 'auto';
+        let next;
+        if (current === 'auto') next = 'light';
+        else if (current === 'light') next = 'dark';
+        else next = 'auto';
+        
+        setStoredTheme(next);
+        setTheme(next);
+        updateThemeIcon(next);
+    }
+
+    function updateThemeIcon(theme) {
+        const icon = document.getElementById('theme-icon');
+        const label = document.getElementById('theme-label');
+        if (theme === 'light') {
+            icon.innerText = 'light_mode';
+            label.innerText = 'Light';
+        } else if (theme === 'dark') {
+            icon.innerText = 'dark_mode';
+            label.innerText = 'Dark';
+        } else {
+            icon.innerText = 'brightness_auto';
+            label.innerText = 'Auto';
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        updateThemeIcon(getStoredTheme() || 'auto');
+    });
+</script>
+<nav class="fixed top-0 w-full z-50 bg-light-bg/80 dark:bg-background/80 backdrop-blur-md border-b border-outline-variant/10 dark:border-outline-variant/30 theme-transition">
+<div class="flex justify-between items-center h-20 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="font-headline-md text-headline-md text-light-on-surface dark:text-on-surface tracking-tight">Max Barrass</div>
+<div class="hidden md:flex space-x-12 items-center">
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-light-on-surface dark:text-on-surface border-b border-primary pb-1 transition-all" href="#services">Services</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-light-outline dark:text-on-surface-variant hover:text-primary transition-colors" href="#approach">Approach</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-light-outline dark:text-on-surface-variant hover:text-primary transition-colors" href="#about">About</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-light-outline dark:text-on-surface-variant hover:text-primary transition-colors" href="#contact">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 p-2 rounded-lg hover:bg-surface-container-high transition-colors group" onclick="cycleTheme()" title="Switch Theme">
+<span class="material-symbols-outlined text-primary" id="theme-icon">brightness_auto</span>
+<span class="hidden lg:block text-[10px] uppercase tracking-tighter text-light-outline dark:text-on-surface-variant group-hover:text-primary" id="theme-label">Auto</span>
+</button>
+</div>
+</div>
+</nav>
+<section class="pt-40 pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto knowledge-graph-bg theme-transition">
+<div class="flex flex-col md:flex-row items-center md:items-start gap-12 lg:gap-24">
+<div class="flex-1 space-y-8">
+<h1 class="font-display-lg text-display-lg md:text-[56px] leading-[1.1] text-light-on-surface dark:text-on-surface max-w-3xl">
+                AI governance, strategy and enterprise systems advisory
+            </h1>
+<div class="space-y-4">
+<p class="font-body-lg text-body-lg text-light-outline dark:text-on-surface-variant max-w-2xl leading-relaxed">
+                    I help organisations move beyond scattered AI tools and automation experiments by designing the governance, operating models and enterprise systems needed to turn AI into real business value.
+                </p>
+<p class="font-label-sm text-label-sm text-primary uppercase tracking-widest italic opacity-90">
+                    The return on AI comes from governed amplification, not uncontrolled automation.
+                </p>
+</div>
+<div class="flex flex-wrap gap-4 pt-4">
+<a href="https://calendar.app.google/ZKjjMS66dunqXwdW8" class="bg-primary text-on-primary px-12 py-5 rounded-lg font-label-sm uppercase tracking-widest hover:opacity-90 transition-opacity flex items-center justify-center gap-3">
+                Book a conversation
+                <span class="material-symbols-outlined text-[18px]">calendar_today</span>
+</a>
+<a href="https://www.linkedin.com/in/maxbarrass/" class="border border-light-outline dark:border-outline text-light-on-surface dark:text-on-surface px-12 py-5 rounded-lg font-label-sm uppercase tracking-widest hover:bg-light-surface-container dark:hover:bg-surface-container transition-colors flex items-center justify-center gap-3">
+                LinkedIn
+                <span class="material-symbols-outlined text-[18px]">share</span>
+</a>
+</div>
+</div>
+<div class="flex-shrink-0 relative">
+<div class="w-64 h-64 md:w-80 md:h-80 rounded-full border border-outline-variant/30 p-2">
+<img alt="Max Barrass" class="w-full h-full rounded-full object-cover grayscale" src="maxbarrass.jpg"/>
+</div>
+<div class="absolute -bottom-4 -right-4 w-12 h-12 bg-primary-container rounded-full flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">insights</span>
+</div>
+</div>
+</div>
+</section>
+<section class="py-12 border-y border-outline-variant/20 bg-light-surface-container dark:bg-surface-container-low overflow-hidden theme-transition">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-wrap justify-between items-center gap-8 text-light-outline dark:text-on-surface-variant font-label-sm tracking-wide text-center md:text-left">
+<span>25+ YEARS IN ENTERPRISE TECHNOLOGY</span>
+<span class="hidden md:inline text-outline-variant">•</span>
+<span>FOUNDER/CIO AT ANCHORA</span>
+<span class="hidden md:inline text-outline-variant">•</span>
+<span>ADOBE AEM CHAMPION</span>
+<span class="hidden md:inline text-outline-variant">•</span>
+<span>GOVERNANCE FOUNDATION CONTRIBUTOR</span>
+</div>
+</div>
+</section>
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto theme-transition">
+<div class="grid md:grid-cols-12 gap-12 items-end">
+<div class="md:col-span-7">
+<h2 class="font-headline-lg text-headline-lg text-light-on-surface dark:text-on-surface mb-8">Bridging the gap between technological possibility and organizational control.</h2>
+<p class="font-body-lg text-body-lg text-light-outline dark:text-on-surface-variant mb-6">
+                The rush to adopt AI often outpaces the development of the systems required to manage it. My focus is on practical advice for AI and platforms—ensuring your architectural foundations are as robust as your innovation is ambitious.
+            </p>
+<div class="w-24 h-px bg-primary"></div>
+</div>
+<div class="md:col-span-4 md:col-start-9">
+<p class="font-label-sm text-label-sm uppercase text-light-outline dark:text-outline mb-4">Focus Areas</p>
+<ul class="space-y-3 font-body-md text-light-on-surface dark:text-on-surface">
+<li class="flex items-center gap-3"><span class="w-2 h-[1px] bg-primary"></span> Enterprise AI Integration</li>
+<li class="flex items-center gap-3"><span class="w-2 h-[1px] bg-primary"></span> Risk Mitigation Frameworks</li>
+<li class="flex items-center gap-3"><span class="w-2 h-[1px] bg-primary"></span> Scalable Platform Architectures</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="py-section-gap bg-light-surface-container dark:bg-surface-container-low px-margin-mobile md:px-margin-desktop theme-transition" id="services">
+<div class="max-w-container-max mx-auto">
+<div class="mb-16">
+<h2 class="font-headline-lg text-headline-lg text-light-on-surface dark:text-on-surface">Core Advisory Services</h2>
+<p class="text-light-outline dark:text-on-surface-variant mt-2">Strategic guidance tailored for executive leadership and technical teams.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="bg-white dark:bg-surface-container p-8 rounded-lg border border-outline-variant/10 dark:border-outline-variant/30 transition-all hover:border-primary/50 shadow-sm dark:shadow-none">
+<span class="material-symbols-outlined text-primary mb-6 text-3xl">policy</span>
+<h3 class="font-headline-md text-headline-md mb-4 text-light-on-surface dark:text-on-surface">AI Strategy &amp; Governance</h3>
+<ul class="space-y-4 font-body-md text-light-outline dark:text-on-surface-variant">
+<li class="flex items-start gap-2"><span class="w-1.5 h-1.5 mt-2 bg-primary/40 dark:bg-outline shrink-0"></span> Ethics &amp; compliance frameworks</li>
+<li class="flex items-start gap-2"><span class="w-1.5 h-1.5 mt-2 bg-primary/40 dark:bg-outline shrink-0"></span> Strategic roadmap development</li>
+<li class="flex items-start gap-2"><span class="w-1.5 h-1.5 mt-2 bg-primary/40 dark:bg-outline shrink-0"></span> Risk assessment models</li>
+</ul>
+</div>
+<div class="bg-white dark:bg-surface-container p-8 rounded-lg border border-outline-variant/10 dark:border-outline-variant/30 transition-all hover:border-primary/50 shadow-sm dark:shadow-none">
+<span class="material-symbols-outlined text-primary mb-6 text-3xl">architecture</span>
+<h3 class="font-headline-md text-headline-md mb-4 text-light-on-surface dark:text-on-surface">Enterprise Architecture</h3>
+<ul class="space-y-4 font-body-md text-light-outline dark:text-on-surface-variant">
+<li class="flex items-start gap-2"><span class="w-1.5 h-1.5 mt-2 bg-primary/40 dark:bg-outline shrink-0"></span> Scalable system design</li>
+<li class="flex items-start gap-2"><span class="w-1.5 h-1.5 mt-2 bg-primary/40 dark:bg-outline shrink-0"></span> Data flow orchestration</li>
+<li class="flex items-start gap-2"><span class="w-1.5 h-1.5 mt-2 bg-primary/40 dark:bg-outline shrink-0"></span> Legacy modernization</li>
+</ul>
+</div>
+<div class="bg-white dark:bg-surface-container p-8 rounded-lg border border-outline-variant/10 dark:border-outline-variant/30 transition-all hover:border-primary/50 shadow-sm dark:shadow-none">
+<span class="material-symbols-outlined text-primary mb-6 text-3xl">precision_manufacturing</span>
+<h3 class="font-headline-md text-headline-md mb-4 text-light-on-surface dark:text-on-surface">AI-Native Delivery</h3>
+<ul class="space-y-4 font-body-md text-light-outline dark:text-on-surface-variant">
+<li class="flex items-start gap-2"><span class="w-1.5 h-1.5 mt-2 bg-primary/40 dark:bg-outline shrink-0"></span> VibeGov implementation</li>
+<li class="flex items-start gap-2"><span class="w-1.5 h-1.5 mt-2 bg-primary/40 dark:bg-outline shrink-0"></span> Automated governance</li>
+<li class="flex items-start gap-2"><span class="w-1.5 h-1.5 mt-2 bg-primary/40 dark:bg-outline shrink-0"></span> Delivery efficiency metrics</li>
+</ul>
+</div>
+<div class="bg-white dark:bg-surface-container p-8 rounded-lg border border-outline-variant/10 dark:border-outline-variant/30 transition-all hover:border-primary/50 shadow-sm dark:shadow-none">
+<span class="material-symbols-outlined text-primary mb-6 text-3xl">cloud_sync</span>
+<h3 class="font-headline-md text-headline-md mb-4 text-light-on-surface dark:text-on-surface">Platform &amp; Adobe Advisory</h3>
+<ul class="space-y-4 font-body-md text-light-outline dark:text-on-surface-variant">
+<li class="flex items-start gap-2"><span class="w-1.5 h-1.5 mt-2 bg-primary/40 dark:bg-outline shrink-0"></span> Adobe AEM optimization</li>
+<li class="flex items-start gap-2"><span class="w-1.5 h-1.5 mt-2 bg-primary/40 dark:bg-outline shrink-0"></span> MarTech ecosystem audit</li>
+<li class="flex items-start gap-2"><span class="w-1.5 h-1.5 mt-2 bg-primary/40 dark:bg-outline shrink-0"></span> Partner ecosystem strategy</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto theme-transition">
+<div class="relative bg-light-surface-container dark:bg-surface-container-high text-light-on-surface dark:text-on-surface p-12 md:p-24 overflow-hidden rounded-xl border border-outline-variant/10 dark:border-outline-variant/20">
+<div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-6">Why This Matters</h2>
+<p class="font-body-lg text-body-lg text-light-outline dark:text-on-surface-variant leading-relaxed">
+                    The speed of AI evolution is exponential, while traditional corporate governance is linear. This mismatch creates massive institutional risk. Without a practical, systems-based approach to governance, the very tools meant to drive value can become sources of liability and technical debt.
+                </p>
+</div>
+<div class="md:border-l border-outline-variant/30 md:pl-12">
+<div class="space-y-8">
+<div>
+<span class="text-primary font-display-lg block mb-2">90%</span>
+<p class="text-light-outline dark:text-on-surface-variant font-label-sm uppercase tracking-widest">Of AI projects fail to reach production without clear governance.</p>
+</div>
+<div>
+<span class="text-primary font-display-lg block mb-2">4.5x</span>
+<p class="text-light-outline dark:text-on-surface-variant font-label-sm uppercase tracking-widest">Increase in delivery velocity when systems are architected for AI-native workflows.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+<svg class="w-full h-full" viewbox="0 0 400 400">
+<path class="text-primary" d="M50,200 Q200,50 350,200 T50,200" fill="none" stroke="currentColor" stroke-width="0.5"></path>
+<circle class="text-primary" cx="50" cy="200" fill="currentColor" r="3"></circle>
+<circle class="text-primary" cx="200" cy="50" fill="currentColor" r="3"></circle>
+<circle class="text-primary" cx="350" cy="200" fill="currentColor" r="3"></circle>
+</svg>
+</div>
+</div>
+</section>
+<!-- Strategic Insight Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto theme-transition">
+<div class="bg-light-surface-container dark:bg-surface-container-low border border-outline-variant/20 dark:border-outline-variant/30 rounded-xl overflow-hidden shadow-sm">
+<div class="grid lg:grid-cols-12 gap-0">
+<div class="lg:col-span-8 p-12 md:p-16 space-y-8">
+<h2 class="font-headline-lg text-headline-lg text-light-on-surface dark:text-on-surface">AI value comes from amplification, not replacement</h2>
+<div class="space-y-6 font-body-lg text-light-outline dark:text-on-surface-variant leading-relaxed">
+<p>Many organisations are under pressure to prove quick returns from AI. But cutting roles or deploying tools in isolation does not create lasting value. Workforce reductions may create budget room, but they do not create return.</p>
+<p>The real opportunity is to redesign how people, systems, knowledge, workflows and AI-enabled capabilities work together. AI should amplify skilled people, improve decision-making, reduce friction, strengthen governance and create more reliable execution.</p>
+<p>That requires more than automation. It requires the right operating model, controls, roles, architecture and delivery practices. This is where Max helps organisations move from AI experiments to governed AI capability.</p>
+</div>
+<div class="pt-8 border-t border-outline-variant/20">
+<blockquote class="italic text-light-on-surface dark:text-on-surface font-headline-md text-xl md:text-2xl leading-snug">
+                        "AI does not deliver value because people are removed. It delivers value when people, systems and governance are redesigned around better ways of working."
+                    </blockquote>
+</div>
+</div>
+<div class="lg:col-span-4 bg-primary/5 dark:bg-primary/10 p-12 flex flex-col items-center justify-center relative overflow-hidden">
+<!-- Abstract Graphic -->
+<div class="relative z-10 w-full aspect-square max-w-[240px]">
+<svg class="w-full h-full text-primary" viewbox="0 0 200 200">
+<circle class="opacity-30" cx="100" cy="100" fill="none" r="80" stroke="currentColor" stroke-dasharray="4 4" stroke-width="0.5"></circle>
+<rect fill="none" height="80" stroke="currentColor" stroke-width="1.5" width="80" x="60" y="60"></rect>
+<path class="opacity-50" d="M40,100 L160,100 M100,40 L100,160" stroke="currentColor" stroke-width="0.5"></path>
+<circle cx="100" cy="100" fill="currentColor" r="12"></circle>
+<path d="M70,130 L40,160 M130,70 L160,40" stroke="currentColor" stroke-width="2"></path>
+<circle class="opacity-60" cx="40" cy="160" fill="currentColor" r="6"></circle>
+<circle class="opacity-60" cx="160" cy="40" fill="currentColor" r="6"></circle>
+</svg>
+</div>
+<div class="mt-8 text-center">
+<span class="font-label-sm uppercase tracking-[0.2em] text-primary/80">Strategic Foundation</span>
+</div>
+<!-- Subtle Gradient Glow -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary/10 blur-[100px] pointer-events-none"></div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto theme-transition" id="approach">
+<div class="text-center mb-20">
+<h2 class="font-headline-lg text-headline-lg text-light-on-surface dark:text-on-surface">Practical governance, not theoretical governance</h2>
+<p class="text-light-outline dark:text-on-surface-variant mt-4 max-w-2xl mx-auto">I believe in building structures that enable speed rather than hindering it.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-12">
+<div class="space-y-6 text-center">
+<div class="w-16 h-16 mx-auto bg-light-surface-container dark:bg-surface-container-high flex items-center justify-center rounded-lg border border-outline-variant/10 dark:border-outline-variant/20">
+<span class="material-symbols-outlined text-primary">visibility</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-light-on-surface dark:text-on-surface">Clarity before tooling</h3>
+<p class="text-light-outline dark:text-on-surface-variant">Don't buy the software until you understand the objective. We define the mission-critical outcomes first.</p>
+</div>
+<div class="space-y-6 text-center">
+<div class="w-16 h-16 mx-auto bg-light-surface-container dark:bg-surface-container-high flex items-center justify-center rounded-lg border border-outline-variant/10 dark:border-outline-variant/20">
+<span class="material-symbols-outlined text-primary">build_circle</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-light-on-surface dark:text-on-surface">Governance built into delivery</h3>
+<p class="text-light-outline dark:text-on-surface-variant">Compliance shouldn't be a checklist at the end. It should be a guardrail integrated into the workflow.</p>
+</div>
+<div class="space-y-6 text-center">
+<div class="w-16 h-16 mx-auto bg-light-surface-container dark:bg-surface-container-high flex items-center justify-center rounded-lg border border-outline-variant/10 dark:border-outline-variant/20">
+<span class="material-symbols-outlined text-primary">dynamic_feed</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-light-on-surface dark:text-on-surface">Systems that scale</h3>
+<p class="text-light-outline dark:text-on-surface-variant">We build architecture designed for the future, ensuring your digital foundations can support 10x growth.</p>
+</div>
+</div>
+</section>
+<section class="py-section-gap bg-light-surface-container dark:bg-surface-container-low px-margin-mobile md:px-margin-desktop theme-transition">
+<div class="max-w-[800px] mx-auto bg-white dark:bg-surface-container p-12 md:p-16 border border-outline-variant/10 dark:border-outline-variant/30 rounded-lg shadow-sm dark:shadow-none">
+<h2 class="font-headline-lg text-headline-lg text-light-on-surface dark:text-on-surface mb-12 text-center">Is this the right fit?</h2>
+<div class="space-y-8">
+<div class="flex gap-6 items-start">
+<span class="material-symbols-outlined text-primary mt-1">help_outline</span>
+<p class="font-body-lg text-light-on-surface dark:text-on-surface">Are you facing "analysis paralysis" with your AI strategy?</p>
+</div>
+<div class="flex gap-6 items-start">
+<span class="material-symbols-outlined text-primary mt-1">help_outline</span>
+<p class="font-body-lg text-light-on-surface dark:text-on-surface">Is your enterprise architecture struggling to keep up with business demands?</p>
+</div>
+<div class="flex gap-6 items-start">
+<span class="material-symbols-outlined text-primary mt-1">help_outline</span>
+<p class="font-body-lg text-light-on-surface dark:text-on-surface">Do you need an independent, expert voice to validate your platform roadmap?</p>
+</div>
+<div class="flex gap-6 items-start">
+<span class="material-symbols-outlined text-primary mt-1">help_outline</span>
+<p class="font-body-lg text-light-on-surface dark:text-on-surface">Are you looking to bridge the gap between technical teams and executive leadership?</p>
+</div>
+</div>
+<div class="mt-16 text-center">
+<p class="text-light-outline dark:text-on-surface-variant italic font-body-md">If you answered 'yes' to any of these, we should talk.</p>
+</div>
+</div>
+</section>
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto theme-transition" id="about">
+<div class="grid md:grid-cols-2 gap-24 items-center">
+<div class="space-y-8">
+<div class="inline-block px-4 py-1 bg-primary-container text-on-primary-container text-[10px] font-label-sm uppercase tracking-[0.2em] rounded-full">Background</div>
+<h2 class="font-headline-lg text-headline-lg text-light-on-surface dark:text-on-surface">Melbourne-based advisor, Founder/CIO at Anchora</h2>
+<p class="font-body-lg text-light-outline dark:text-on-surface-variant leading-relaxed">
+                With over 25 years at the intersection of technology and enterprise strategy, I've seen the rise and fall of dozens of platform trends. My experience as Founder and CIO at Anchora has given me a front-row seat to the challenges of scaling complex systems while maintaining operational integrity.
+            </p>
+<div class="flex gap-8 items-center pt-4">
+<div class="bg-light-surface-container dark:bg-surface-container-high p-4 rounded grayscale opacity-80 flex items-center gap-2 border border-outline-variant/10 dark:border-outline-variant/20">
+<span class="material-symbols-outlined text-primary">verified</span>
+<span class="font-label-sm text-light-on-surface dark:text-on-surface">Adobe Champion</span>
+</div>
+<div class="bg-light-surface-container dark:bg-surface-container-high p-4 rounded grayscale opacity-80 flex items-center gap-2 border border-outline-variant/10 dark:border-outline-variant/20">
+<span class="material-symbols-outlined text-primary">shield</span>
+<span class="font-label-sm text-light-on-surface dark:text-on-surface">Gov Foundation</span>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-square bg-light-surface-container dark:bg-surface-container rounded-lg overflow-hidden border border-outline-variant/10 dark:border-outline-variant/20">
+<img alt="A sophisticated office interior" class="w-full h-full object-cover mix-blend-multiply dark:mix-blend-screen opacity-70 dark:opacity-80 grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9XH2lmWom-F9z-20XWro-MgcwJAmkX2xsPe7zBRxMkOZialZhi4r4fO9XaCMsDr6PMU5yIs0ykKuIGWtD4gLEyv6Z4SaaQ48PqgAQlG7FVO3txf_BtyUDNK50Z3cCiSZS2FWkCmiMTicmidtwwWCi_lUHlTGXuyHSmtjs3OPEVOySIouf2bUehiqwojjFEIsSJKobYXDcWfzSdwQqXviWWIB0E9y_7nduhQHKP4RHbE26fRzGwRwweO_8JY0Xpun9lXTTDAkgvXc"/>
+</div>
+<div class="absolute -top-12 -left-12 hidden lg:block">
+<div class="bg-white dark:bg-surface-container-high border border-outline-variant/10 dark:border-outline-variant/50 p-8 shadow-xl dark:shadow-2xl max-w-xs rounded-lg theme-transition">
+<p class="font-display-lg text-primary leading-tight text-4xl mb-2">25+</p>
+<p class="font-label-sm text-light-outline dark:text-on-surface-variant uppercase tracking-widest leading-snug">Years of enterprise architectural expertise</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-section-gap bg-light-bg dark:bg-surface-dim px-margin-mobile md:px-margin-desktop border-t border-outline-variant/10 dark:border-none theme-transition">
+<div class="max-w-container-max mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-light-on-surface dark:text-on-surface mb-16 text-center">Engagement Models</h2>
+<div class="grid md:grid-cols-4 gap-gutter">
+<div class="bg-white dark:bg-surface-container border border-outline-variant/10 dark:border-outline-variant/20 p-6 rounded transition-all hover:border-primary/60 shadow-sm dark:shadow-none">
+<h4 class="font-label-sm text-primary uppercase tracking-widest mb-4">Tactical</h4>
+<h3 class="font-headline-md text-[20px] mb-2 text-light-on-surface dark:text-on-surface">Advisory Session</h3>
+<p class="text-light-outline dark:text-on-surface-variant text-body-md">A focused 90-minute session to unblock a specific strategic or technical challenge.</p>
+</div>
+<div class="bg-white dark:bg-surface-container border border-outline-variant/10 dark:border-outline-variant/20 p-6 rounded transition-all hover:border-primary/60 shadow-sm dark:shadow-none">
+<h4 class="font-label-sm text-primary uppercase tracking-widest mb-4">Discovery</h4>
+<h3 class="font-headline-md text-[20px] mb-2 text-light-on-surface dark:text-on-surface">Discovery &amp; Roadmap</h3>
+<p class="text-light-outline dark:text-on-surface-variant text-body-md">Deep-dive audit and multi-quarter strategic plan for AI or platform evolution.</p>
+</div>
+<div class="bg-white dark:bg-surface-container border border-outline-variant/10 dark:border-outline-variant/20 p-6 rounded transition-all hover:border-primary/60 shadow-sm dark:shadow-none">
+<h4 class="font-label-sm text-primary uppercase tracking-widest mb-4">Structural</h4>
+<h3 class="font-headline-md text-[20px] mb-2 text-light-on-surface dark:text-on-surface">Governance Design</h3>
+<p class="text-light-outline dark:text-on-surface-variant text-body-md">Developing custom operating models and governance frameworks for your org.</p>
+</div>
+<div class="bg-white dark:bg-surface-container border border-outline-variant/10 dark:border-outline-variant/20 p-6 rounded transition-all hover:border-primary/60 shadow-sm dark:shadow-none">
+<h4 class="font-label-sm text-primary uppercase tracking-widest mb-4">Retainer</h4>
+<h3 class="font-headline-md text-[20px] mb-2 text-light-on-surface dark:text-on-surface">Strategic Support</h3>
+<p class="text-light-outline dark:text-on-surface-variant text-body-md">Ongoing executive advisory and oversight of critical delivery milestones.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center theme-transition" id="contact">
+<div class="max-w-3xl mx-auto space-y-12">
+<h2 class="font-display-lg text-display-lg text-light-on-surface dark:text-on-surface">Need a practical path through AI and enterprise complexity?</h2>
+<div class="flex flex-col sm:flex-row gap-6 justify-center">
+<a href="https://calendar.app.google/ZKjjMS66dunqXwdW8" class="bg-primary text-on-primary px-12 py-5 rounded-lg font-label-sm uppercase tracking-widest hover:opacity-90 transition-opacity flex items-center justify-center gap-3">
+                Book a conversation
+                <span class="material-symbols-outlined text-[18px]">calendar_today</span>
+</a>
+<a href="https://www.linkedin.com/in/maxbarrass/" class="border border-light-outline dark:border-outline text-light-on-surface dark:text-on-surface px-12 py-5 rounded-lg font-label-sm uppercase tracking-widest hover:bg-light-surface-container dark:hover:bg-surface-container transition-colors flex items-center justify-center gap-3">
+                LinkedIn
+                <span class="material-symbols-outlined text-[18px]">share</span>
+</a>
+</div>
+<p class="text-light-outline dark:text-outline font-label-sm uppercase tracking-[0.2em] pt-8">Melbourne, Australia &amp; Globally Available</p>
+</div>
+</section>
+<footer class="w-full py-section-gap bg-light-surface-container dark:bg-surface-container-low border-t border-outline-variant/10 dark:border-outline-variant/20 theme-transition">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop gap-8">
+<div class="space-y-4">
+<div class="font-headline-md text-headline-md text-light-on-surface dark:text-on-surface">Max Barrass</div>
+<p class="font-body-md text-light-outline dark:text-on-surface-variant max-w-xs">© 2026 Max Barrass. AI Governance &amp; Enterprise Advisory.</p>
+</div>
+<div class="flex flex-col md:flex-row gap-8 md:gap-16">
+<div class="space-y-4">
+<p class="font-label-sm text-light-on-surface dark:text-on-surface uppercase tracking-widest">Connect</p>
+<ul class="space-y-2 text-light-outline dark:text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="https://www.linkedin.com/in/maxbarrass/">LinkedIn</a></li>
+<li><a class="hover:text-primary transition-colors" href="mailto:max.barrass@gmail.com?subject=AI%20Governance%20Strategy%20Conversation">Email</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<p class="font-label-sm text-light-on-surface dark:text-on-surface uppercase tracking-widest">Links</p>
+<ul class="space-y-2 text-light-outline dark:text-on-surface-variant">
+<li>Melbourne, Australia</li>
+<li><a class="hover:text-primary transition-colors" href="https://governance.foundation/">Governance Foundation</a></li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
