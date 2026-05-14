@@ -121,6 +121,36 @@
         .theme-transition {
             transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
+        .bio-link {
+            color: #006a6a;
+            font-weight: 600;
+            text-decoration-line: underline;
+            text-decoration-thickness: 1.5px;
+            text-underline-offset: 4px;
+            text-decoration-color: rgba(0, 106, 106, 0.35);
+            transition: color 0.2s ease, text-decoration-color 0.2s ease;
+        }
+
+        .bio-link:hover {
+            color: #004f50;
+            text-decoration-color: #004f50;
+        }
+
+        .dark .bio-link {
+            color: #83d4d4;
+            text-decoration-color: rgba(131, 212, 212, 0.45);
+        }
+
+        .dark .bio-link:hover {
+            color: #9ff1f0;
+            text-decoration-color: #9ff1f0;
+        }
+
+        .bio-link:focus-visible {
+            outline: 2px solid #83d4d4;
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
     </style>
 </head>
 <body class="bg-light-bg dark:bg-background text-light-on-surface dark:text-on-surface font-body-md overflow-x-hidden selection:bg-primary selection:text-on-primary theme-transition">
@@ -467,7 +497,7 @@ For more than 25 years I’ve worked across software delivery, enterprise archit
 A lot of my current work traces back to my thesis on information systems governance, where I explored how governance can be understood through different perspectives: social, technical, organisational and systemic.
 </p>
 <p class="font-body-lg text-light-outline dark:text-on-surface-variant leading-relaxed">
-Governance Foundation is where I share those perspectives and ideas. KnowledgeFund is the platform expression of that thinking. VibeGov is a tactical method for embedding governed AI practices into agent-based work, so individuals can use AI with more structure, clarity and control.
+<a class="bio-link" href="https://governance.foundation/">Governance Foundation</a> is where I share those perspectives and ideas. <a class="bio-link" href="https://knowledgefund.co/">KnowledgeFund</a> is the platform expression of that thinking. <a class="bio-link" href="https://vibegov.io/">VibeGov</a> is a tactical method for embedding governed AI practices into agent-based work, so individuals can use AI with more structure, clarity and control.
 </p>
 <p class="font-body-lg text-light-outline dark:text-on-surface-variant leading-relaxed">
 My focus is simple: helping organisations adopt AI and digital platforms in ways that are useful, governed, secure and commercially sensible.
@@ -551,7 +581,7 @@ My focus is simple: helping organisations adopt AI and digital platforms in ways
 <ul class="space-y-2 text-light-outline dark:text-on-surface-variant">
 <li><a class="hover:text-primary transition-colors" href="https://www.google.com/maps/place/Melbourne,+Australia/">Melbourne, Australia</a></li>
 <li><a class="hover:text-primary transition-colors" href="https://governance.foundation/">Governance Foundation</a></li>
-<li><a class="hover:text-primary transition-colors" href="https://knowledgefund.co/">Knowledge<span style="color: rgb(89, 111, 210);">Fund</span></a></li>
+<li><a class="hover:text-primary transition-colors" href="https://knowledgefund.co/">KnowledgeFund</a></li>
 <li><a class="hover:text-primary transition-colors" href="https://vibegov.io/">VibeGov</a></li>
 </ul>
 </div>
