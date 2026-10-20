@@ -8,6 +8,15 @@ from pathlib import Path
 from urllib.parse import urljoin, urlsplit, unquote
 import sys
 
+ARTICLE_DATES = {
+    '1767-contributions-in-one-day': '2026/10/11',
+    '42850-contributions-the-year-i-changed-how-i-build-software': '2026/10/14',
+    'has-your-software-factory-run-out-of-tokens': '2026/09/30',
+    'what-could-you-do-with-more-tokens': '2026/10/08',
+    'your-organisation-needs-a-software-factory': '2026/08/30',
+}
+REDIRECTS = {f'/blog/{slug}/': f'/blog/{date}/{slug}/' for slug, date in ARTICLE_DATES.items()}
+
 
 class Page(HTMLParser):
     def __init__(self, source):
@@ -24,6 +33,10 @@ class Page(HTMLParser):
 def check(root):
     files = [root / 'index.html', *sorted((root / 'blog').rglob('*.html'))]
     errors, pages, canonicals = [], {}, set()
+    for old, new in REDIRECTS.items():
+        for route in (old, new):
+            if not (root / route.lstrip('/') / 'index.html').is_file():
+                errors.append(f'Missing article or redirect: {route}')
     for file in files:
         source = file.read_text(encoding='utf-8')
         page = pages[file] = Page(source)
@@ -38,9 +51,26 @@ def check(root):
         route = '/' + str(file.parent.relative_to(root)).replace('\\', '/') + '/'
         if file == root / 'index.html':
             route = '/'
-        if canonical != ['https://maxbarrass.com' + route] or canonical[0] in canonicals:
+        redirect = REDIRECTS.get(route)
+        expected_canonical = 'https://maxbarrass.com' + (redirect or route)
+        if canonical != [expected_canonical] or (not redirect and expected_canonical in canonicals):
             errors.append(f'{label}: missing, duplicate or incorrect canonical')
-        canonicals.update(canonical)
+        if not redirect:
+            canonicals.update(canonical)
+        if route.startswith('/blog/'):
+            social_urls = [a.get('content') for t, a in page.tags if t == 'meta' and a.get('property') == 'og:url']
+            if social_urls != [expected_canonical]:
+                errors.append(f'{label}: social URL differs from canonical')
+        if redirect:
+            refreshes = [a.get('content') for t, a in page.tags if t == 'meta' and a.get('http-equiv', '').lower() == 'refresh']
+            if refreshes != ['1;url=' + redirect]:
+                errors.append(f'{label}: missing or incorrect static redirect')
+            if not any(t == 'a' and a.get('href') == redirect for t, a in page.tags):
+                errors.append(f'{label}: missing visible redirect fallback')
+            if not any(t == 'meta' and a.get('name') == 'robots' and a.get('content') == 'noindex,follow' for t, a in page.tags):
+                errors.append(f'{label}: redirect should not be indexed')
+            if not any(t == 'script' and a.get('src') == '/assets/article-redirect.js' for t, a in page.tags):
+                errors.append(f'{label}: missing query/fragment-preserving redirect')
         if not any(t == 'meta' and a.get('name') == 'description' and a.get('content') for t, a in page.tags):
             errors.append(f'{label}: missing description')
         for private_field in ('editorial_status:', 'publishing_action:', 'draft_for_review'):
@@ -56,6 +86,8 @@ def check(root):
             url = urlsplit(urljoin('https://maxbarrass.com' + route, target))
             if url.scheme not in ('http', 'https') or url.netloc != 'maxbarrass.com':
                 continue
+            if url.path in REDIRECTS:
+                errors.append(f'{file.relative_to(root)}: link still points to old article URL {target}')
             destination = root / unquote(url.path).lstrip('/')
             if destination.is_dir():
                 destination /= 'index.html'
@@ -69,7 +101,7 @@ def check(root):
     if errors:
         print('\n'.join(errors))
         return 1
-    print(f'PASS: {len(files)} pages; unique metadata, landmarks, IDs; {checked} local links/assets/fragments.')
+    print(f'PASS: {len(files)} pages, {len(REDIRECTS)} legacy redirects; canonical/social URLs, landmarks, IDs; {checked} local links/assets/fragments.')
     return 0
 
 
