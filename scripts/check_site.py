@@ -57,6 +57,13 @@ def check(root):
             errors.append(f'{label}: missing, duplicate or incorrect canonical')
         if not redirect:
             canonicals.update(canonical)
+        if route == '/blog/' and not any(t == 'main' and a.get('data-series-index') == 'building-my-software-factory' for t, a in page.tags):
+            errors.append(f'{label}: missing series index marker')
+        if route in REDIRECTS.values():
+            if not any(t == 'article' and a.get('data-series') == 'building-my-software-factory' for t, a in page.tags):
+                errors.append(f'{label}: missing series membership')
+            if not any(t == 'a' and 'data-series-home' in a and a.get('href') == '/blog/' for t, a in page.tags):
+                errors.append(f'{label}: missing series navigation')
         if route.startswith('/blog/'):
             social_urls = [a.get('content') for t, a in page.tags if t == 'meta' and a.get('property') == 'og:url']
             if social_urls != [expected_canonical]:

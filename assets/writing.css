@@ -11,3 +11,5 @@ html.dark{color-scheme:dark;--paper:#131313;--panel:#201f1f;--ink:#e5e2e1;--mute
 @media(max-width:600px){.site-links a{font-size:11px;letter-spacing:.08em}}
 .home-added h2{font-size:32px;line-height:1.2}.home-mobile-nav{flex-wrap:wrap}
 @media(max-width:600px){html{scroll-padding-top:165px}.home-mobile-nav{display:grid;grid-template-columns:repeat(3,1fr);gap:8px 20px;padding-bottom:14px}.home-added{scroll-margin-top:165px}}
+
+.project-card-wide{grid-column:1/-1}
