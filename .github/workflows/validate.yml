@@ -1,0 +1,24 @@
+name: Validate static site
+
+on:
+  pull_request:
+    branches: [bio-homepage]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check pages and local links
+        run: python scripts/check_site.py
+      - name: Check whitespace
+        run: git diff --check HEAD^ HEAD

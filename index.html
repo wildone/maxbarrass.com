@@ -152,89 +152,31 @@
             border-radius: 2px;
         }
     </style>
+<link rel="stylesheet" href="/assets/writing.css"/>
+<script src="/assets/theme.js"></script>
+<meta name="description" content="Max Barrass: AI governance and enterprise systems advisory, projects, and writing from a personal software factory."/>
+<link rel="canonical" href="https://maxbarrass.com/"/>
 </head>
 <body class="bg-light-bg dark:bg-background text-light-on-surface dark:text-on-surface font-body-md overflow-x-hidden selection:bg-primary selection:text-on-primary theme-transition">
-<script>
-    const getStoredTheme = () => localStorage.getItem('theme');
-    const setStoredTheme = theme => localStorage.setItem('theme', theme);
-
-    const getPreferredTheme = () => {
-        const storedTheme = getStoredTheme();
-        if (storedTheme) return storedTheme;
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    };
-
-    const setTheme = theme => {
-        if (theme === 'auto') {
-            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                document.documentElement.classList.add('dark');
-            } else {
-                document.documentElement.classList.remove('dark');
-            }
-        } else if (theme === 'dark') {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-    };
-
-    setTheme(getPreferredTheme());
-
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-        const storedTheme = getStoredTheme();
-        if (storedTheme !== 'light' && storedTheme !== 'dark') {
-            setTheme('auto');
-        }
-    });
-
-    function cycleTheme() {
-        const current = getStoredTheme() || 'auto';
-        let next;
-        if (current === 'auto') next = 'light';
-        else if (current === 'light') next = 'dark';
-        else next = 'auto';
-        
-        setStoredTheme(next);
-        setTheme(next);
-        updateThemeIcon(next);
-    }
-
-    function updateThemeIcon(theme) {
-        const icon = document.getElementById('theme-icon');
-        const label = document.getElementById('theme-label');
-        if (theme === 'light') {
-            icon.innerText = 'light_mode';
-            label.innerText = 'Light';
-        } else if (theme === 'dark') {
-            icon.innerText = 'dark_mode';
-            label.innerText = 'Dark';
-        } else {
-            icon.innerText = 'brightness_auto';
-            label.innerText = 'Auto';
-        }
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-        updateThemeIcon(getStoredTheme() || 'auto');
-    });
-</script>
+<a class="skip-link" href="#main">Skip to content</a>
 <nav class="fixed top-0 w-full z-50 bg-light-bg/80 dark:bg-background/80 backdrop-blur-md border-b border-outline-variant/10 dark:border-outline-variant/30 theme-transition">
 <div class="flex justify-between items-center h-20 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-<div class="font-headline-md text-headline-md text-light-on-surface dark:text-on-surface tracking-tight">Max Barrass</div>
-<div class="hidden md:flex space-x-12 items-center">
+<div class="font-headline-md text-headline-md text-light-on-surface dark:text-on-surface tracking-tight"><a class="home-brand" href="/">Max Barrass</a></div>
+<div class="hidden md:flex space-x-12 items-center home-desktop-nav">
 <a class="font-label-sm text-label-sm uppercase tracking-widest text-light-on-surface dark:text-on-surface border-b border-primary pb-1 transition-all" href="#services">Services</a>
 <a class="font-label-sm text-label-sm uppercase tracking-widest text-light-outline dark:text-on-surface-variant hover:text-primary transition-colors" href="#approach">Approach</a>
 <a class="font-label-sm text-label-sm uppercase tracking-widest text-light-outline dark:text-on-surface-variant hover:text-primary transition-colors" href="#about">About</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-light-outline dark:text-on-surface-variant" href="#projects">Projects</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-light-outline dark:text-on-surface-variant" href="/blog/">Writing</a>
 <a class="font-label-sm text-label-sm uppercase tracking-widest text-light-outline dark:text-on-surface-variant hover:text-primary transition-colors" href="#contact">Contact</a>
 </div>
 <div class="flex items-center gap-4">
-<button class="flex items-center gap-2 p-2 rounded-lg hover:bg-surface-container-high transition-colors group" onclick="cycleTheme()" title="Switch Theme">
-<span class="material-symbols-outlined text-primary" id="theme-icon">brightness_auto</span>
-<span class="hidden lg:block text-[10px] uppercase tracking-tighter text-light-outline dark:text-on-surface-variant group-hover:text-primary" id="theme-label">Auto</span>
-</button>
+<button class="theme-control" type="button" data-theme-toggle>Theme: Auto</button>
 </div>
 </div>
+<div class="home-mobile-nav" aria-label="Mobile navigation"><a href="#services">Services</a><a href="#approach">Approach</a><a href="#about">About</a><a href="#projects">Projects</a><a href="/blog/">Writing</a><a href="#contact">Contact</a></div>
 </nav>
+<main class="home-main" id="main" tabindex="-1">
 <section class="pt-40 pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto knowledge-graph-bg theme-transition">
 <div class="flex flex-col md:flex-row items-center md:items-start gap-12 lg:gap-24">
 <div class="flex-1 space-y-8">
@@ -546,6 +488,8 @@ My focus is simple: helping organisations adopt AI and digital platforms in ways
 </div>
 </div>
 </section>
+<section class="home-added wrap" id="projects" aria-labelledby="projects-title"><p class="eyebrow">Ideas into practice</p><h2 id="projects-title">Projects</h2><p class="intro" style="font-size:17px">The places where I develop and share my work on governance, knowledge and delivery.</p><div class="project-grid"><article class="project-card"><h3>VibeGov</h3><p>Knowledge and policies agents adopt to keep intent, ownership, evidence and handoffs explicit.</p><a class="read-link" href="https://vibegov.io/">Explore the guidance <span aria-hidden="true">↗</span></a></article><article class="project-card"><h3>Governance.Foundation</h3><p>Writing and frameworks for making organisations legible to people and AI, with governance at the centre.</p><a class="read-link" href="https://governance.foundation/">Read the foundations <span aria-hidden="true">↗</span></a></article><article class="project-card"><h3>Service Lasso</h3><p>A manifest-based runtime for managing the supporting services a local application needs, from startup to health checks.</p><a class="read-link" href="https://service-lasso.github.io/service-lasso/">Explore Service Lasso <span aria-hidden="true">↗</span></a></article><article class="project-card"><h3>KnowledgeFund</h3><p>Connecting approved business knowledge with governed AI workflows, human review and a record of what changed.</p><a class="read-link" href="https://knowledgefund.co/">Explore KnowledgeFund <span aria-hidden="true">↗</span></a></article></div></section>
+<section class="home-writing" id="writing" aria-labelledby="writing-title"><div class="wrap home-added"><div class="home-writing-head"><div><p class="eyebrow">Notes from the work</p><h2 id="writing-title">Writing</h2><p class="intro" style="font-size:17px;margin:0">What I am building, how I work, and what I am learning.</p></div><a class="read-link" href="/blog/">Explore all five essays <span aria-hidden="true">→</span></a></div><div class="home-essays"><article><p class="eyebrow">Personal perspective</p><h3><a href="/blog/42850-contributions-the-year-i-changed-how-i-build-software/">42,850 Contributions: The Year I Changed How I Build Software.</a></h3><p>How my working method is changing, and what a contribution graph can and cannot tell me.</p><a class="read-link" href="/blog/42850-contributions-the-year-i-changed-how-i-build-software/" aria-label="Read: 42,850 Contributions: The Year I Changed How I Build Software.">Read essay <span aria-hidden="true">→</span></a></article><article><p class="eyebrow">Building the method</p><h3><a href="/blog/your-organisation-needs-a-software-factory/">Your Organisation Needs a Software Factory. Here’s How to Build One.</a></h3><p>The delivery loop I am building, from a bounded idea to a result someone can accept.</p><a class="read-link" href="/blog/your-organisation-needs-a-software-factory/" aria-label="Read: Your Organisation Needs a Software Factory. Here’s How to Build One.">Read essay <span aria-hidden="true">→</span></a></article></div></div></section>
 <section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center theme-transition" id="contact">
 <div class="max-w-3xl mx-auto space-y-12">
 <h2 class="font-display-lg text-display-lg text-light-on-surface dark:text-on-surface">Need help turning AI ambition into a governed plan?</h2>
@@ -562,6 +506,7 @@ My focus is simple: helping organisations adopt AI and digital platforms in ways
 <p class="text-light-outline dark:text-outline font-label-sm uppercase tracking-[0.2em] pt-8">Melbourne, Australia &amp; Globally Available</p>
 </div>
 </section>
+</main>
 <footer class="w-full py-section-gap bg-light-surface-container dark:bg-surface-container-low border-t border-outline-variant/10 dark:border-outline-variant/20 theme-transition">
 <div class="flex flex-col md:flex-row justify-between items-start md:items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop gap-8">
 <div class="space-y-4">
