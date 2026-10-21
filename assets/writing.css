@@ -15,3 +15,21 @@ html.dark{color-scheme:dark;--paper:#131313;--panel:#201f1f;--ink:#e5e2e1;--mute
 .project-card-wide{grid-column:1/-1}
 
 .article-update{padding:20px 24px;background:var(--panel);border-left:3px solid var(--accent);margin:32px 0}.article-body .article-update h2{margin:0 0 16px;font-size:24px}
+
+/* Shared navigation: native links with an accessible mobile disclosure. */
+.home-header{position:fixed;inset:0 0 auto;background:var(--paper)}
+.site-header .header-row{min-height:80px;padding-block:12px;flex-wrap:nowrap;gap:24px}
+.site-header .site-links{order:0;width:auto;gap:22px;margin-left:auto}
+.site-header .site-links a{font-size:11px;white-space:nowrap}
+.site-header .theme-control{margin-left:0}
+.menu-toggle{display:none;border:1px solid var(--line);border-radius:4px;background:transparent;color:var(--ink);font-size:12px;padding:8px 12px;min-height:40px}
+@media(max-width:900px){
+ .site-header .header-row{min-height:72px;flex-wrap:wrap;gap:12px}
+ .site-header .site-links{order:3;width:100%;margin:0;display:flex;flex-wrap:wrap;gap:16px 24px;padding:8px 0 12px;justify-content:flex-start}
+ .nav-ready .site-header .menu-toggle{display:block;margin-left:auto}
+ .nav-ready .site-header .site-links:not([data-open]){display:none}
+ .site-header .site-links a{font-size:12px;padding:4px 0}
+ html{scroll-padding-top:100px}
+ html:not(.nav-ready){scroll-padding-top:200px;scroll-behavior:auto}
+ .home-added{scroll-margin-top:0}
+}
