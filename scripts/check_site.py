@@ -4,6 +4,7 @@ Run with Python 3: python scripts/check_site.py
 No build or third-party dependencies required.
 """
 from html.parser import HTMLParser
+from hashlib import sha256
 from pathlib import Path
 from urllib.parse import urljoin, urlsplit, unquote
 import sys
@@ -31,6 +32,7 @@ class Page(HTMLParser):
 
 
 def check(root):
+    asset_versions = {name: sha256((root / name.lstrip('/')).read_bytes()).hexdigest()[:12] for name in ('/assets/theme.js', '/assets/writing.css', '/assets/article-redirect.js')}
     files = [root / 'index.html', *sorted((root / 'blog').rglob('*.html'))]
     errors, pages, canonicals = [], {}, set()
     for old, new in REDIRECTS.items():
@@ -82,7 +84,7 @@ def check(root):
                 errors.append(f'{label}: missing visible redirect fallback')
             if not any(t == 'meta' and a.get('name') == 'robots' and a.get('content') == 'noindex,follow' for t, a in page.tags):
                 errors.append(f'{label}: redirect should not be indexed')
-            if not any(t == 'script' and a.get('src') == '/assets/article-redirect.js' for t, a in page.tags):
+            if not any(t == 'script' and urlsplit(a.get('src', '')).path == '/assets/article-redirect.js' for t, a in page.tags):
                 errors.append(f'{label}: missing query/fragment-preserving redirect')
         if not any(t == 'meta' and a.get('name') == 'description' and a.get('content') for t, a in page.tags):
             errors.append(f'{label}: missing description')
@@ -99,6 +101,8 @@ def check(root):
             url = urlsplit(urljoin('https://maxbarrass.com' + route, target))
             if url.scheme not in ('http', 'https') or url.netloc != 'maxbarrass.com':
                 continue
+            if url.path in asset_versions and url.query != 'v=' + asset_versions[url.path]:
+                errors.append(f'{file.relative_to(root)}: stale asset version for {target}; run python scripts/version_assets.py')
             if url.path in REDIRECTS:
                 errors.append(f'{file.relative_to(root)}: link still points to old article URL {target}')
             destination = root / unquote(url.path).lstrip('/')
