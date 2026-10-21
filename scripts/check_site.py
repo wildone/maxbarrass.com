@@ -44,6 +44,12 @@ def check(root):
         for tag in ('h1', 'main', 'title'):
             if sum(t == tag for t, _ in page.tags) != 1:
                 errors.append(f'{label}: expected one {tag}')
+        if not any(t == 'span' and 'data-theme-icon' in a and a.get('id') == 'theme-icon' for t, a in page.tags):
+            errors.append(f'{label}: missing nested theme icon')
+        if not any(t == 'span' and 'data-theme-label' in a and a.get('id') == 'theme-label' for t, a in page.tags):
+            errors.append(f'{label}: missing nested theme label')
+        if not any(t == 'link' and 'fonts.googleapis.com' in a.get('href', '') and 'Material+Symbols+Outlined' in a.get('href', '') for t, a in page.tags):
+            errors.append(f'{label}: missing theme icon font')
         ids = [a['id'] for _, a in page.tags if 'id' in a]
         if len(ids) != len(set(ids)):
             errors.append(f'{label}: duplicate IDs')
