@@ -32,8 +32,8 @@ class Page(HTMLParser):
 
 
 def check(root):
-    asset_versions = {name: sha256((root / name.lstrip('/')).read_bytes()).hexdigest()[:12] for name in ('/assets/theme.js', '/assets/writing.css', '/assets/article-redirect.js')}
-    files = [root / 'index.html', *sorted((root / 'blog').rglob('*.html'))]
+    asset_versions = {name: sha256((root / name.lstrip('/')).read_bytes()).hexdigest()[:12] for name in ('/assets/theme.js', '/assets/writing.css', '/assets/article-redirect.js', '/assets/navigation.js')}
+    files = [root / 'index.html', *sorted((root / 'blog').rglob('*.html')), root / 'projects/index.html']
     errors, pages, canonicals = [], {}, set()
     for old, new in REDIRECTS.items():
         for route in (old, new):
@@ -52,6 +52,19 @@ def check(root):
             errors.append(f'{label}: missing nested theme label')
         if not any(t == 'link' and 'fonts.googleapis.com' in a.get('href', '') and 'Material+Symbols+Outlined' in a.get('href', '') for t, a in page.tags):
             errors.append(f'{label}: missing theme icon font')
+        header = source.split('<header class="site-header', 1)[-1].split('</header>', 1)[0]
+        navigation = Page(header)
+        expected_links = {'/#services', '/#approach', '/#about', '/projects/', '/blog/', '/#contact'}
+        header_links = {a.get('href') for t, a in navigation.tags if t == 'a'}
+        if not expected_links.issubset(header_links):
+            errors.append(f'{label}: incomplete shared navigation')
+        if not any(t == 'button' and a.get('aria-controls') == 'site-navigation' and a.get('aria-expanded') == 'false' for t, a in navigation.tags):
+            errors.append(f'{label}: missing accessible mobile menu control')
+        if not any(t == 'script' and urlsplit(a.get('src', '')).path == '/assets/navigation.js' for t, a in page.tags):
+            errors.append(f'{label}: missing navigation script')
+        cards = sum(t == 'article' and 'project-card' in a.get('class', '').split() for t, a in page.tags)
+        if cards != (5 if file == root / 'projects/index.html' else 0):
+            errors.append(f'{label}: project cards must live only on the Projects page')
         ids = [a['id'] for _, a in page.tags if 'id' in a]
         if len(ids) != len(set(ids)):
             errors.append(f'{label}: duplicate IDs')
