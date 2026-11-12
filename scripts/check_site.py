@@ -33,7 +33,7 @@ class Page(HTMLParser):
 
 def check(root):
     asset_versions = {name: sha256((root / name.lstrip('/')).read_bytes()).hexdigest()[:12] for name in ('/assets/theme.js', '/assets/writing.css', '/assets/article-redirect.js', '/assets/navigation.js')}
-    files = [root / 'index.html', *sorted((root / 'blog').rglob('*.html')), root / 'projects/index.html']
+    files = [root / 'index.html', *sorted((root / 'blog').rglob('*.html')), root / 'projects/index.html', *sorted((root / 'research').rglob('*.html'))]
     errors, pages, canonicals = [], {}, set()
     for old, new in REDIRECTS.items():
         for route in (old, new):
@@ -54,7 +54,7 @@ def check(root):
             errors.append(f'{label}: missing theme icon font')
         header = source.split('<header class="site-header', 1)[-1].split('</header>', 1)[0]
         navigation = Page(header)
-        expected_links = {'/#services', '/#approach', '/#about', '/projects/', '/blog/', '/#contact'}
+        expected_links = {'/#services', '/#approach', '/#about', '/projects/', '/blog/', '/research/', '/#contact'}
         header_links = {a.get('href') for t, a in navigation.tags if t == 'a'}
         if not expected_links.issubset(header_links):
             errors.append(f'{label}: incomplete shared navigation')

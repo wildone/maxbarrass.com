@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const update = () => {
     for (const link of links.querySelectorAll('a')) {
       const url = new URL(link.href);
-      const page = url.pathname === '/blog/' ? location.pathname.startsWith('/blog/') : url.pathname === location.pathname;
+      const page = ['/blog/', '/research/'].includes(url.pathname) ? location.pathname.startsWith(url.pathname) : url.pathname === location.pathname;
       const active = page && (!url.hash || url.hash === location.hash);
       if (active) link.setAttribute('aria-current', url.hash ? 'location' : 'page');
       else link.removeAttribute('aria-current');
