@@ -30,6 +30,6 @@ html.dark{color-scheme:dark;--paper:#131313;--panel:#201f1f;--ink:#e5e2e1;--mute
  .nav-ready .site-header .site-links:not([data-open]){display:none}
  .site-header .site-links a{font-size:12px;padding:4px 0}
  html{scroll-padding-top:100px}
- html:not(.nav-ready){scroll-padding-top:200px;scroll-behavior:auto}
+ html:not(.nav-ready){scroll-padding-top:240px;scroll-behavior:auto}
  .home-added{scroll-margin-top:0}
 }
