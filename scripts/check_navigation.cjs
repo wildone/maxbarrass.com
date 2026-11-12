@@ -9,7 +9,7 @@ const root = path.resolve(__dirname, '..');
 const live = process.argv.includes('--live');
 const base = live ? 'https://maxbarrass.com' : 'http://127.0.0.1:8771';
 const article = '/blog/2026/10/08/what-could-you-do-with-more-tokens/';
-const destinations = {Services:'/#services',Approach:'/#approach',About:'/#about',Projects:'/projects/',Creating:'/blog/',Contact:'/#contact'};
+const destinations = {Services:'/#services',Approach:'/#approach',About:'/#about',Projects:'/projects/',Creating:'/blog/',Research:'/research/',Contact:'/#contact'};
 const server = http.createServer((req,res) => {
   let file = path.join(root, decodeURIComponent(req.url.split('?')[0]));
   if (!file.startsWith(root + path.sep)) {res.writeHead(403);return res.end();}
@@ -28,7 +28,7 @@ const server = http.createServer((req,res) => {
       const page=await context.newPage({viewport:{width,height:1000}});
       await page.setViewportSize({width,height:1000});
       page.on('pageerror',error=>errors.push(error.message));
-      for(const route of ['/', '/projects/', '/blog/', article]) {
+      for(const route of ['/', '/projects/', '/blog/', article, '/research/', '/research/cmf/']) {
         for(const [label,destination] of Object.entries(destinations)) {
           await page.goto(base+route);
           const before=page.url();

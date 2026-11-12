@@ -23,7 +23,7 @@ html.dark{color-scheme:dark;--paper:#131313;--panel:#201f1f;--ink:#e5e2e1;--mute
 .site-header .site-links a{font-size:11px;white-space:nowrap}
 .site-header .theme-control{margin-left:0}
 .menu-toggle{display:none;border:1px solid var(--line);border-radius:4px;background:transparent;color:var(--ink);font-size:12px;padding:8px 12px;min-height:40px}
-@media(max-width:900px){
+@media(max-width:1050px){
  .site-header .header-row{min-height:72px;flex-wrap:wrap;gap:12px}
  .site-header .site-links{order:3;width:100%;margin:0;display:flex;flex-wrap:wrap;gap:16px 24px;padding:8px 0 12px;justify-content:flex-start}
  .nav-ready .site-header .menu-toggle{display:block;margin-left:auto}
