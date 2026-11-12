@@ -78,6 +78,27 @@ const server = http.createServer((req,res) => {
       assert.equal(await page.locator('.project-card').count(),0);
       await page.close();
     }
+    // Research page readability, document download and responsive layout.
+    fs.mkdirSync(path.join(root,'test-results'),{recursive:true});
+    const research=await context.newPage();
+    const newRoutes=['/research/','/research/cmf/','/blog/2026/11/12/when-a-good-story-outruns-the-evidence/'];
+    for (const width of [320,390,1024,1440]) {
+      await research.setViewportSize({width,height:1000});
+      for (const route of newRoutes) {
+        await research.goto(base+route);
+        assert.equal(await research.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,route+' overflow '+width);
+        const active=research.locator('#site-navigation [aria-current]');
+        assert.equal(await active.count(),1);
+        for (const theme of ['light','dark']) {
+          await research.evaluate(theme=>document.documentElement.classList.toggle('dark',theme==='dark'),theme);
+          await research.screenshot({path:path.join(root,'test-results',route.replaceAll('/','_')+width+'-'+theme+'.png'),fullPage:true});
+        }
+      }
+    }
+    const pdf=await context.request.get(base+'/research/cmf/CMF-Working-Paper-Max-Barrass-v4.pdf');
+    assert.equal(pdf.status(),200);
+    assert.deepEqual(await pdf.body(),fs.readFileSync(path.join(root,'research/cmf/CMF-Working-Paper-Max-Barrass-v4.pdf')));
+    await research.close();
     // Native navigation remains available when JavaScript is disabled.
     const nojs=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:1000}});
     const fallback=await nojs.newPage();await fallback.goto(base+'/projects/');
