@@ -1,0 +1,17 @@
+/* Evidence figures for the software factory series. */
+.article-evidence {
+  margin: 1.55rem 0;
+}
+.article-evidence img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+.article-evidence figcaption {
+  margin-top: .55rem;
+  color: var(--muted);
+  font-size: .875rem;
+  line-height: 1.5;
+}
